@@ -205,4 +205,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcb5f689eec8fb4c9954e6bf59945cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pluggSO: {fileID: 11400000, guid: cf02adc243d67c041b8d0d93511f3ede, type: 2}
   isGlued: 0

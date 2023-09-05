@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Plugg : MonoBehaviour
 {
+    [SerializeField] Fasteners pluggSO;
     public bool isGlued;
-
 
     private void OnTriggerEnter(Collider other)
     {
