@@ -59,10 +59,18 @@ public class WeldableObject : MonoBehaviour
 
         isAttached = false;
 
+
         if (this.transform.parent != null)
         {
             this.transform.SetParent(null);
         }
+
+        GameObject paren = transform.parent.gameObject;
+        if (paren.transform.childCount == 0)
+        {
+            Destroy(paren);
+        }
+
 
         // Only add a Rigidbody if one doesn't already exist
         if (gameObject.GetComponent<Rigidbody>() == null)
