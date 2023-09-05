@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Resources/OculusRuntimeSettings.asset
+Assets/Oculus/Voice/Lib/Wit.ai/Scripts/Runtime/Data/Traits.meta
+Assets/Oculus/Voice/Lib/Wit.ai/Lib/Conduit/Editor/Data.meta
+Assets/Oculus/Voice/Features/Dictation/Scripts/Runtime/Utilities.meta
+Assets/Resources/OculusRuntimeSettings.asset.meta
