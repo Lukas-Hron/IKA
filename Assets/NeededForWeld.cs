@@ -8,17 +8,21 @@ public class NeededForWeld : MonoBehaviour
     private WeldableObject weldableObjectScript;
 
     // objects that can and will need to be welded to this object, like other planks
-    [SerializeField] List<WeldableObject> weldObjects = new List<WeldableObject>();
+    [SerializeField] WeldableObject nextObjectToWeldTo;
 
     // this items id for pdf reference
     public string itemID = "A1";
 
-    // needed to know which object should be connected to this object, 
-    public string pluggConnectionID = "0";
+    // needed to know which object should be connected to this object
+    // if there are more than one object to be connected add another string to dictionary
+    // key is the itemID and value is the connectionID
+    public Dictionary<string, string> pluggConnectionID = new Dictionary<string,string>();
     public bool canConnectToNextPiece;
 
     // how many and in what spots the plugs are, 0 = empty 1 = filled
     private Dictionary<PluggHole, int> connectedPluggHoles = new Dictionary<PluggHole, int>();
+
+
 
     private void Start()
     {
@@ -53,10 +57,13 @@ public class NeededForWeld : MonoBehaviour
         }
 
         // all plugs are correct to connect to next piece
-        if (currentConnectionID == pluggConnectionID)
+        if (pluggConnectionID.Count == 1)
         {
-            canConnectToNextPiece = true;
-            Debug.Log("Can connect");
+            //if (currentConnectionID == pluggConnectionID[0])
+            //{
+            //    canConnectToNextPiece = true;
+            //    Debug.Log("Can connect");
+            //}
         }
     }
 }
