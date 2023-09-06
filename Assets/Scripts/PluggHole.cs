@@ -32,7 +32,6 @@ public class PluggHole : MonoBehaviour
         //cant connect if plugg is already connected
         if (hasPlugg || plugg.transform.parent != null) return;
 
-        Debug.Log("hej igen" + gameObject.name);
         hasPlugg = true;
 
         plugg.transform.position = transform.position;

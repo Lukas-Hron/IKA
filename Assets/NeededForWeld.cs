@@ -35,7 +35,6 @@ public class NeededForWeld : MonoBehaviour
     {
         connectedPluggHoles[pluggHole] = 1;
         CheckConnectionID();
-        Debug.Log("added plugg" + pluggHole.gameObject.name);
     }
 
     public void RemovedPlugg(PluggHole pluggHole)
@@ -52,7 +51,6 @@ public class NeededForWeld : MonoBehaviour
         {
             currentConnectionID += connectedPluggHoles[item.Key].ToString();
         }
-        Debug.Log(currentConnectionID);
 
         // all plugs are correct to connect to next piece
         if (currentConnectionID == pluggConnectionID)
