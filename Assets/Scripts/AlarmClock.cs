@@ -8,38 +8,32 @@ public class AlarmClock : MonoBehaviour
     [SerializeField] TextMeshPro timerText;
     [SerializeField] AudioSource alarmSource;
 
-    public float timeRemaining = 60;
-    private float alarmTime = 0;
+    public float timeRemaining = 180;
 
     private bool timerRunning;
+    private bool alarmRunning;
 
     private void Start()
     {
         timerText.text = "00:00";
         timerRunning = true;
 
+        alarmRunning = false;
         alarmSource.Stop();
-        Invoke(nameof(GetRandomTimer), 5);
+        float alarmTimer = Random.Range(0, timeRemaining / 2);
+        alarmTimer = Mathf.Clamp(alarmTimer, 5, timeRemaining);
+        Invoke(nameof(StartAlarm), alarmTimer);
     }
 
-    private void GetRandomTimer()
+    private void StartAlarm()
     {
-        //dont run if theres less then 10 seconds left or its not running
-        if (timeRemaining < 10 || !timerRunning) return;
-
-        alarmTime = Random.Range(10, timeRemaining - 10);
-        alarmTime = Mathf.Clamp(alarmTime, 10, timeRemaining - 10);
-
+        alarmSource.Play();
+        alarmRunning = true;
     }
 
     private void Update()
     {
         if (!timerRunning) return;
-
-        if(timeRemaining < alarmTime)
-        {
-            alarmSource.Play();
-        }
 
         if (timeRemaining > 0)
         {
@@ -48,7 +42,7 @@ public class AlarmClock : MonoBehaviour
             int minutes = Mathf.FloorToInt(timeRemaining / 60);
             int seconds = Mathf.FloorToInt(timeRemaining % 60);
 
-            timerText.text = "0" + minutes + ":" + seconds;
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         }
         else
@@ -56,11 +50,21 @@ public class AlarmClock : MonoBehaviour
             Debug.Log("timer ran out");
             timeRemaining = 0;
             timerRunning = false;
+            CancelInvoke();
         }
     }
 
     public void TurnOffAlarm()
     {
+        if (!alarmRunning) return;
 
+        alarmSource.Stop();
+
+        if (timerRunning)
+        {
+            float alarmTimer = Random.Range(0, timeRemaining / 2);
+        alarmTimer = Mathf.Clamp(alarmTimer, 5, timeRemaining);
+        Invoke(nameof(StartAlarm), alarmTimer);
+        }
     }
 }
