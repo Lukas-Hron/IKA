@@ -34,16 +34,37 @@ public class Hammer : MonoBehaviour
             Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
             Debug.Log("Found original weldable");
             // Shoot another ray from the hit point in the direction of the normal
-            Ray secondRay = new Ray(hit.point, hit.normal * -1f);
+            Ray secondRay = new Ray(hit.point, hit.normal * -1);
             RaycastHit secondHit;
+            Physics.Raycast(secondRay, out secondHit, 100f);
+            Debug.DrawLine(secondRay.origin, secondHit.point, Color.blue, 2f);
 
-            if (Physics.Raycast(secondRay, out secondHit, 100f))
+            RaycastHit[] hits = Physics.RaycastAll(secondRay, 100f);
+            GameObject targetObject = null;
+
+            foreach (var hitInfo in hits)
             {
-                Debug.DrawLine(secondRay.origin, secondHit.point, Color.blue, 2f);
-                Debug.Log("WE BE WELDIN'");
-
-                hit.collider.gameObject.GetComponent<WeldableObject>().AttachToObject(secondHit.collider.gameObject);
+                if (hitInfo.collider.gameObject != hit.collider.gameObject)
+                {
+                    WeldableObject weldable = hitInfo.collider.gameObject.GetComponent<WeldableObject>();
+                    if (weldable != null)
+                    {
+                        targetObject = hitInfo.collider.gameObject;
+                        break;  // Exit the loop once found
+                    }
+                }
             }
+
+            if (targetObject != null)
+            {
+                hit.collider.gameObject.GetComponent<WeldableObject>().AttachToObject(targetObject);
+                Debug.Log("Welding " + hit.collider.gameObject.name + " to " + targetObject.name + ".");
+            }
+            else
+            {
+                Debug.Log("Failed to find a weldable object");
+            }
+
         }
     }
 }
