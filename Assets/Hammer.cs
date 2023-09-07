@@ -32,15 +32,17 @@ public class Hammer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100f))
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
-
+            Debug.Log("Found original weldable");
             // Shoot another ray from the hit point in the direction of the normal
             Ray secondRay = new Ray(hit.point, hit.normal * -1f);
             RaycastHit secondHit;
-                
+
             if (Physics.Raycast(secondRay, out secondHit, 100f))
             {
                 Debug.DrawLine(secondRay.origin, secondHit.point, Color.blue, 2f);
-                Debug.Log("We in it");
+                Debug.Log("WE BE WELDIN'");
+
+                hit.collider.gameObject.GetComponent<WeldableObject>().AttachToObject(secondHit.collider.gameObject);
             }
         }
     }
