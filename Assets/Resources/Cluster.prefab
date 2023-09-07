@@ -71,7 +71,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 4465756431457390278}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 6892674235046252210}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
