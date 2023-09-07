@@ -7,7 +7,7 @@ public class Hammer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if the entered object has the tag "PickUpable"
-        if (other.CompareTag("PickUpable"))
+        if (other.CompareTag("PickUpables"))
         {
             // Check if the object has the "WeldableObject" component
             WeldableObject weldable = other.GetComponent<WeldableObject>();
@@ -17,16 +17,16 @@ public class Hammer : MonoBehaviour
                 if (!weldable.isAttached)
                 {
                     // Your logic here. For example:
-                    ShootRay();
+                    ShootRay(other.gameObject);
                     Debug.Log("Found an unattached WeldableObject!");
                 }
             }
         }
     }
 
-    void ShootRay()
+    void ShootRay(GameObject other)
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position, (other.transform.position - transform.position).normalized);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f))
@@ -34,12 +34,13 @@ public class Hammer : MonoBehaviour
             Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
 
             // Shoot another ray from the hit point in the direction of the normal
-            Ray secondRay = new Ray(hit.point, hit.normal);
+            Ray secondRay = new Ray(hit.point, hit.normal * -1f);
             RaycastHit secondHit;
                 
             if (Physics.Raycast(secondRay, out secondHit, 100f))
             {
                 Debug.DrawLine(secondRay.origin, secondHit.point, Color.blue, 2f);
+                Debug.Log("We in it");
             }
         }
     }
