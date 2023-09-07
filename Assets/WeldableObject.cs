@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WeldableObject : MonoBehaviour
@@ -33,12 +34,8 @@ public class WeldableObject : MonoBehaviour
         else
         {
             // Create a new empty GameObject called "Cluster" at the current GameObject's position
-            GameObject cluster = new GameObject("Cluster");
-            cluster.AddComponent<Rigidbody>();
-            //cluster.transform.position = this.transform.position;
-
-            // Set the parent of the current GameObject and the weldable object to the cluster
-            this.transform.SetParent(cluster.transform);
+            GameObject newCluster = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Cluster.prefab"));
+            this.transform.SetParent(newCluster.transform);
 
             // Only attach back if it's not a recursive call
             if (!recursiveCall)
