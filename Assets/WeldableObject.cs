@@ -35,7 +35,7 @@ public class WeldableObject : MonoBehaviour
             // Create a new empty GameObject called "Cluster" at the current GameObject's position
             GameObject cluster = new GameObject("Cluster");
             cluster.AddComponent<Rigidbody>();
-            cluster.transform.position = this.transform.position;
+            //cluster.transform.position = this.transform.position;
 
             // Set the parent of the current GameObject and the weldable object to the cluster
             this.transform.SetParent(cluster.transform);

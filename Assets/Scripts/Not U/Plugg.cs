@@ -6,6 +6,7 @@ public class Plugg : MonoBehaviour
 {
     [SerializeField] Fasteners pluggSO;
     public bool isGlued;
+    public bool isHeld;
 
     private void OnTriggerEnter(Collider other)
     {
