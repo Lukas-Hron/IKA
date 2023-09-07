@@ -2798,7 +2798,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -3407,7 +3407,7 @@ GameObject:
   - component: {fileID: 1078335515}
   - component: {fileID: 1078335516}
   m_Layer: 0
-  m_Name: Level (1)
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6065,8 +6065,8 @@ SceneRoots:
   - {fileID: 240365422}
   - {fileID: 899071198}
   - {fileID: 1060854922}
-  - {fileID: 563779752}
-  - {fileID: 1826448531}
   - {fileID: 226805060}
+  - {fileID: 1826448531}
+  - {fileID: 563779752}
   - {fileID: 1467514655}
   - {fileID: 356187654}
