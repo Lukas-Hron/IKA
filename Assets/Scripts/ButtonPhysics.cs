@@ -30,20 +30,19 @@ public class ButtonPhysics : MonoBehaviour
 
     private void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
     }
 
     private void Update()
     {
 
+        transform.localPosition = new Vector3(0,transform.localPosition.y,0);
 
         if (!isPressed && GetValue() + threshhold >= 1)
             Pressed();
         else if (isPressed && GetValue() - threshhold <= 0)
             Released();
-
-
     }
 
 
