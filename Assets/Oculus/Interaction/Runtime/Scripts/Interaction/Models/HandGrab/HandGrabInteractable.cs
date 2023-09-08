@@ -40,7 +40,7 @@ namespace Oculus.Interaction.HandGrab
         IHandGrabInteractable, IRigidbodyRef, ICollidersRef
     {
         [SerializeField]
-        private Rigidbody _rigidbody;
+        public Rigidbody _rigidbody;
         public Rigidbody Rigidbody => _rigidbody;
 
         [SerializeField, Optional]

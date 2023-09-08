@@ -43,8 +43,20 @@ public class WeldableObject : MonoBehaviour
         else
         {
             // Create a new empty GameObject called "Cluster" at the current GameObject's position
-            GameObject newCluster = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Cluster.prefab"));
-            newCluster.transform.position = this.transform.position;
+            //GameObject newCluster = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Cluster.prefab"));
+            GameObject newCluster = Instantiate(new GameObject());
+            
+            newCluster.AddComponent<Rigidbody>();
+            newCluster.AddComponent<Grabbable>();
+            newCluster.AddComponent<HandGrabInteractable>();
+            newCluster.AddComponent<PhysicsGrabbable>();
+            
+            newCluster.GetComponent<PhysicsGrabbable>()._rigidbody = newCluster.GetComponent<Rigidbody>();
+            newCluster.GetComponent<PhysicsGrabbable>()._grabbable = newCluster.GetComponent<Grabbable>();
+
+            newCluster.GetComponent<HandGrabInteractable>()._rigidbody = newCluster.GetComponent<Rigidbody>();
+
+newCluster.transform.position = this.transform.position;
             this.transform.SetParent(newCluster.transform);
 
             // Only attach back if it's not a recursive call
