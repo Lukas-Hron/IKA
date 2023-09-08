@@ -54,6 +54,7 @@ public class CheckForPoints : MonoBehaviour
         {
             points = 1;
         }
+
         return points;
     }
 
@@ -83,7 +84,7 @@ public class CheckForPoints : MonoBehaviour
         {
             points = 1;
         }
-        points = 0;
+
         return points;
     }
 }
