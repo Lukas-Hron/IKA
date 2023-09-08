@@ -1,5 +1,3 @@
-using Oculus.Interaction;
-using Oculus.Interaction.HandGrab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +5,11 @@ using UnityEngine;
 public class WeldableObject : MonoBehaviour
 {
     private Rigidbody rg;
-    private Grabbable grab;
-    private HandGrabInteractable hgrab;
-    public GameObject cluster;
     public bool isAttached;
     // Start is called before the first frame update
     void Start()
     {
         rg = GetComponent<Rigidbody>();
-        grab = GetComponent<Grabbable>();
-        hgrab = GetComponent<HandGrabInteractable>();
     }
 
 
@@ -40,16 +33,12 @@ public class WeldableObject : MonoBehaviour
         else
         {
             // Create a new empty GameObject called "Cluster" at the current GameObject's position
-            // GameObject cluster = new GameObject("Cluster");
-            // cluster.AddComponent<Rigidbody>();
-            // cluster.AddComponent<Grabbable>();
-            // cluster.AddComponent<HandGrabInteractable>();
-            // cluster.transform.position = this.transform.position;
-
-            GameObject myCluster = Instantiate(cluster);
+            GameObject cluster = new GameObject("Cluster");
+            cluster.AddComponent<Rigidbody>();
+            //cluster.transform.position = this.transform.position;
 
             // Set the parent of the current GameObject and the weldable object to the cluster
-            this.transform.SetParent(myCluster.transform);
+            this.transform.SetParent(cluster.transform);
 
             // Only attach back if it's not a recursive call
             if (!recursiveCall)
@@ -87,8 +76,6 @@ public class WeldableObject : MonoBehaviour
         if (gameObject.GetComponent<Rigidbody>() == null)
         {
             rg = gameObject.AddComponent<Rigidbody>();
-            grab.enabled = true;
-            hgrab.enabled = true;
         }
     }
 
@@ -96,7 +83,5 @@ public class WeldableObject : MonoBehaviour
     public void RemoveRigidbody()
     {
         Destroy(rg);
-        grab.enabled = false;
-        hgrab.enabled = false;
     }
 }
