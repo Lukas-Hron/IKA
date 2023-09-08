@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GlueCollider
   - Hand
+  - PickUpables
   layers:
   - Default
   - TransparentFX

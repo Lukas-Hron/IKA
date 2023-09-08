@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
+using UnityEditor;
 using UnityEngine;
 
 public class WeldableObject : MonoBehaviour
 {
     private Rigidbody rg;
+    private Grabbable grabbable;
+    private HandGrabInteractable HandGrabInteractable;
+    private PhysicsGrabbable physicsGrabbable;
+
     public bool isAttached;
     // Start is called before the first frame update
     void Start()
     {
         rg = GetComponent<Rigidbody>();
+        grabbable = GetComponent<Grabbable>();
+        HandGrabInteractable = GetComponent<HandGrabInteractable>();
+        physicsGrabbable = GetComponent<PhysicsGrabbable>();
     }
 
 
@@ -33,12 +43,9 @@ public class WeldableObject : MonoBehaviour
         else
         {
             // Create a new empty GameObject called "Cluster" at the current GameObject's position
-            GameObject cluster = new GameObject("Cluster");
-            cluster.AddComponent<Rigidbody>();
-            //cluster.transform.position = this.transform.position;
-
-            // Set the parent of the current GameObject and the weldable object to the cluster
-            this.transform.SetParent(cluster.transform);
+            GameObject newCluster = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Cluster.prefab"));
+            newCluster.transform.position = this.transform.position;
+            this.transform.SetParent(newCluster.transform);
 
             // Only attach back if it's not a recursive call
             if (!recursiveCall)
@@ -76,12 +83,18 @@ public class WeldableObject : MonoBehaviour
         if (gameObject.GetComponent<Rigidbody>() == null)
         {
             rg = gameObject.AddComponent<Rigidbody>();
+            grabbable.enabled = true;
+            HandGrabInteractable.enabled = true;
+            physicsGrabbable.enabled = true;
         }
     }
 
 
     public void RemoveRigidbody()
     {
+        grabbable.enabled = false;
+        HandGrabInteractable.enabled = false;
+        physicsGrabbable.enabled = false;
         Destroy(rg);
     }
 }
