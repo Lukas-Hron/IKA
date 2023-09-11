@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class CheckForPoints : MonoBehaviour
 {
-    [SerializeField] GameObject otherToCheck;
+    public GameObject otherToCheck;
     private PointCounter pointCounter;
 
 
     private void Start()
     {
         pointCounter = FindObjectOfType<PointCounter>();
+
         CheckPoints();
     }
+
     //private void Update()
     //{
     //    if (Input.GetKeyDown(KeyCode.K))
@@ -41,7 +43,7 @@ public class CheckForPoints : MonoBehaviour
         float posThreshold1 = 0.15f;//more points the closer you are
         float posThreshold2 = 0.1f;
         float posThreshold3 = 0.05f;
-        Debug.Log(posDiff.magnitude);
+
         if (posDiff.magnitude <= posThreshold3)
         {
             points = 3;

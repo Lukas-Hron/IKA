@@ -28,10 +28,10 @@ namespace Oculus.Interaction
     public class PhysicsGrabbable : MonoBehaviour
     {
         [SerializeField]
-        private Grabbable _grabbable;
+        public Grabbable _grabbable;
 
         [SerializeField]
-        private Rigidbody _rigidbody;
+        public Rigidbody _rigidbody;
 
         [SerializeField]
         [Tooltip("If enabled, the object's mass will scale appropriately as the scale of the object changes.")]

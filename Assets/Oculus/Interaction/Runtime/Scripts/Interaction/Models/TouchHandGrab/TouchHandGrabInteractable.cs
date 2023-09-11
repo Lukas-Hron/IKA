@@ -35,7 +35,7 @@ namespace Oculus.Interaction
         private Collider _boundsCollider;
 
         [SerializeField]
-        private List<Collider> _colliders;
+        public List<Collider> _colliders;
 
         private ColliderGroup _colliderGroup;
         public ColliderGroup ColliderGroup => _colliderGroup;

@@ -10,6 +10,5 @@ public class PointCounter : MonoBehaviour
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;
-        Debug.Log(points);
     }
 }
