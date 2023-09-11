@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,10 @@ public class MaxDebugger : MonoBehaviour
 {
     // Start is called before the first frame update
     public List <WeldableObject> WeldObjects;
+    public HandVisual hand;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,4 +22,5 @@ public class MaxDebugger : MonoBehaviour
         }
         
     }
+    
 }
