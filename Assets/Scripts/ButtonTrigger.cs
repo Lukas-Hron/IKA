@@ -23,8 +23,6 @@ public class ButtonTrigger : MonoBehaviour
 
 
         startPos = button.localPosition;
-
-        Debug.Log(startPos);
     }
 
     private void OnCollisionEnter(Collision collision)

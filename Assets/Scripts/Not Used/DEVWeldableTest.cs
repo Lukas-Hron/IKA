@@ -20,7 +20,7 @@ public class DEVWeldableTest : MonoBehaviour
                 WeldableObject weldable = objectToAttach.GetComponent<WeldableObject>();
                 if (weldable != null)
                 {
-                    weldable.AttachToObject(targetObject);
+                    //weldable.AttachToObject(targetObject);
                 }
                 else
                 {
@@ -42,7 +42,7 @@ public class DEVWeldableTest : MonoBehaviour
                 WeldableObject weldable = objectToRemoveFrom.GetComponent<WeldableObject>();
                 if (weldable != null)
                 {
-                    weldable.RemoveFromObject();
+                    //weldable.RemoveFromObject();
                 }
                 else
                 {
