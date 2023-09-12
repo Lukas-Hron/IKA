@@ -18,7 +18,7 @@ public class MaxDebugger : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            WeldObjects[0].AttachToObject(WeldObjects[1].gameObject, false);
+            //WeldObjects[0].AttachToObject(WeldObjects[1].gameObject, false);
         }
         
     }
