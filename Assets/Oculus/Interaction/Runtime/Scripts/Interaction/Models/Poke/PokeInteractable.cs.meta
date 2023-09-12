@@ -3,7 +3,10 @@ guid: 317e663e2bb60ea408fe22b908b59295
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _data: {instanceID: 0}
+  - _pointableElement: {instanceID: 0}
+  - _surfacePatch: {fileID: 2100000, guid: bd0bb729cb6159b4ab21c5f62cad24ee, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

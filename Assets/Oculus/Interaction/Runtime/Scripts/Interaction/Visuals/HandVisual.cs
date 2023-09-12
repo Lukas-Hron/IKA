@@ -44,6 +44,8 @@ namespace Oculus.Interaction
         [SerializeField, Optional]
         private Transform _root = null;
 
+        public Transform ActualHand;
+
         [SerializeField, Optional]
         private MaterialPropertyBlockEditor _handMaterialPropertyBlockEditor;
 
@@ -121,12 +123,12 @@ namespace Oculus.Interaction
                 _skinnedMeshRenderer.enabled = false;
             }
 
-            if (_updateRootPose)
+            if (_updateRootPose) // moves the hand
             {
-                if (_root != null && Hand.GetRootPose(out Pose handRootPose))
+                if (ActualHand != null && Hand.GetRootPose(out Pose handRootPose))
                 {
-                    _root.position = handRootPose.position;
-                    _root.rotation = handRootPose.rotation;
+                    ActualHand.position = handRootPose.position;
+                    ActualHand.rotation = handRootPose.rotation;
                 }
             }
 
