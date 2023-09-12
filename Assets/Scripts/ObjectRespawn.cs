@@ -6,6 +6,15 @@ public class ObjectRespawn : MonoBehaviour
 {
     private Transform Origin;
     private Rigidbody rg;
+
+    private void OnEnable()
+    {
+        RespawnAll.Respawn += Respawn;
+    }
+    private void OnDisable()
+    {
+        RespawnAll.Respawn -= Respawn;
+    }
     private void Start()
     {
         Origin = transform;
