@@ -14,12 +14,12 @@ public class ButtonPhysics : MonoBehaviour
 
     private bool isPressed;
     private Vector3 startPos;
+    [SerializeField] private float endPos = 0.1f;
     private ConfigurableJoint joint;
 
     private float GetValue()
     {
         var value = Vector3.Distance(startPos, transform.localPosition) / joint.linearLimit.limit;
-
 
         if (Mathf.Abs(value) < deadzone)
             value = 0;
@@ -36,8 +36,24 @@ public class ButtonPhysics : MonoBehaviour
 
     private void Update()
     {
+        float yPos;
 
-        transform.localPosition = new Vector3(0,transform.localPosition.y,0);
+        transform.localPosition = new Vector3(0, transform.localPosition.y, 0);
+
+        if (transform.localPosition.y > startPos.y)
+        {
+            yPos = startPos.y;
+        }
+        else if (transform.localPosition.y < endPos)
+        {
+            yPos = endPos;
+        }
+        else
+            yPos = transform.localPosition.y;
+
+
+        transform.localPosition = new Vector3(0, yPos, 0);
+
 
         if (!isPressed && GetValue() + threshhold >= 1)
             Pressed();
