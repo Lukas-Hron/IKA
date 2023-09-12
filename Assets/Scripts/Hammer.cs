@@ -68,22 +68,25 @@ public class Hammer : MonoBehaviour
     {
         Cluster obj1Cluster = null;
         Cluster obj2Cluster = null;
+
         try
         {
             obj1Cluster = object1.transform.parent.GetComponent<Cluster>();
             obj2Cluster = object2.transform.parent.GetComponent<Cluster>();
-
         }
-        catch (System.Exception)
+        catch {/* does not have cluster parent */}
+
+        // both objects are in clusters
+        if (obj1Cluster && obj2Cluster)
         {
+            // they're in same cluster
+            if (obj1Cluster == obj2Cluster) return;
 
+            obj1Cluster.AddThisClusterToAnotherOne(obj2Cluster);
         }
 
-        // both objects are in the same cluster
-        if (obj1Cluster && obj2Cluster && object1.transform.parent == object2.transform.parent) return;
-       
         // neither object is in a cluster so create one
-        if (!obj1Cluster && !obj2Cluster)
+        else if (!obj1Cluster && !obj2Cluster)
         {
             GameObject newCluster = Instantiate(clusterPrefab, object1.transform.position, Quaternion.identity);
 
@@ -93,7 +96,7 @@ public class Hammer : MonoBehaviour
             object1.transform.SetParent(newCluster.transform);
             object2.transform.SetParent(newCluster.transform);
         }
-        else // check which object has cluster and add the other object to it
+        else // one of them is in a cluster, check which one and add the other object to it
         {
             if (obj1Cluster)
             {
