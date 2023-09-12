@@ -125,10 +125,10 @@ namespace Oculus.Interaction
 
             if (_updateRootPose) // moves the hand
             {
-                if (_root != null && Hand.GetRootPose(out Pose handRootPose))
+                if (ActualHand != null && Hand.GetRootPose(out Pose handRootPose))
                 {
-                    _root.position = handRootPose.position;
-                    _root.rotation = handRootPose.rotation;
+                    ActualHand.position = handRootPose.position;
+                    ActualHand.rotation = handRootPose.rotation;
                 }
             }
 
