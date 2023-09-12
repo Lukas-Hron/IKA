@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class WeldableObject : MonoBehaviour
 {
-    public bool colorable;
     private Rigidbody rg;
     private Grabbable grabbable;
     private HandGrabInteractable handGrab;

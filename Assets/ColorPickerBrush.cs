@@ -46,12 +46,9 @@ public class ColorPickerBrush : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("WeldableObject"))
-        {
-            if (other.GetComponent<WeldableObject>().colorable)
+            if (other.GetComponent<Colorable>() != null)
             {
                 other.GetComponent<Renderer>().material.color = currentColor;
             }
-        }
     }
 }
