@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckForPoints : MonoBehaviour
+public class PointChecker : MonoBehaviour
 {
     public GameObject otherToCheck;
     private PointCounter pointCounter;
@@ -15,16 +15,6 @@ public class CheckForPoints : MonoBehaviour
 
         CheckPoints();
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.K))
-    //    {
-    //        pointCounter.points = 0;
-    //        CheckPoints();
-    //        Debug.Log("hej");
-    //    }
-    //}
 
     public void CheckPoints()
     {

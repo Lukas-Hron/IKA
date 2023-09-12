@@ -35,7 +35,17 @@ public class Cluster : MonoBehaviour
         touchGrab._colliders.Remove(part.GetComponent<Collider>());
 
         // if this cluster is empty Destroy
-        if(parts.Count <= 0)
+        if (parts.Count <= 0)
             Destroy(this.gameObject);
+    }
+
+    public void AddThisClusterToAnotherOne(Cluster clusterToAddTo)
+    {
+        foreach (GameObject part in parts)
+        {
+            RemovePartFromList(part);
+
+            clusterToAddTo.AddPartToList(part);
+        }
     }
 }
