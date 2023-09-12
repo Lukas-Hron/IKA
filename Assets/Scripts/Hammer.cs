@@ -66,8 +66,18 @@ public class Hammer : MonoBehaviour
 
     public void AttachToObject(GameObject object1, GameObject object2)
     {
-        Cluster obj1Cluster = object1.transform.parent.GetComponent<Cluster>();
-        Cluster obj2Cluster = object2.transform.parent.GetComponent<Cluster>();
+        Cluster obj1Cluster = null;
+        Cluster obj2Cluster = null;
+        try
+        {
+            obj1Cluster = object1.transform.parent.GetComponent<Cluster>();
+            obj2Cluster = object2.transform.parent.GetComponent<Cluster>();
+
+        }
+        catch (System.Exception)
+        {
+
+        }
 
         // both objects are in the same cluster
         if (obj1Cluster && obj2Cluster && object1.transform.parent == object2.transform.parent) return;
