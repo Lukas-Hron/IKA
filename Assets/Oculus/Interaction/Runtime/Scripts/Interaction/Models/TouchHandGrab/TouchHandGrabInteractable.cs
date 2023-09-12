@@ -31,6 +31,8 @@ namespace Oculus.Interaction
     /// </summary>
     public class TouchHandGrabInteractable : PointerInteractable<TouchHandGrabInteractor, TouchHandGrabInteractable>
     {
+        public bool SetSelfComponents;
+
         [SerializeField]
         private Collider _boundsCollider;
 
@@ -42,6 +44,13 @@ namespace Oculus.Interaction
 
         protected override void Start()
         {
+            if (SetSelfComponents)
+            {
+                _boundsCollider = GetComponent<Collider>();
+                _colliders.Add(_boundsCollider);
+                PointableElement = GetComponent<Grabbable>();
+            }
+
             base.Start();
             this.AssertField(_boundsCollider, nameof(_boundsCollider));
             this.AssertCollectionField(_colliders, nameof(_colliders));

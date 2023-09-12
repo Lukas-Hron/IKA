@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8475744236920928295}
   - component: {fileID: 639794752953950515}
   - component: {fileID: 2903745487757776204}
+  - component: {fileID: 7802128919822418147}
   m_Layer: 0
   m_Name: TouchGrabTest_HammerPhysics
   m_TagString: Untagged
@@ -82,6 +83,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 639794752953950515}
+  SetStuffToSelf: 0
   _boundsCollider: {fileID: 2772476671741767122}
   _colliders:
   - {fileID: 3994443251072181360}
@@ -121,6 +123,67 @@ MonoBehaviour:
   _grabbable: {fileID: 639794752953950515}
   _rigidbody: {fileID: 3617314952583571535}
   _scaleMassWithSize: 1
+--- !u!114 &7802128919822418147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175094750486884656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 8475744236920928295}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057799116694289695}
+        m_TargetAssemblyTypeName: Hammer, Assembly-CSharp
+        m_MethodName: SetIsGrabbedBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057799116694289695}
+        m_TargetAssemblyTypeName: Hammer, Assembly-CSharp
+        m_MethodName: SetIsGrabbedBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1144055698313982913
 GameObject:
   m_ObjectHideFlags: 0

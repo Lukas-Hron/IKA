@@ -10,8 +10,12 @@ public class Hammer : MonoBehaviour
 
     [SerializeField] LayerMask weldableObjects;
 
+    private bool isGrabbed;
+    public void SetIsGrabbedBool(bool value) { isGrabbed = value; }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (!isGrabbed) return;
         // Check if the entered object has the tag "PickUpable"
         if (other.CompareTag("PickUpables"))
         {

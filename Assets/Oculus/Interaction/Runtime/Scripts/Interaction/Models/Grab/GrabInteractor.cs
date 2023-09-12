@@ -167,6 +167,7 @@ namespace Oculus.Interaction
 
         protected override void InteractableSelected(GrabInteractable interactable)
         {
+            Debug.Log("Hej igen");
             Pose target = _grabTarget.GetPose();
             Pose source = _interactable.GetGrabSourceForTarget(target);
 

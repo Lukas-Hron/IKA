@@ -237,6 +237,7 @@ public class OVRGrabber : MonoBehaviour
 
     protected virtual void GrabBegin()
     {
+        Debug.Log("hejsan");
         float closestMagSq = float.MaxValue;
         OVRGrabbable closestGrabbable = null;
         Collider closestGrabbableCollider = null;
