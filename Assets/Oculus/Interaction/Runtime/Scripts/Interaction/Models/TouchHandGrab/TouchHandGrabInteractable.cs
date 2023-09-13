@@ -42,14 +42,19 @@ namespace Oculus.Interaction
         private ColliderGroup _colliderGroup;
         public ColliderGroup ColliderGroup => _colliderGroup;
 
-        protected override void Start()
+        protected override void Awake()
         {
             if (SetSelfComponents)
             {
                 _boundsCollider = GetComponent<Collider>();
                 _colliders.Add(_boundsCollider);
-                PointableElement = GetComponent<Grabbable>();
+                _pointableElement = GetComponent<Grabbable>();
             }
+            base.Awake();
+        }
+        protected override void Start()
+        {
+
 
             base.Start();
             this.AssertField(_boundsCollider, nameof(_boundsCollider));

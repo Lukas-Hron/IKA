@@ -30,7 +30,7 @@ namespace Oculus.Interaction
     {
         [SerializeField, Interface(typeof(IPointableElement))]
         [Optional(OptionalAttribute.Flag.DontHide)]
-        private UnityEngine.Object _pointableElement;
+        public UnityEngine.Object _pointableElement;
         public IPointableElement PointableElement { get; protected set; }
 
         public event Action<PointerEvent> WhenPointerEventRaised = delegate { };
