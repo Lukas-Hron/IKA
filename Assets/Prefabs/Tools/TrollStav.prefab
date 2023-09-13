@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 346012231802316803}
   m_Layer: 0
   m_Name: TrollStav
-  m_TagString: Untagged
+  m_TagString: PickUpables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 7182864412701567122}
-  SetStuffToSelf: 0
+  SetSelfComponents: 1
   _boundsCollider: {fileID: 7332580871715935156}
   _colliders:
   - {fileID: 7332580871715935156}
