@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObjectRespawn : MonoBehaviour
 {
-    private Transform Origin;
+    private Vector3 OriginPos;
+    private Quaternion OriginRot;
     private Rigidbody rg;
 
     private void OnEnable()
@@ -17,15 +18,16 @@ public class ObjectRespawn : MonoBehaviour
     }
     private void Start()
     {
-        Origin = transform;
+        OriginPos = transform.position;
+        OriginRot = transform.rotation;
 
         rg = GetComponent<Rigidbody>();
     }
 
     public void Respawn()
     {
-        gameObject.transform.position = Origin.position;
-        gameObject.transform.rotation = Origin.rotation;
+        gameObject.transform.position = OriginPos;
+        gameObject.transform.rotation = OriginRot;
 
         if (rg != null)
             rg.velocity = Vector3.zero;
