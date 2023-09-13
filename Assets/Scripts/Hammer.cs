@@ -70,15 +70,8 @@ public class Hammer : MonoBehaviour
 
     public void AttachToObject(GameObject object1, GameObject object2)
     {
-        Cluster obj1Cluster = null;
-        Cluster obj2Cluster = null;
-
-        try
-        {
-            obj1Cluster = object1.transform.parent.GetComponent<Cluster>();
-            obj2Cluster = object2.transform.parent.GetComponent<Cluster>();
-        }
-        catch {/* does not have cluster parent */}
+        Cluster obj1Cluster = object1.transform.parent?.GetComponent<Cluster>();
+        Cluster obj2Cluster = object2.transform.parent?.GetComponent<Cluster>();
 
         // both objects are in clusters
         if (obj1Cluster && obj2Cluster)
@@ -105,12 +98,10 @@ public class Hammer : MonoBehaviour
             if (obj1Cluster)
             {
                 obj1Cluster.AddPartToList(object2);
-                Debug.Log("add to cluster " + obj1Cluster.name);
             }
             else if (obj2Cluster)
             {
                 obj2Cluster.AddPartToList(object1);
-                Debug.Log("add to cluster " + obj2Cluster.name);
             }
         }
     }

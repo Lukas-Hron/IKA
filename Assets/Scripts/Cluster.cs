@@ -36,16 +36,20 @@ public class Cluster : MonoBehaviour
 
         // if this cluster is empty Destroy
         if (parts.Count <= 0)
+        {
             Destroy(this.gameObject);
+        }
     }
 
     public void AddThisClusterToAnotherOne(Cluster clusterToAddTo)
     {
+        Debug.Log("parts " + parts.Count);
         foreach (GameObject part in parts)
         {
-            RemovePartFromList(part);
-
             clusterToAddTo.AddPartToList(part);
+            RemovePartFromList(part);
         }
+
+        Destroy(this.gameObject);
     }
 }
