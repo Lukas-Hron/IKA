@@ -189,7 +189,9 @@ GameObject:
   - component: {fileID: 9105177557311622694}
   - component: {fileID: 2514202675564459027}
   - component: {fileID: 2642544295637030020}
-  - component: {fileID: 4591737806004515196}
+  - component: {fileID: 7715883422224376737}
+  - component: {fileID: 4033198043291685722}
+  - component: {fileID: 602119405083717573}
   m_Layer: 0
   m_Name: AlarmClock
   m_TagString: Untagged
@@ -205,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4075400016187229858}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.13367282, z: -0, w: 0.9910255}
+  m_LocalRotation: {x: 0, y: -0.13367477, z: 0, w: 0.99102527}
   m_LocalPosition: {x: 0.9392543, y: 1.109, z: 0.2098056}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.33880597}
   m_ConstrainProportionsScale: 1
@@ -435,14 +437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 0
+  _transferOnSecondSelection: 1
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 0}
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
---- !u!114 &4591737806004515196
+--- !u!114 &7715883422224376737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,20 +453,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 4075400016187229858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1bc992571301d4a9602ac95ef4c71a, type: 3}
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4033198043291685722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075400016187229858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 2642544295637030020}
+  _rigidbody: {fileID: 8287254422705701349}
+  _scaleMassWithSize: 1
+--- !u!114 &602119405083717573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075400016187229858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb4a09355f9dc244bfbcd2ac9208ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interactorFilters: []
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 2642544295637030020}
-  _rigidbody: {fileID: 8287254422705701349}
-  _grabSource: {fileID: 0}
-  _useClosestPointAsGrabSource: 0
-  _releaseDistance: 0
-  _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  SetSelfComponents: 1
+  _boundsCollider: {fileID: 0}
+  _colliders: []
 --- !u!1001 &4160247176670225934
 PrefabInstance:
   m_ObjectHideFlags: 0

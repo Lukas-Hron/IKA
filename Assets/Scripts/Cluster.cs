@@ -43,11 +43,11 @@ public class Cluster : MonoBehaviour
 
     public void AddThisClusterToAnotherOne(Cluster clusterToAddTo)
     {
-        Debug.Log("parts " + parts.Count);
-        foreach (GameObject part in parts)
+        for (int i = parts.Count; i >= 0; i--)
         {
-            clusterToAddTo.AddPartToList(part);
-            RemovePartFromList(part);
+            clusterToAddTo.AddPartToList(parts[i]);
+            RemovePartFromList(parts[i]);
+            Debug.Log("adding part " + parts[i]);
         }
 
         Destroy(this.gameObject);
