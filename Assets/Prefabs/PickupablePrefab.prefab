@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1990608971123154349}
   - component: {fileID: 2140985830039890011}
   - component: {fileID: 7371327217632506049}
+  - component: {fileID: 4493169803067348851}
   m_Layer: 6
   m_Name: PickupablePrefab
   m_TagString: PickUpables
@@ -241,5 +242,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4493169803067348851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275166606742641417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc87d04603f0ff4db62a6a6db5b8b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
