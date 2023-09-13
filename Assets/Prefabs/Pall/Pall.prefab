@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4476991933230555167}
   - component: {fileID: 8596069046329187970}
   - component: {fileID: 5078251025069849966}
+  - component: {fileID: 76810198389164380}
   m_Layer: 0
   m_Name: Sits
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 548851367078341469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3027797, y: 0.25788033, z: 1.7249999}
+  m_LocalPosition: {x: -2.269, y: 0.25788033, z: 1.748}
   m_LocalScale: {x: 0.83206, y: 0.031171462, z: 0.83206}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +109,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &6299592304570754423
@@ -205,6 +206,18 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &76810198389164380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548851367078341469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827798816117329984
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +235,7 @@ GameObject:
   - component: {fileID: 3388230063057291119}
   - component: {fileID: 3019796295700879573}
   - component: {fileID: 4540166978662383231}
+  - component: {fileID: 1952204414250413276}
   m_Layer: 0
   m_Name: Ben (1)
   m_TagString: Untagged
@@ -409,6 +423,18 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &1952204414250413276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827798816117329984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902398524558213833
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +452,7 @@ GameObject:
   - component: {fileID: 5048571496362881170}
   - component: {fileID: 3938198124282235743}
   - component: {fileID: 6605876715829410200}
+  - component: {fileID: 3967035809207124286}
   m_Layer: 0
   m_Name: Ben (2)
   m_TagString: Untagged
@@ -613,6 +640,18 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &3967035809207124286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902398524558213833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4525900138863305552
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3966302113092305087}
-  - component: {fileID: 3271347744260670383}
   m_Layer: 0
   m_Name: Pall
   m_TagString: Untagged
@@ -650,19 +688,6 @@ Transform:
   - {fileID: 5042556206574587425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3271347744260670383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4525900138863305552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8092785b12784ee44a09ced6a606ad2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point: {fileID: 0}
 --- !u!1 &6922537029960762062
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +705,7 @@ GameObject:
   - component: {fileID: 5705655653463630284}
   - component: {fileID: 2293787420608809746}
   - component: {fileID: 3516387512024467547}
+  - component: {fileID: 106994696179819592}
   m_Layer: 0
   m_Name: 'Ben '
   m_TagString: Untagged
@@ -869,6 +895,18 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &106994696179819592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6922537029960762062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8424329053245379191
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +924,7 @@ GameObject:
   - component: {fileID: 4857214492507770886}
   - component: {fileID: 230026567812515201}
   - component: {fileID: 6260473216200396738}
+  - component: {fileID: 8945101249535202048}
   m_Layer: 0
   m_Name: Ben  (1)
   m_TagString: Untagged
@@ -1075,3 +1114,15 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &8945101249535202048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424329053245379191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

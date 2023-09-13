@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7802128919822418147}
   m_Layer: 0
   m_Name: TouchGrabTest_HammerPhysics
-  m_TagString: Untagged
+  m_TagString: PickUpables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 639794752953950515}
-  SetStuffToSelf: 0
+  SetSelfComponents: 0
   _boundsCollider: {fileID: 2772476671741767122}
   _colliders:
   - {fileID: 3994443251072181360}
