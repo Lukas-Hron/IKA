@@ -12,63 +12,64 @@ public class ButtonTrigger : MonoBehaviour
     private Vector3 startPos;
     public Vector3 endPos;
 
-    private bool isPressed;
+    public bool isPressed;
+
+    private float cooldownTime = 0.5f;
 
     private void Start()
     {
         isPressed = false;
 
-
         button = transform.GetChild(0);
-
 
         startPos = button.localPosition;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
+        if (isPressed) return;
         Pressed();
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (!isPressed) return;
         Released();
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void Pressed()
     {
-
+        isPressed = true;
+        button.localPosition = endPos;
+        onPressed.Invoke();
+        StartCoroutine(Cooldown());
+        //StartCoroutine(LerpPos(startPos, endPos));
     }
 
-
-    void Pressed()
+    private void Released()
     {
-        if (!isPressed)
-        {
-            isPressed = true;
-            button.localPosition = endPos;
-            onPressed.Invoke();
-        }
+        onRelease.Invoke();
     }
 
-
-    void Released()
+    private IEnumerator Cooldown()
     {
+        //StartCoroutine(LerpPos(endPos, startPos));
+        yield return new WaitForSeconds(cooldownTime);
+        isPressed = false;
+        button.localPosition = startPos;
+    }
 
-        if (isPressed)
+    private IEnumerator LerpPos(Vector3 start, Vector3 end)
+    {
+        float timer = 0;
+
+        while (timer < cooldownTime)
         {
-
-
-            isPressed = false;
-            button.localPosition = startPos;
-
-            onRelease.Invoke();
+            button.localPosition = Vector3.Lerp(start, end, timer);
+            timer += Time.deltaTime;
         }
+        button.localPosition = end;
+
+        yield return null;
     }
 }

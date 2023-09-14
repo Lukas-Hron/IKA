@@ -12,7 +12,7 @@ public class RemovingWand : MonoBehaviour
     {
         if (!isGrabbed) return;
 
-        if (other.GetComponent<WeldableObject>() != null)
+        if (other.GetComponent<WeldableObject>() != null)// get object and remove it from the cluster if attached
         {
             if (other.GetComponent<WeldableObject>().isAttached)
             {
