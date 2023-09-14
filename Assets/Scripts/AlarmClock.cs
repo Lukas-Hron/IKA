@@ -8,7 +8,7 @@ public class AlarmClock : MonoBehaviour
     [SerializeField] TextMeshPro timerText;
     [SerializeField] AudioSource alarmSource;
 
-    public float timeRemaining = 180;
+    public float timeRemaining = 600;
 
     private bool timerRunning;
     private bool alarmRunning;
@@ -20,8 +20,7 @@ public class AlarmClock : MonoBehaviour
 
         alarmRunning = false;
         alarmSource.Stop();
-        float alarmTimer = Random.Range(0, timeRemaining / 2);
-        alarmTimer = Mathf.Clamp(alarmTimer, 5, timeRemaining);
+        float alarmTimer = Random.Range(30, timeRemaining);
         Invoke(nameof(StartAlarm), alarmTimer);
     }
 
