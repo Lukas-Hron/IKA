@@ -2392,10 +2392,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1187545214455777469, guid: 74585c9cc18876e499b45c99139ada13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4911145200700255753, guid: 74585c9cc18876e499b45c99139ada13,
         type: 3}
       propertyPath: m_Name
       value: OVRCameraRig Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839479013629002054, guid: 74585c9cc18876e499b45c99139ada13,
+        type: 3}
+      propertyPath: m_Name
+      value: PalmDownLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8861632315076893126, guid: 74585c9cc18876e499b45c99139ada13,
         type: 3}
@@ -2448,7 +2458,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1424653639031760966, guid: 74585c9cc18876e499b45c99139ada13, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74585c9cc18876e499b45c99139ada13, type: 3}
