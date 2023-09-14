@@ -15,11 +15,12 @@ public class TestPointCheck : MonoBehaviour
 
     int overlappingColliders = 0;
     int amountColliders = 0;
-    Mesh mesh;
+    MeshFilter mesh;
     void Start()
     {
         collider = GetComponent<Collider>();
-        mesh = GetComponent<Mesh>();
+        mesh = GetComponent<MeshFilter>();
+        Debug.LogWarning(mesh.mesh.ToString());
     }
 
     // Update is called once per frame
@@ -37,38 +38,54 @@ public class TestPointCheck : MonoBehaviour
         if (overlappingGameObjects.Contains(other?.transform.gameObject))
             return;
 
+        if (other.gameObject.transform.parent.CompareTag("CapsuleHolder"))
+        {
+            overlappingGameObjects?.Add(other.transform.parent.transform.parent.gameObject); 
+            return;
+        }
+
+        if (other.GetComponent<MeshFilter>() == null)
+            return;
         overlappingGameObjects?.Add(other.transform.gameObject);
     }
 
     private void CheckColliders()
     {
-        GameObject parent = null;
-        for(int i = 0; i < overlappingGameObjects.Count; i++)
+        GameObject partOfFurniture = null;
+        for (int i = 0; i < overlappingGameObjects.Count; i++)
         {
-            if (overlappingGameObjects[i].GetComponent<Mesh>() == mesh)
+            Debug.Log(overlappingGameObjects[i].GetComponent<MeshFilter>().mesh.ToString());
+            if (overlappingGameObjects[i].GetComponent<MeshFilter>().mesh.ToString() == mesh.mesh.ToString())
             {
-                parent = overlappingGameObjects[i];
+                partOfFurniture = overlappingGameObjects[i];
+               
                 break; // if we found the right mesh
             }
-            if(i < overlappingGameObjects.Count - 1 && parent == null)
+            
+        }
+
+        if (partOfFurniture == null)
+        {
+            if (partOfFurniture == null)
             {
-                sendScoreInfo.Invoke(0, 0, false);
+                sendScoreInfo.Invoke(0, 0, false); // could be moved down one
+
                 return;
             }
         }
+        GameObject holder = null;
+        if (partOfFurniture.transform.childCount > 0 && partOfFurniture.transform.GetChild(0).CompareTag("CapsuleHolder"))
+        {
+            holder = partOfFurniture.transform.GetChild(0).gameObject;
+        }
+         //the first child of each object needs to have the capsules
 
-        if (parent == null)
-            return;
-
-        Debug.Log(parent.ToString());
-        Transform capsules = parent.transform.GetChild(0);
-
-        GameObject holder = capsules.gameObject;//gameobject that holds gameobjects with capsules
+        //gameobject that holds gameobjects with capsules
        
 
         if (holder == null) //if the mesh was right but still had no colliders in it something is seriously wrong
         {
-            Debug.LogError("Mesh of part" + holder.transform.parent.name.ToString() + " is right but has no CapsuleHolder");
+            Debug.LogError("Mesh of part" + partOfFurniture.name.ToString() + " is right but has no CapsuleHolder");
             return;
         }
 

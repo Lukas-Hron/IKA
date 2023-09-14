@@ -438,7 +438,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -612,7 +612,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -762,7 +762,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518574046}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a992145c614b0fd4283a6092a0d86fc3, type: 3}
   m_Name: 
@@ -930,7 +930,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1297,7 +1297,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1352,7 +1352,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1362,7 +1362,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1476396007}
     m_Modifications:
     - target: {fileID: 1411029162522226841, guid: 792371301dac92945a9aa0953793fb14,
         type: 3}
@@ -1391,18 +1391,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6605
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.941
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.596
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
         type: 3}
@@ -1516,6 +1531,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 946929072194980259, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310853275385056169, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831397518834684029, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750600362096363344, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3966302113092305087, guid: f5e625454e5cc474693392a2389187f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1576,6 +1611,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6299592304570754423, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8164370141697620115, guid: f5e625454e5cc474693392a2389187f1,
         type: 3}
       propertyPath: m_Convex
@@ -1584,6 +1624,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3966302113092305087, guid: f5e625454e5cc474693392a2389187f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1048957271}
     - targetCorrespondingSourceObject: {fileID: 7866881328609685605, guid: f5e625454e5cc474693392a2389187f1,
         type: 3}
       insertIndex: -1
@@ -1677,7 +1721,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2005,6 +2049,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &1048957271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5936065542977887909, guid: 792371301dac92945a9aa0953793fb14,
+    type: 3}
+  m_PrefabInstance: {fileID: 813432605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1068138659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2129,7 +2179,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2184,7 +2234,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2239,7 +2289,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2663,7 +2713,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2722,6 +2772,12 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1476396007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3966302113092305087, guid: f5e625454e5cc474693392a2389187f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 816148695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1483879646 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8474944794626499920, guid: 74585c9cc18876e499b45c99139ada13,
@@ -2791,7 +2847,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -2846,7 +2902,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3327,7 +3383,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3678,5 +3734,4 @@ SceneRoots:
   - {fileID: 1862108800}
   - {fileID: 5729623432773990610}
   - {fileID: 5199713405318067034}
-  - {fileID: 813432605}
   - {fileID: 816148695}
