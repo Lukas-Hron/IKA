@@ -16,7 +16,8 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(selectedLevelName);
+        if (selectedLevelName != null)
+            SceneManager.LoadScene(selectedLevelName);
     }
 
     public void RestartLevel()
