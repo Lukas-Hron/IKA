@@ -5,21 +5,31 @@ using TMPro;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI selectedLevelText;
-
     string selectedLevelName;
 
-    public void SetSelectedLevel(string levelName)
+    public void FlipIsActive()
     {
-        selectedLevelText.text = levelName;
-        selectedLevelName = levelName;
+        gameObject.SetActive(!gameObject.activeInHierarchy);
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(selectedLevelName);
+    }
+
+    public void RestartLevel()
+    {
+        selectedLevelName = SceneManager.GetActiveScene().name;
+        StartGame();
+    }
+
+    public void SetSelectedLevel(string levelName)
+    {
+        selectedLevelText.text = levelName;
+        selectedLevelName = levelName;
     }
 
     public void ExitGame()
