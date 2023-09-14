@@ -13,5 +13,4 @@ public class CheckPoints : MonoBehaviour
             child.CheckPoints();
         }
     }
-
 }
