@@ -6,6 +6,7 @@ public class ObjectRespawn : MonoBehaviour
 {
     private Vector3 originPos;
     private Quaternion originRot;
+
     private Rigidbody rg;
 
     private void OnEnable()
@@ -27,8 +28,6 @@ public class ObjectRespawn : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("Hej");
-
         gameObject.transform.position = originPos;
         gameObject.transform.rotation = originRot;
 
