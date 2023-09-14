@@ -11,6 +11,7 @@ public class WeldableObject : MonoBehaviour
     private Grabbable grabbable;
     private PhysicsGrabbable physicsGrabbable;
     private TouchHandGrabInteractable touchGrab;
+    private ObjectRespawn objectRespawn;
 
     public bool isAttached;
 
@@ -20,6 +21,7 @@ public class WeldableObject : MonoBehaviour
         grabbable = GetComponent<Grabbable>();
         physicsGrabbable = GetComponent<PhysicsGrabbable>();
         touchGrab = GetComponent<TouchHandGrabInteractable>();
+        objectRespawn = GetComponent<ObjectRespawn>();
     }
 
     public void TurnOffComponents()
@@ -29,6 +31,7 @@ public class WeldableObject : MonoBehaviour
         grabbable.enabled = false;
         physicsGrabbable.enabled = false;
         touchGrab.enabled = false;
+        objectRespawn.enabled = false;
         Destroy(rg);
     }
 
@@ -39,6 +42,7 @@ public class WeldableObject : MonoBehaviour
         grabbable.enabled = true;
         physicsGrabbable.enabled = true;
         touchGrab.enabled = true;
+        objectRespawn.enabled = true;
 
         // Only add a Rigidbody if one doesn't already exist
         if (GetComponent<Rigidbody>() == null)
