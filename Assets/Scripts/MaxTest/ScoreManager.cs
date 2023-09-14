@@ -6,11 +6,10 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static Action TestingAttentionPlease;
+    public static Action Facit;
 
     int amountOfColliders = 0;
     int amountOfOverlappingColliders = 0;
-    float negativePoints = 0;
 
     private void OnEnable()
     {
@@ -45,6 +44,6 @@ public class ScoreManager : MonoBehaviour
     [ContextMenu ("Test")]
     public void Test()
     {
-        TestingAttentionPlease.Invoke();
+        Facit.Invoke();
     }
 }

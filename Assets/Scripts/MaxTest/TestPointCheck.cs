@@ -10,78 +10,73 @@ public class TestPointCheck : MonoBehaviour
     public static Action <int, int, bool> sendScoreInfo; // ovelapping colliders, amountOfColliders, valid mesh
 
     Collider collider;
-    private List<Collider> otherColliders = new List<Collider>();
-    private List<GameObject> overlappingGameObjects = new List<GameObject>();
+    private List<Collider> otherColliders = new List<Collider>(); // colliders of the part we are checking
+    private List<GameObject> overlappingGameObjects = new List<GameObject>(); // all overlapping parts inside the collider radius
 
-    int overlappingColliders = 0;
+    int overlappingColliders = 0; //information that gets sent to the scoremanager
     int amountColliders = 0;
-    MeshFilter mesh;
+
+    MeshFilter mesh; // used to check if its the right mesh in the right place
     void Start()
     {
         collider = GetComponent<Collider>();
         mesh = GetComponent<MeshFilter>();
-        Debug.LogWarning(mesh.mesh.ToString());
     }
 
-    // Update is called once per frame
     private void OnEnable()
     {
-        ScoreManager.TestingAttentionPlease += CheckColliders;
+        ScoreManager.Facit += CheckColliders; // scoremanager calls the delegate in order to triggre the checking process
     }
     private void OnDisable()
     {
-        ScoreManager.TestingAttentionPlease -= CheckColliders;
+        ScoreManager.Facit -= CheckColliders;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // add all collisionn objects into overlapping gameobjects
     {
-        if (overlappingGameObjects.Contains(other?.transform.gameObject))
+        if (overlappingGameObjects.Contains(other?.transform.gameObject)) // if the object is already in the list of overlapping objects then skip procedure
             return;
 
-        if (other.gameObject.transform.parent.CompareTag("CapsuleHolder"))
+        if (other.gameObject.transform.parent.CompareTag("CapsuleHolder")) // if were colliding with the capsules of the object, then add the object
         {
             overlappingGameObjects?.Add(other.transform.parent.transform.parent.gameObject); 
             return;
         }
 
-        if (other.GetComponent<MeshFilter>() == null)
+        if (other.GetComponent<MeshFilter>() == null) // if it doesnt contain a mesh return
             return;
-        overlappingGameObjects?.Add(other.transform.gameObject);
+
+        overlappingGameObjects?.Add(other.transform.gameObject); // if nothing failed proceed to add into the list of objects
     }
 
     private void CheckColliders()
     {
         GameObject partOfFurniture = null;
+
         for (int i = 0; i < overlappingGameObjects.Count; i++)
         {
-            Debug.Log(overlappingGameObjects[i].GetComponent<MeshFilter>().mesh.ToString());
-            if (overlappingGameObjects[i].GetComponent<MeshFilter>().mesh.ToString() == mesh.mesh.ToString())
+            if (overlappingGameObjects[i].GetComponent<MeshFilter>().mesh.ToString() == mesh.mesh.ToString()) // string compare of the meshes
             {
                 partOfFurniture = overlappingGameObjects[i];
                
                 break; // if we found the right mesh
             }
-            
         }
 
-        if (partOfFurniture == null)
+        if (partOfFurniture == null) // if the wrong furniture is overlapping
         {
-            if (partOfFurniture == null)
-            {
-                sendScoreInfo.Invoke(0, 0, false); // could be moved down one
+            sendScoreInfo.Invoke(0, 0, false); 
 
-                return;
-            }
+            return;
         }
+
         GameObject holder = null;
-        if (partOfFurniture.transform.childCount > 0 && partOfFurniture.transform.GetChild(0).CompareTag("CapsuleHolder"))
-        {
-            holder = partOfFurniture.transform.GetChild(0).gameObject;
+        if (partOfFurniture.transform.childCount > 0 && partOfFurniture.transform.GetChild(0).CompareTag("CapsuleHolder")) // if the furniture has a child (collider holder) and it is
+        {                                                                                                                  // a capsule holder it means weve hit something worth looking at
+            holder = partOfFurniture.transform.GetChild(0).gameObject;                                                     //the first child of each object needs to have the capsules
         }
-         //the first child of each object needs to have the capsules
+         
 
-        //gameobject that holds gameobjects with capsules
-       
 
         if (holder == null) //if the mesh was right but still had no colliders in it something is seriously wrong
         {
@@ -89,11 +84,11 @@ public class TestPointCheck : MonoBehaviour
             return;
         }
 
-        otherColliders = holder.GetComponentsInChildren<Collider>().ToList<Collider>();
+        otherColliders = holder.GetComponentsInChildren<Collider>().ToList<Collider>(); // list of the colliders inside the furniture used to count points
 
         for (int i = 0; i < otherColliders.Count; i++)
         {
-            if (collider.bounds.Intersects(otherColliders[i].bounds))
+            if (collider.bounds.Intersects(otherColliders[i].bounds)) //check if the colliders intersect
             {
                 overlappingColliders++;
             }
