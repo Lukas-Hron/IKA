@@ -28363,6 +28363,11 @@ PrefabInstance:
       propertyPath: _hmd
       value: 
       objectReference: {fileID: 8434688924186925154}
+    - target: {fileID: 2064165941440653623, guid: 48779c4e9105c1d4c986f52958bba9a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2064165942398712283, guid: 48779c4e9105c1d4c986f52958bba9a3,
         type: 3}
       propertyPath: m_hasFontAssetChanged
