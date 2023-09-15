@@ -10,7 +10,7 @@ public class ColorPickerBrush : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Found " + other.name);
+        //Debug.Log("Found " + other.name);
         if (other.CompareTag("ColorPickerTexture")) // Make sure to tag your rainbow gradient texture object with "ColorPickerTexture".
         {
             Debug.Log("Gameobject is Tagged correctly");
