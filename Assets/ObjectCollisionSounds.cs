@@ -29,6 +29,8 @@ public class ObjectCollisionSounds : MonoBehaviour
         Vector3 collisionPoint = collision.contacts[0].point;
 
         // Play the collision sound from the AudioManager
-        CollisionAudioManager.Instance.PlayCollisionSoundAt(collisionPoint, volume);
+        //CollisionAudioManager.Instance.PlayCollisionSoundAt(collisionPoint, volume);
     }
+
+    
 }
