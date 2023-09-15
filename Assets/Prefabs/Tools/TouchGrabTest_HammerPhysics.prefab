@@ -478,6 +478,7 @@ MonoBehaviour:
   - {fileID: 7714557613898086160, guid: 939efbc7fdd24fe4b9833db43fb5a8bf, type: 3}
   systemParticles:
   - {fileID: 5618527769578377198, guid: 04ccff9ff6bda144da405079c651bb95, type: 3}
+  vfxPosRef: []
 --- !u!82 &1948145370643834349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -490,13 +491,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 127
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -587,7 +588,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: b3a12dcc91d2bee479d2c2ec7b622d89, type: 3}
+  - {fileID: 8300000, guid: 7deac9862cf67f04eae58a4f68fd6ae0, type: 3}
+  - {fileID: 8300000, guid: b5210db8c20292f40b34d47e2393ba5d, type: 3}
+  - {fileID: 8300000, guid: 9b299114ff338ce4488ade23243d40e9, type: 3}
 --- !u!1 &7718157399338037290
 GameObject:
   m_ObjectHideFlags: 0
