@@ -92,7 +92,7 @@ namespace Oculus.Interaction.Input
             this.BeginStart(ref _started);
             this.AssertField(HandVisual, nameof(HandVisual));
             this.AssertField(_jointsRadiusFeature, nameof(_jointsRadiusFeature));
-            GenerateCapsules();
+            Invoke("GenerateCapsules", 3f);
             this.EndStart(ref _started);
         }
 
