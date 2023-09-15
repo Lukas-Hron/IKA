@@ -13,12 +13,23 @@ public class Hammer : MonoBehaviour
     private bool isGrabbed;
     public void SetIsGrabbedBool(bool value) { isGrabbed = value; }
 
+    private ParticleSpawner particleScript;
+    private SoundPlayer soundScript;
+    private Vector3 meldPosition;
+
+    private void Start()
+    {
+        particleScript = GetComponent<ParticleSpawner>();
+        soundScript = GetComponent<SoundPlayer>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!isGrabbed) return;
         // Check if the entered object has the tag "PickUpable"
         if (other.CompareTag("PickUpables"))
         {
+            soundScript.PlayAudio(0);
             // Check if the object has the "WeldableObject" component
             WeldableObject weldable = other.GetComponent<WeldableObject>();
             if (weldable != null)
@@ -27,6 +38,16 @@ public class Hammer : MonoBehaviour
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (!isGrabbed) return;
+        // Check if the entered object has the tag "PickUpable"
+        if (other.CompareTag("PickUpables"))
+        {
+            soundScript.PlayAudio(1);
+        }
+    }
+
 
     void ShootRay(GameObject other)
     {
@@ -35,6 +56,10 @@ public class Hammer : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100f, weldableObjects))
         {
+
+            particleScript.PlayAllParticles(hit.point, 1, 0, true);
+
+
             // Shoot another ray from the hit point in the direction of the normal
             Ray secondRay = new Ray(hit.point, hit.normal * -1);
             RaycastHit secondHit;
@@ -51,6 +76,7 @@ public class Hammer : MonoBehaviour
                     if (weldable != null)
                     {
                         targetObject = hitInfo.collider.gameObject;
+                        meldPosition = hitInfo.point;
                         break;  // Exit the loop once found
                     }
                 }
@@ -59,7 +85,9 @@ public class Hammer : MonoBehaviour
             if (targetObject != null)
             {
                 AttachToObject(hit.collider.gameObject, targetObject);
-                Debug.Log("Welding " + hit.collider.gameObject.name + " to " + targetObject.name + ".");
+                //Debug.Log("Welding " + hit.collider.gameObject.name + " to " + targetObject.name + ".");
+
+
             }
             else
             {
@@ -104,6 +132,10 @@ public class Hammer : MonoBehaviour
                 obj2Cluster.AddPartToList(object1);
             }
         }
+
+        soundScript.PlayAudio(2);
+        particleScript.PlayAllParticles(meldPosition,0,0);
+
     }
 }
 
