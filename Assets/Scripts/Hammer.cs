@@ -30,6 +30,7 @@ public class Hammer : MonoBehaviour
 
     void ShootRay(GameObject other)
     {
+        Debug.Log("hej");
         Ray ray = new Ray(transform.position, (other.transform.position - transform.position).normalized);
         RaycastHit hit;
 
