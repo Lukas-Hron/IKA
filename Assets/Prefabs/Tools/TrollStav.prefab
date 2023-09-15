@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 6222672290267549041}
   - component: {fileID: 346012231802316803}
   - component: {fileID: 3625856025684399489}
+  - component: {fileID: -6590886475232156424}
   m_Layer: 0
   m_Name: TrollStav
   m_TagString: PickUpables
@@ -325,3 +326,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6590886475232156424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231491810634966092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb09e4f18fd0954796cd0b766d28fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yThresholdForRespawn: 0
+  _whenRespawned:
+    m_PersistentCalls:
+      m_Calls: []
