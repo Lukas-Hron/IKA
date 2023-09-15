@@ -21389,7 +21389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _updateMode: 4
-  _updateAfter: {fileID: 0}
+  _updateAfter: {fileID: 8474944794626499920}
   _iModifyDataFromSourceMono: {fileID: 8474944794626499920}
   _applyModifier: 1
   _wristPositionLockCurve:
@@ -24223,7 +24223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _updateMode: 4
-  _updateAfter: {fileID: 0}
+  _updateAfter: {fileID: 7925576671282918747}
   _iModifyDataFromSourceMono: {fileID: 7925576671282918747}
   _applyModifier: 1
   _wristPositionLockCurve:
@@ -25536,7 +25536,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d641a50c4fe4ee3489a64cf52b76ae79, type: 2}
+  - {fileID: 2100000, guid: 3a91bac793043664d802926bc54b9b23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25926,7 +25926,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d641a50c4fe4ee3489a64cf52b76ae79, type: 2}
+  - {fileID: 2100000, guid: 3a91bac793043664d802926bc54b9b23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
