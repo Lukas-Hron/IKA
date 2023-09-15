@@ -14,7 +14,7 @@ public class MenuScript : MonoBehaviour
         gameObject.SetActive(!gameObject.activeInHierarchy);
     }
 
-    public void StartGame()
+    public void LoadLevel()
     {
         if (selectedLevelName != null)
             SceneManager.LoadScene(selectedLevelName);
@@ -22,8 +22,9 @@ public class MenuScript : MonoBehaviour
 
     public void RestartLevel()
     {
+        Debug.Log("restart");
         selectedLevelName = SceneManager.GetActiveScene().name;
-        StartGame();
+        LoadLevel();
     }
 
     public void SetSelectedLevel(string levelName)
@@ -34,6 +35,8 @@ public class MenuScript : MonoBehaviour
 
     public void ExitGame()
     {
+        Debug.Log("exit");
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

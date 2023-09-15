@@ -8,6 +8,8 @@ TagManager:
   - Hand
   - PickUpables
   - CapsuleHolder
+  - ColorPickerTexture
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - OnlyRightHand
   - Hands
   - NoHands
   - OnlyHands
