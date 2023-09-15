@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 7649736498383283638}
   alarmSource: {fileID: 9105177557311622694}
-  timeRemaining: 180
+  timeRemaining: 600
 --- !u!114 &2642544295637030020
 MonoBehaviour:
   m_ObjectHideFlags: 0
