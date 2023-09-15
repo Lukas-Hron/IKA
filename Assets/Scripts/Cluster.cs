@@ -43,11 +43,12 @@ public class Cluster : MonoBehaviour
 
     public void AddThisClusterToAnotherOne(Cluster clusterToAddTo)
     {
-        for (int i = parts.Count; i >= 0; i--)
+        int g = parts.Count;
+
+        for (int i = 0; i < g; i++)
         {
             clusterToAddTo.AddPartToList(parts[i]);
-            RemovePartFromList(parts[i]);
-            Debug.Log("adding part " + parts[i]);
+            parts.Remove(parts[i]);
         }
 
         Destroy(this.gameObject);

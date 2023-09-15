@@ -22,5 +22,8 @@ public class MaxDebugger : MonoBehaviour
         }
         
     }
-    
+    public void Selected()
+    {
+        Debug.LogError("Righthand");
+    }
 }

@@ -59,11 +59,11 @@ public class Hammer : MonoBehaviour
             if (targetObject != null)
             {
                 AttachToObject(hit.collider.gameObject, targetObject);
-                Debug.Log("Welding " + hit.collider.gameObject.name + " to " + targetObject.name + ".");
+                //Debug.Log("Welding " + hit.collider.gameObject.name + " to " + targetObject.name + ".");
             }
             else
             {
-                Debug.Log("Failed to find a weldable object");
+                //Debug.Log("Failed to find a weldable object");
             }
         }
     }

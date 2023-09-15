@@ -16,13 +16,13 @@ public class MenuScript : MonoBehaviour
 
     public void LoadLevel()
     {
+
         if (selectedLevelName != null)
             SceneManager.LoadScene(selectedLevelName);
     }
 
     public void RestartLevel()
     {
-        Debug.Log("restart");
         selectedLevelName = SceneManager.GetActiveScene().name;
         LoadLevel();
     }
@@ -35,8 +35,6 @@ public class MenuScript : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("exit");
-
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
