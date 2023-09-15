@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 639794752953950515}
   - component: {fileID: 2903745487757776204}
   - component: {fileID: 7802128919822418147}
+  - component: {fileID: 5746002679313109933}
   m_Layer: 0
   m_Name: TouchGrabTest_HammerPhysics
   m_TagString: PickUpables
@@ -183,6 +184,18 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5746002679313109933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175094750486884656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1144055698313982913
 GameObject:
   m_ObjectHideFlags: 0
