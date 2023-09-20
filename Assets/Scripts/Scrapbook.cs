@@ -28,7 +28,7 @@ public class Scrapbook : MonoBehaviour
     {
         CreatePages();
         SetupUppslag();
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void CreatePages()
@@ -85,7 +85,7 @@ public class Scrapbook : MonoBehaviour
 
         button.GetComponent<Button>().onClick.AddListener(() => ObjectSpawner.SpawnObject(buttonPartConnection[button]));
 
-        // button.GetComponent<Image>().sprite = partSO.partSprite;
+        //button.GetComponent<Image>().sprite = partSO.partSprite;
     }
 
     public void OpenBook()
