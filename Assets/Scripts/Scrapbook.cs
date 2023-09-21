@@ -1,19 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class Scrapbook : MonoBehaviour
 {
     private List<SpawnableObjectSO> spawnableParts;
+    private List<SpawnableObjectSO> recipeItems;
 
-    private List<List<SpawnableObjectSO>> totUppslag = new List<List<SpawnableObjectSO>>();
+    private List<List<SpawnableObjectSO>> totPages = new List<List<SpawnableObjectSO>>();
+
+
+    private Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>> RecipePage = new Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>>();
 
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
     [SerializeField] GameObject buttonPrefab;
+    [SerializeField] GameObject mainButton;
+
+    [SerializeField] TextMeshProUGUI recipeName;
+
+    [SerializeField] RectTransform recipePage;
     [SerializeField] RectTransform leftPage;
     [SerializeField] RectTransform rightPage;
 
@@ -22,16 +33,40 @@ public class Scrapbook : MonoBehaviour
     private void Awake()
     {
         spawnableParts = new List<SpawnableObjectSO>(Resources.LoadAll<SpawnableObjectSO>("SpawnableParts/ScriptableObjects"));
+        recipeItems = new List<SpawnableObjectSO>(Resources.LoadAll<SpawnableObjectSO>("SpawnableParts/ScriptableObjects/WholeItems"));
     }
 
     private void Start()
     {
-        CreatePages();
-        SetupUppslag();
+        CreateRecipePages();
+        CreatePagesAllItems();
+        SetupOpenPage();
+
         gameObject.SetActive(false);
     }
 
-    private void CreatePages()
+    private void CreateRecipePages()
+    {
+        List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
+
+        foreach (SpawnableObjectSO mainItem in recipeItems)
+        {
+            //add the main item to a page
+            page.Add(mainItem);
+            foreach (SpawnableObjectSO partSO in spawnableParts)
+            {
+                if (partSO.name.Contains(mainItem.name))
+                    page.Add(partSO);
+            }
+
+            if (page.Count > 0) //add both the main item and the parts as a page
+                totPages.Add(page);
+
+            page = new List<SpawnableObjectSO>(); //Reset page
+        }
+    }
+
+    private void CreatePagesAllItems()
     {
         int index = 0;
 
@@ -41,7 +76,7 @@ public class Scrapbook : MonoBehaviour
         {
             if (index >= 36) //36 is the max amount in a uppslag so add to uppslag and clear
             {
-                totUppslag.Add(page);
+                totPages.Add(page);
                 page = new List<SpawnableObjectSO>();
                 index = 0;
             }
@@ -50,10 +85,10 @@ public class Scrapbook : MonoBehaviour
             index++;
         }
         if (page.Count > 0)//add the last items to page even if its not a whole page
-            totUppslag.Add(page); 
+            totPages.Add(page);
     }
 
-    private void SetupUppslag()
+    private void SetupOpenPage()
     {
         if (leftPage.childCount != 0)
             foreach (RectTransform child in leftPage) { Destroy(child.gameObject); }
@@ -62,51 +97,56 @@ public class Scrapbook : MonoBehaviour
 
         int spawnedItems = 0;
 
+        if (pageIndex < recipeItems.Count) //main page should only have the one item on left page
+            spawnedItems = 17;
+
         RectTransform pageToAddTo = leftPage;
 
-        foreach (SpawnableObjectSO part in totUppslag[pageIndex])
+        foreach (SpawnableObjectSO part in totPages[pageIndex])
         {
             if (spawnedItems >= 18) //18 is max amount in a page so switch pages
             {
                 pageToAddTo = rightPage;
             }
 
-            CreateButton(pageToAddTo, part);
+            CreateButton(buttonPrefab, pageToAddTo, part);
 
             spawnedItems++;
         }
     }
 
-    private void CreateButton(RectTransform page, SpawnableObjectSO partSO)
+    private void CreateButton(GameObject buttonToSpawn, RectTransform page, SpawnableObjectSO partSO)
     {
-        GameObject button = Instantiate(buttonPrefab, page);
+        GameObject button = Instantiate(buttonToSpawn, page);
 
         buttonPartConnection.Add(button, partSO.partPrefab);
-
         button.GetComponent<Button>().onClick.AddListener(() => ObjectSpawner.SpawnObject(buttonPartConnection[button]));
 
         //button.GetComponent<Image>().sprite = partSO.partSprite;
     }
 
-    public void OpenBook()
-    {
-        gameObject.SetActive(true);
-    }
-
-    [ContextMenu("FlipToNextPage")]
     public void FlipToNextPage()
     {
         pageIndex++;
-        pageIndex = Mathf.Clamp(pageIndex, 0, totUppslag.Count - 1);
-        SetupUppslag();
+        pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
+
+        SetupOpenPage();
     }
 
-    [ContextMenu("FlipToLastPage")]
     public void FlipToLastPage()
     {
         pageIndex--;
-        pageIndex = Mathf.Clamp(pageIndex, 0, totUppslag.Count - 1);
-        SetupUppslag();
+        pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
+
+        SetupOpenPage();
+    }
+
+    private void OnEnable() => OpenBook();
+    private void OnDisable() => CloseBook();
+
+    public void OpenBook()
+    {
+        gameObject.SetActive(true);
     }
 
     public void CloseBook()

@@ -8,8 +8,8 @@ public class AlarmClock : MonoBehaviour
     [SerializeField] TextMeshPro timerText;
     [SerializeField] AudioSource alarmSource;
 
-    public float timer = 0;
-    private float maxAlarmTime = 400;
+    private float timer = 0;
+    private float maxAlarmTime = 800;
 
     private bool timerRunning;
     private bool alarmRunning;
