@@ -53,4 +53,14 @@ public class Cluster : MonoBehaviour
 
         Destroy(this.gameObject);
     }
+    public void IAmACar()
+    {
+        Destroy(GetComponent<Grabbable>());
+        Destroy(GetComponent<PhysicsGrabbable>());
+        Destroy(GetComponent<TouchHandGrabInteractable>());
+        Destroy(GetComponent<Collider>());
+        Destroy(GetComponent<ObjectRespawn>());
+        Destroy(this);
+    }
+
 }

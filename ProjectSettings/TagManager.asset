@@ -10,6 +10,8 @@ TagManager:
   - CapsuleHolder
   - ColorPickerTexture
   - SamplesInfoPanel
+  - Car
+  - Cluster
   layers:
   - Default
   - TransparentFX
