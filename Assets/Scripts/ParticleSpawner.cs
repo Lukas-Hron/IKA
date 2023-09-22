@@ -5,12 +5,14 @@ using UnityEngine.VFX;
 
 public class ParticleSpawner : MonoBehaviour
 {
+    
+
 
     public GameObject[] VFXParticles;
     public GameObject[] systemParticles;
 
     private List<VisualEffect> VFXRefs = new List<VisualEffect>();
-    public List<GameObject> vfxPosRef = new List<GameObject>();
+    private List<GameObject> vfxPosRef = new List<GameObject>();
 
 
     private void Start()
@@ -19,8 +21,8 @@ public class ParticleSpawner : MonoBehaviour
 
         for (int i = 0; i < VFXParticles.Length; i++)
         {
-            GameObject aaa = Instantiate(VFXParticles[i], Vector3.zero, Quaternion.identity);
-            vfxPosRef.Add(aaa);
+            GameObject temp = Instantiate(VFXParticles[i], Vector3.zero, Quaternion.identity);
+            vfxPosRef.Add(temp);
             VFXRefs.Add(vfxPosRef[i].GetComponent<VisualEffect>());
 
         }
@@ -41,9 +43,9 @@ public class ParticleSpawner : MonoBehaviour
         }
     }
 
-    public void PlayAllParticles(Vector3 position, int IndexVfx, int IndexSystem, bool playVFX)
+    public void PlayAllParticles(Vector3 position, int IndexVfx, int IndexSystem, bool VFXOnly)
     {
-        if (playVFX)
+        if (VFXOnly)
         {
             if (VFXParticles != null)
             {

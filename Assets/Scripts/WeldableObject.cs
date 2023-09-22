@@ -5,10 +5,18 @@ using Oculus.Interaction.HandGrab;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(InteractableUnityEventWrapper))]
+[RequireComponent(typeof(Grabbable))]
+[RequireComponent(typeof(PhysicsGrabbable))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(ObjectRespawn))]
+
+
 public class WeldableObject : MonoBehaviour
 {
     private Rigidbody rg;
     private Grabbable grabbable;
+    private InteractableUnityEventWrapper interactEvent;
     private PhysicsGrabbable physicsGrabbable;
     private TouchHandGrabInteractable touchGrab;
     private ObjectRespawn objectRespawn;
@@ -17,6 +25,7 @@ public class WeldableObject : MonoBehaviour
 
     void Start()
     {
+        interactEvent = GetComponent<InteractableUnityEventWrapper>();
         rg = GetComponent<Rigidbody>();
         grabbable = GetComponent<Grabbable>();
         physicsGrabbable = GetComponent<PhysicsGrabbable>();
@@ -28,6 +37,7 @@ public class WeldableObject : MonoBehaviour
     {
         isAttached = true;
 
+        //interactEvent.enabled = false;
         grabbable.enabled = false;
         physicsGrabbable.enabled = false;
         touchGrab.enabled = false;
@@ -39,6 +49,7 @@ public class WeldableObject : MonoBehaviour
     {
         isAttached = false;
 
+        //interactEvent.enabled = true;
         grabbable.enabled = true;
         physicsGrabbable.enabled = true;
         touchGrab.enabled = true;
@@ -51,4 +62,17 @@ public class WeldableObject : MonoBehaviour
         GetComponent<PhysicsGrabbable>()._rigidbody = rg;
         rg.mass = 0.1f;
     }
+
+    public void ChangeInteractableEventHandler(IInteractableView gameObj)
+    {
+        interactEvent.InjectAllInteractableUnityEventWrapper(gameObj);
+        interactEvent.enabled = false;
+        Invoke(nameof(EnableEventHandler), 0.1f);
+    }
+
+    public void EnableEventHandler()
+    {
+        interactEvent.enabled = true;
+    }
+
 }

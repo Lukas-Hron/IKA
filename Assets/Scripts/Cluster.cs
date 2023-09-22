@@ -14,7 +14,10 @@ public class Cluster : MonoBehaviour
         if (parts.Contains(part)) return;
 
         part.transform.parent = transform;
-        part.GetComponent<WeldableObject>().TurnOffComponents();
+
+        WeldableObject partWeld = part.GetComponent<WeldableObject>();
+        partWeld.TurnOffComponents();
+        partWeld.ChangeInteractableEventHandler(GetComponent<TouchHandGrabInteractable>());
 
         parts.Add(part);
 
