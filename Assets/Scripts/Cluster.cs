@@ -56,4 +56,10 @@ public class Cluster : MonoBehaviour
 
         Destroy(this.gameObject);
     }
+    public void IAmACar()
+    {
+        Destroy(GetComponent<ObjectRespawn>());
+        gameObject.AddComponent<CarsDoMove>();
+    }
+
 }

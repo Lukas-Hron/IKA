@@ -2121,7 +2121,6 @@ MonoBehaviour:
   _updateRootPose: 1
   _updateRootScale: 1
   _root: {fileID: 0}
-  ActualHand: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 6519333329606360144}
   _jointTransforms:
   - {fileID: 6190349665033817257}
@@ -4391,8 +4390,6 @@ GameObject:
   - component: {fileID: 3336597983070357714}
   - component: {fileID: 4932462939547480259}
   - component: {fileID: 4817821330120647016}
-  - component: {fileID: 1443883948546464039}
-  - component: {fileID: 4200713862175565376}
   m_Layer: 0
   m_Name: OVRLeftHandVisual
   m_TagString: Untagged
@@ -4433,7 +4430,6 @@ MonoBehaviour:
   _updateRootPose: 1
   _updateRootScale: 1
   _root: {fileID: 0}
-  ActualHand: {fileID: 6040429483876681810}
   _handMaterialPropertyBlockEditor: {fileID: 4381345659412163924}
   _jointTransforms:
   - {fileID: 7677265061726464041}
@@ -4477,46 +4473,6 @@ MonoBehaviour:
   _asTriggers: 0
   _useLayer: 10
   _mask: 16777215
---- !u!54 &1443883948546464039
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651182722344416665}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!114 &4200713862175565376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651182722344416665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708f916a897ed384aa9a9071f1e1d707, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handToFollow: {fileID: 6040429483876681810}
 --- !u!1 &1655825442866687958
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,8 +5246,6 @@ GameObject:
   - component: {fileID: 799948069330345672}
   - component: {fileID: 5342910390723637315}
   - component: {fileID: 390196036510685377}
-  - component: {fileID: 3465747185391628699}
-  - component: {fileID: 4442552963833602823}
   m_Layer: 0
   m_Name: OVRRightHandVisual
   m_TagString: Untagged
@@ -5332,7 +5286,6 @@ MonoBehaviour:
   _updateRootPose: 1
   _updateRootScale: 1
   _root: {fileID: 0}
-  ActualHand: {fileID: 4645569223180171685}
   _handMaterialPropertyBlockEditor: {fileID: 5970422676099043872}
   _jointTransforms:
   - {fileID: 6533254512603909290}
@@ -5376,46 +5329,6 @@ MonoBehaviour:
   _asTriggers: 0
   _useLayer: 9
   _mask: 16777215
---- !u!54 &3465747185391628699
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928077270253723878}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!114 &4442552963833602823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928077270253723878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708f916a897ed384aa9a9071f1e1d707, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handToFollow: {fileID: 4645569223180171685}
 --- !u!1 &1928992682677295193
 GameObject:
   m_ObjectHideFlags: 0
@@ -9221,7 +9134,6 @@ MonoBehaviour:
   _updateRootPose: 1
   _updateRootScale: 1
   _root: {fileID: 0}
-  ActualHand: {fileID: 0}
   _handMaterialPropertyBlockEditor: {fileID: 6995826898169102422}
   _jointTransforms:
   - {fileID: 7685216081230460396}
@@ -21295,7 +21207,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5885965860235565537}
-  - component: {fileID: 4732854248382870611}
   m_Layer: 11
   m_Name: r_middle_mcp_aa_axis_marker
   m_TagString: Untagged
@@ -21318,27 +21229,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6533254512603909290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4732854248382870611
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7266904864724621874}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01, y: 0.07, z: 0.07}
-  m_Center: {x: 0.02, y: 0, z: 0}
 --- !u!1 &7274820258590353396
 GameObject:
   m_ObjectHideFlags: 0
