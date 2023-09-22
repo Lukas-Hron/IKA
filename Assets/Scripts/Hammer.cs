@@ -11,7 +11,7 @@ public class Hammer : MonoBehaviour
     [SerializeField] LayerMask weldableObjects;
 
     private bool isGrabbed;
-    public void SetIsGrabbedBool(bool value) { isGrabbed = value; }
+    public void SetIsGrabbedBool(bool value) => isGrabbed = value;
 
     private ParticleSpawner particleScript;
     private SoundPlayer soundScript;
