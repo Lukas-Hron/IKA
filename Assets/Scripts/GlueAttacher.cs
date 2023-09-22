@@ -74,8 +74,8 @@ public class GlueAttacher : MonoBehaviour
         {
             print("Eyo!?!??!");
 
-            GetComponent<Rigidbody>().AddForce((object1.transform.position - object2.transform.position).normalized * 0.5f, ForceMode.Impulse);
-            RemoveGlue();
+            //GetComponent<Rigidbody>().AddForce((object1.transform.position - object2.transform.position).normalized * 100f, ForceMode.Impulse);
+            obj2Glue.RemoveGlue();
             return;
         }
 

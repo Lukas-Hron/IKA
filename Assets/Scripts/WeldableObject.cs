@@ -6,10 +6,10 @@ using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(InteractableUnityEventWrapper))]
-[RequireComponent(typeof(Grabbable))]
-[RequireComponent(typeof(PhysicsGrabbable))]
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(ObjectRespawn))]
+//[RequireComponent(typeof(Grabbable))]
+//[RequireComponent(typeof(PhysicsGrabbable))]
+//[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(ObjectRespawn))]
 
 
 public class WeldableObject : MonoBehaviour
