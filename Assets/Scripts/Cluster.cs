@@ -1,6 +1,7 @@
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cluster : MonoBehaviour
@@ -8,7 +9,8 @@ public class Cluster : MonoBehaviour
     [SerializeField] TouchHandGrabInteractable touchGrab;
 
     public List<GameObject> parts = new List<GameObject>();
-
+    private int amountOfWheels;
+    private bool isCar = false;
     public void AddPartToList(GameObject part)
     {
         if (parts.Contains(part)) return;
@@ -16,6 +18,21 @@ public class Cluster : MonoBehaviour
         part.transform.parent = transform;
 
         WeldableObject partWeld = part.GetComponent<WeldableObject>();
+        switch (partWeld.MyPart)
+        {
+            case (WeldableObject.Parts.Ordinary): // do nothing
+                break;
+
+            case(WeldableObject.Parts.Wheel):
+                amountOfWheels++;
+                IAmACar();
+                break;
+
+            default:
+                break;
+        }
+
+
         partWeld.TurnOffComponents();
         partWeld.ChangeInteractableEventHandler(GetComponent<TouchHandGrabInteractable>());
 
@@ -31,7 +48,24 @@ public class Cluster : MonoBehaviour
         if (!parts.Contains(part)) return;
 
         part.transform.parent = null;
-        part.GetComponent<WeldableObject>().TurnOnComponents();
+
+        WeldableObject partWeld = part.GetComponent<WeldableObject>();
+        switch (partWeld.MyPart)
+        {
+            case (WeldableObject.Parts.Ordinary): // do nothing
+                break;
+
+            case (WeldableObject.Parts.Wheel):
+                amountOfWheels--;
+                IAmACar();
+                break;
+
+            default:
+                break;
+        }
+
+        partWeld.TurnOnComponents();
+
 
         parts.Remove(part);
 
@@ -58,8 +92,17 @@ public class Cluster : MonoBehaviour
     }
     public void IAmACar()
     {
-        Destroy(GetComponent<ObjectRespawn>());
-        gameObject.AddComponent<CarsDoMove>();
+        if(amountOfWheels > 3 && isCar == false) //we arre now a car
+        {
+            Destroy(GetComponent<ObjectRespawn>());
+            gameObject.AddComponent<CarsDoMove>();
+        }
+        else if(amountOfWheels < 4 && isCar == true) // if we remove a wheel and we no longer should be considered a car
+        {
+            isCar = false;
+            Destroy(GetComponent<CarsDoMove>());
+            gameObject.AddComponent<ObjectRespawn>();
+        }
     }
 
 }

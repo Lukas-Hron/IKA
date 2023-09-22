@@ -20,8 +20,10 @@ public class WeldableObject : MonoBehaviour
     private PhysicsGrabbable physicsGrabbable;
     private TouchHandGrabInteractable touchGrab;
     private ObjectRespawn objectRespawn;
-
     public bool isAttached;
+    public enum Parts {Ordinary, Wheel}
+    public Parts MyPart = Parts.Ordinary;
+    
 
     void Start()
     {
