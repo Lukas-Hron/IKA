@@ -105,7 +105,7 @@ public class Scrapbook : MonoBehaviour
             leftPage.gameObject.SetActive(false);
             pageToAddTo = recipePage;
             buttonToCreate = recipeButtonPrefab;
-           // recipeName = totPages[pageIndex,0].;
+            recipeName.text = totPages[pageIndex][0].name;
             spawnedItems = 17; //main page should only have the one item on left page
         }
         else
