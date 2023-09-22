@@ -14,8 +14,6 @@ public class Scrapbook : MonoBehaviour
 
     private List<List<SpawnableObjectSO>> totPages = new List<List<SpawnableObjectSO>>();
 
-    private Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>> RecipePage = new Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>>();
-
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
     [SerializeField] GameObject buttonPrefab;
@@ -39,7 +37,6 @@ public class Scrapbook : MonoBehaviour
     {
         CreateRecipePages();
         CreatePagesAllItems();
-        SetupOpenPage();
 
         gameObject.SetActive(false);
     }
@@ -101,12 +98,18 @@ public class Scrapbook : MonoBehaviour
 
         if (pageIndex < recipeItems.Count)
         {
-            recipePage.gameObject.SetActive(true);
-            leftPage.gameObject.SetActive(false);
+            Debug.Log("recipepage");
             pageToAddTo = recipePage;
             buttonToCreate = recipeButtonPrefab;
+
+            recipePage.gameObject.SetActive(true);
+            leftPage.gameObject.SetActive(false);
+
             recipeName.text = totPages[pageIndex][0].name;
+            Debug.Log(totPages[pageIndex][0]);
             spawnedItems = 17; //main page should only have the one item on left page
+            Debug.Break();
+
         }
         else
         {
@@ -116,6 +119,10 @@ public class Scrapbook : MonoBehaviour
 
         foreach (SpawnableObjectSO part in totPages[pageIndex])
         {
+            Debug.Log(pageToAddTo.name);
+            Debug.Log(buttonToCreate.name);
+            Debug.Log(part.name);
+            Debug.Log(spawnedItems);
             if (spawnedItems >= 18) //18 is max amount in a page so switch pages
             {
                 pageToAddTo = rightPage;
@@ -142,7 +149,8 @@ public class Scrapbook : MonoBehaviour
         pageIndex++;
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
-        SetupOpenPage();
+        if (gameObject.activeInHierarchy)
+            SetupOpenPage();
     }
 
     public void FlipToLastPage()
@@ -150,7 +158,8 @@ public class Scrapbook : MonoBehaviour
         pageIndex--;
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
-        SetupOpenPage();
+        if (gameObject.activeInHierarchy)
+            SetupOpenPage();
     }
 
     private void OnEnable() => OpenBook();
@@ -159,6 +168,7 @@ public class Scrapbook : MonoBehaviour
     public void OpenBook()
     {
         gameObject.SetActive(true);
+        SetupOpenPage();
     }
 
     public void CloseBook()
