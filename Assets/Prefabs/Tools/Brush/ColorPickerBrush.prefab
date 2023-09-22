@@ -276,6 +276,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 4688511422457178836}
+  SetSelfComponents: 0
   _boundsCollider: {fileID: 6088793936258869652}
   _colliders:
   - {fileID: 6088793936258869652}

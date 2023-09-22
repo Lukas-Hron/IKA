@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 602119405083717573}
   m_Layer: 0
   m_Name: AlarmClock
-  m_TagString: Untagged
+  m_TagString: PickUpables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 7649736498383283638}
   alarmSource: {fileID: 9105177557311622694}
-  timeRemaining: 600
+  timer: 0
 --- !u!114 &2642544295637030020
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class MenuScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI selectedLevelText;
     string selectedLevelName;
 
+    public void test()
+    {
+        Debug.Log("hejsan");
+    }
     public void FlipIsActive()
     {
         gameObject.SetActive(!gameObject.activeInHierarchy);

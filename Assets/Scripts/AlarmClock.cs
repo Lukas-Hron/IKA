@@ -8,7 +8,8 @@ public class AlarmClock : MonoBehaviour
     [SerializeField] TextMeshPro timerText;
     [SerializeField] AudioSource alarmSource;
 
-    public float timeRemaining = 600;
+    private float timer = 0;
+    private float maxAlarmTime = 800;
 
     private bool timerRunning;
     private bool alarmRunning;
@@ -20,7 +21,7 @@ public class AlarmClock : MonoBehaviour
 
         alarmRunning = false;
         alarmSource.Stop();
-        float alarmTimer = Random.Range(30, timeRemaining);
+        float alarmTimer = Random.Range(30, maxAlarmTime);
         Invoke(nameof(StartAlarm), alarmTimer);
     }
 
@@ -34,22 +35,15 @@ public class AlarmClock : MonoBehaviour
     {
         if (!timerRunning) return;
 
-        if (timeRemaining > 0)
+        if (timer > 0)
         {
-            timeRemaining -= Time.deltaTime;
+            timer += Time.deltaTime;
 
-            int minutes = Mathf.FloorToInt(timeRemaining / 60);
-            int seconds = Mathf.FloorToInt(timeRemaining % 60);
+            int minutes = Mathf.FloorToInt(timer / 60);
+            int seconds = Mathf.FloorToInt(timer % 60);
 
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        }
-        else
-        {
-            Debug.Log("timer ran out");
-            timeRemaining = 0;
-            timerRunning = false;
-            CancelInvoke();
         }
     }
 
@@ -61,9 +55,8 @@ public class AlarmClock : MonoBehaviour
 
         if (timerRunning)
         {
-            float alarmTimer = Random.Range(0, timeRemaining / 2);
-        alarmTimer = Mathf.Clamp(alarmTimer, 5, timeRemaining);
-        Invoke(nameof(StartAlarm), alarmTimer);
+            float alarmTimer = Random.Range(30, maxAlarmTime);
+            Invoke(nameof(StartAlarm), alarmTimer);
         }
     }
 }
