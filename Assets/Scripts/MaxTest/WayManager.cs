@@ -16,17 +16,18 @@ public class WayManager : MonoBehaviour
     }
     public void AddCarToWay(CarsDoMove car)
     {
-        PlayRugWay tempWay = ways[Random.Range(0, ways.Count)];
+        int temp = Random.Range(0, ways.Count);
+        PlayRugWay tempWay = ways[temp];
         car.wayPoints = tempWay.wayPoints;
+        car.FixRotPos();
         tempWay.Drive += car.MoveCar;
     }
   
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Car"))
+        if (other.gameObject.GetComponent<CarsDoMove>() != null)
         {
             other.gameObject.GetComponent<CarsDoMove>().StartCar(); // den här får du när du är en bil
-            other.gameObject.GetComponent<Cluster>()?.IAmACar(); //den här kallas på när din inte cluster collider gör sin grej
         }
     }
 }
