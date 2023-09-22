@@ -14,17 +14,16 @@ public class Scrapbook : MonoBehaviour
 
     private List<List<SpawnableObjectSO>> totPages = new List<List<SpawnableObjectSO>>();
 
-
     private Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>> RecipePage = new Dictionary<SpawnableObjectSO, List<SpawnableObjectSO>>();
 
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
     [SerializeField] GameObject buttonPrefab;
-    [SerializeField] GameObject mainButton;
-
-    [SerializeField] TextMeshProUGUI recipeName;
+    [SerializeField] GameObject recipeButtonPrefab;
 
     [SerializeField] RectTransform recipePage;
+    [SerializeField] TextMeshProUGUI recipeName;
+
     [SerializeField] RectTransform leftPage;
     [SerializeField] RectTransform rightPage;
 
@@ -97,10 +96,23 @@ public class Scrapbook : MonoBehaviour
 
         int spawnedItems = 0;
 
-        if (pageIndex < recipeItems.Count) //main page should only have the one item on left page
-            spawnedItems = 17;
-
         RectTransform pageToAddTo = leftPage;
+        GameObject buttonToCreate = buttonPrefab;
+
+        if (pageIndex < recipeItems.Count)
+        {
+            recipePage.gameObject.SetActive(true);
+            leftPage.gameObject.SetActive(false);
+            pageToAddTo = recipePage;
+            buttonToCreate = recipeButtonPrefab;
+           // recipeName = totPages[pageIndex,0].;
+            spawnedItems = 17; //main page should only have the one item on left page
+        }
+        else
+        {
+            recipePage.gameObject.SetActive(false);
+            leftPage.gameObject.SetActive(true);
+        }
 
         foreach (SpawnableObjectSO part in totPages[pageIndex])
         {
@@ -109,7 +121,7 @@ public class Scrapbook : MonoBehaviour
                 pageToAddTo = rightPage;
             }
 
-            CreateButton(buttonPrefab, pageToAddTo, part);
+            CreateButton(buttonToCreate, pageToAddTo, part);
 
             spawnedItems++;
         }
