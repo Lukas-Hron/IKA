@@ -4958,11 +4958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glue Dipper
       objectReference: {fileID: 0}
-    - target: {fileID: 6291229564904085367, guid: 7d364b41eb506a746826a4720f62e9fd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6792822159992024962, guid: 7d364b41eb506a746826a4720f62e9fd,
         type: 3}
       propertyPath: m_LocalPosition.x
