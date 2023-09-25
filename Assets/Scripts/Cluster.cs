@@ -11,11 +11,14 @@ public class Cluster : MonoBehaviour
     public List<GameObject> parts = new List<GameObject>();
     private int amountOfWheels;
     private bool isCar = false;
+
+
     public void AddPartToList(GameObject part)
     {
         if (parts.Contains(part)) return;
 
         part.transform.parent = transform;
+
 
         WeldableObject partWeld = part.GetComponent<WeldableObject>();
         switch (partWeld.MyPart)
@@ -33,14 +36,21 @@ public class Cluster : MonoBehaviour
         }
 
 
+
         partWeld.TurnOffComponents();
         partWeld.ChangeInteractableEventHandler(GetComponent<TouchHandGrabInteractable>());
+
 
         parts.Add(part);
 
         Collider partColl = part.GetComponent<Collider>();
         if (partColl != null)
             touchGrab._colliders.Add(partColl);
+        else
+            Debug.Log("Missing Collider");
+
+
+
     }
 
     public void RemovePartFromList(GameObject part)
