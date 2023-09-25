@@ -8,8 +8,9 @@ public class GlueDipper : MonoBehaviour
     private ParticleSpawner particleSpawn;
     [SerializeField] private GameObject clusterPrefab;
     [SerializeField]
-    private GameObject glueDrippVFX;
     public int totalUses = 5;
+
+
 
     private void Start()
     {
@@ -25,8 +26,6 @@ public class GlueDipper : MonoBehaviour
 
                 objRef.clusterPrefab = this.clusterPrefab;
                 objRef.parentParticles = particleSpawn;
-
-
 
                 totalUses--;
             }
