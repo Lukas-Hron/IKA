@@ -478,7 +478,6 @@ MonoBehaviour:
   - {fileID: 7714557613898086160, guid: 939efbc7fdd24fe4b9833db43fb5a8bf, type: 3}
   systemParticles:
   - {fileID: 5618527769578377198, guid: 04ccff9ff6bda144da405079c651bb95, type: 3}
-  vfxPosRef: []
 --- !u!82 &1948145370643834349
 AudioSource:
   m_ObjectHideFlags: 0
