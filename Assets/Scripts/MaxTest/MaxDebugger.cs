@@ -34,8 +34,6 @@ public class MaxDebugger : MonoBehaviour
 
        // GlueAttacher obj2Glue = object2.transform?.GetComponent<GlueAttacher>();
 
-       
-
         // both objects are in clusters
         if (obj1Cluster && obj2Cluster)
         {
