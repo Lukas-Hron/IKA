@@ -32,7 +32,6 @@ public class Cluster : MonoBehaviour
                 break;
         }
 
-
         partWeld.TurnOffComponents();
         partWeld.ChangeInteractableEventHandler(GetComponent<TouchHandGrabInteractable>());
 
