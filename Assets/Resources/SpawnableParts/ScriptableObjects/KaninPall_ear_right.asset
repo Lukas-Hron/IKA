@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
-  m_Name: KaninPall_ears
+  m_Name: KaninPall_ear_right
   m_EditorClassIdentifier: 
-  partPrefab: {fileID: 5587305662208083780, guid: c2275201a69083240a0498b3ec8207db,
+  partPrefab: {fileID: 5587305662208083780, guid: d84dafce99b9d49468d98f66f13d5a80,
     type: 3}
   partSprite: {fileID: 0}

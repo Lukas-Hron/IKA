@@ -185,7 +185,7 @@ public class Scrapbook : MonoBehaviour
         if (pageIndex != pageIndexBefore)
             bookAnimator.SetTrigger("FlipToNext");
 
-        SetupOpenPage();
+        StartCoroutine(SetupPageDelay());
     }
 
     public void FlipToPreviousPage()
@@ -202,6 +202,12 @@ public class Scrapbook : MonoBehaviour
         if (pageIndex != pageIndexBefore)
             bookAnimator.SetTrigger("FlipToPrevious");
 
+        StartCoroutine(SetupPageDelay());
+    }
+
+    private IEnumerator SetupPageDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
         SetupOpenPage();
     }
 
