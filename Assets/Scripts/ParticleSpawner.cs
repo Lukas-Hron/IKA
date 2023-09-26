@@ -43,22 +43,22 @@ public class ParticleSpawner : MonoBehaviour
         }
     }
 
-    public void PlayAllParticles(Vector3 position, int IndexVfx, int IndexSystem, bool VFXOnly)
+    public void PlayAllParticles(Vector3 position, int Index, bool VFXOnly)
     {
         if (VFXOnly)
         {
             if (VFXParticles != null)
             {
-                vfxPosRef[IndexVfx].transform.position = position;
-                Debug.Log("Org : " + vfxPosRef[IndexVfx].transform.position + " Target : " + position);
-                VFXRefs[IndexVfx].Play();
+                vfxPosRef[Index].transform.position = position;
+                Debug.Log("Org : " + vfxPosRef[Index].transform.position + " Target : " + position);
+                VFXRefs[Index].Play();
             }
         }
         else
         {
             if (systemParticles != null)
             {
-                Instantiate(systemParticles[IndexSystem], position, Quaternion.identity);
+                Instantiate(systemParticles[Index], position, Quaternion.identity);
             }
         }
     }

@@ -6,10 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(InteractableUnityEventWrapper))]
-//[RequireComponent(typeof(Grabbable))]
-//[RequireComponent(typeof(PhysicsGrabbable))]
-//[RequireComponent(typeof(Rigidbody))]
-//[RequireComponent(typeof(ObjectRespawn))]
+
 
 
 public class WeldableObject : MonoBehaviour
@@ -20,8 +17,10 @@ public class WeldableObject : MonoBehaviour
     private PhysicsGrabbable physicsGrabbable;
     private TouchHandGrabInteractable touchGrab;
     private ObjectRespawn objectRespawn;
-
     public bool isAttached;
+    public enum Parts {Ordinary, Wheel}
+    public Parts MyPart = Parts.Ordinary;
+    
 
     void Start()
     {
@@ -31,6 +30,10 @@ public class WeldableObject : MonoBehaviour
         physicsGrabbable = GetComponent<PhysicsGrabbable>();
         touchGrab = GetComponent<TouchHandGrabInteractable>();
         objectRespawn = GetComponent<ObjectRespawn>();
+
+
+        if (interactEvent && rg && grabbable && physicsGrabbable && touchGrab && objectRespawn == null)
+            Debug.LogError("MISSING COMPONENT IN " + this.gameObject);
     }
 
     public void TurnOffComponents()
@@ -42,6 +45,7 @@ public class WeldableObject : MonoBehaviour
         physicsGrabbable.enabled = false;
         touchGrab.enabled = false;
         objectRespawn.enabled = false;
+
         Destroy(rg);
     }
 

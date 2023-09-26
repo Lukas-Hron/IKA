@@ -56,7 +56,6 @@ public class GlueAttacher : MonoBehaviour
         Debug.Log("RELEASED");
         if (allColliders.Count > 0)
         {
-
             AttachToObject(this.gameObject, allColliders[0]);
 
         }
@@ -91,8 +90,10 @@ public class GlueAttacher : MonoBehaviour
         // neither object is in a cluster so create one
         else if (!obj1Cluster && !obj2Cluster)
         {
+
             GameObject newCluster = Instantiate(clusterPrefab, object1.transform.position, Quaternion.identity);
 
+            Debug.Log(object1 + " " + object2);
             newCluster.GetComponent<Cluster>().AddPartToList(object1);
             newCluster.GetComponent<Cluster>().AddPartToList(object2);
 
@@ -117,6 +118,7 @@ public class GlueAttacher : MonoBehaviour
 
         //if(parentParticles != null)
         parentParticles.PlayAllParticles(transform.position, 0, 0);
+        parentParticles.PlayAllParticles(transform.position, 1, false);
         // https://discussions.unity.com/t/how-to-find-the-point-of-contact-with-the-function-ontriggerenter/13338/5
 
         //soundScript.PlayAudio(2);
