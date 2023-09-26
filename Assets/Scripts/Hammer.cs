@@ -57,7 +57,7 @@ public class Hammer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100f, weldableObjects))
         {
 
-            particleScript.PlayAllParticles(hit.point, 1, true);
+            particleScript.PlayOneParticles(hit.point, 1, true);
 
 
             // Shoot another ray from the hit point in the direction of the normal
@@ -134,7 +134,7 @@ public class Hammer : MonoBehaviour
         }
 
         soundScript.PlayAudio(2);
-        particleScript.PlayAllParticles(meldPosition,0,0);
+        particleScript.PlayBothParticles(meldPosition,0,0);
 
     }
 }
