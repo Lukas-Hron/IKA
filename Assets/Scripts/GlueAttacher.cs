@@ -9,6 +9,7 @@ public class GlueAttacher : MonoBehaviour
     public GameObject clusterPrefab;
     //[SerializeField] LayerMask weldableObjects;
     public ParticleSpawner parentParticles;
+    public SoundPlayer parentSound;
 
     [SerializeField]
     private InteractableUnityEventWrapper interactEvents;
@@ -119,6 +120,7 @@ public class GlueAttacher : MonoBehaviour
         //if(parentParticles != null)
         parentParticles.PlayAllParticles(transform.position, 0, 0);
         parentParticles.PlayAllParticles(transform.position, 1, false);
+        parentSound.PlayAudio(1, transform.position);
         // https://discussions.unity.com/t/how-to-find-the-point-of-contact-with-the-function-ontriggerenter/13338/5
 
         //soundScript.PlayAudio(2);

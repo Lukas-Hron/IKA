@@ -21,6 +21,9 @@ public class SoundPlayer : MonoBehaviour
         audioSause.Play();
     }
 
-
+    public void PlayAudio(int ClipIndex, Vector3 position)
+    {
+        AudioSource.PlayClipAtPoint(audioClips[ClipIndex], position);
+    }
 
 }
