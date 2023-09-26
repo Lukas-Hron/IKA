@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 4569309935489175690}
   - component: {fileID: 3070523256123932764}
   - component: {fileID: 5822902581927714832}
+  - component: {fileID: 6569242500457400098}
   m_Layer: 0
-  m_Name: KaninPall_ears
+  m_Name: KaninPall_ear_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,8 +35,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7117422, y: 2.7117422, z: 21.981813}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3934557, y: 1.3934557, z: 11.295574}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +47,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5587305662208083780}
-  m_Mesh: {fileID: -1853886892841829876, guid: 75222a4960d7089479f813d302de934d, type: 3}
+  m_Mesh: {fileID: 2692275999019944399, guid: 75222a4960d7089479f813d302de934d, type: 3}
 --- !u!23 &6236047965499074193
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1853886892841829876, guid: 75222a4960d7089479f813d302de934d, type: 3}
+  m_Mesh: {fileID: 2692275999019944399, guid: 75222a4960d7089479f813d302de934d, type: 3}
 --- !u!114 &5044531815913604511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 0
+  _transferOnSecondSelection: 1
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 0}
@@ -202,5 +203,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6569242500457400098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587305662208083780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 1324098085643153488}
   - component: {fileID: 880080705773698569}
   - component: {fileID: 2347768317744425740}
+  - component: {fileID: -514709425356195503}
   m_Layer: 0
   m_Name: KaninPall_backleft
   m_TagString: Untagged
@@ -88,7 +89,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.379748, y: 3.379748, z: 3.379748}
+  m_LocalScale: {x: 1.7367173, y: 1.7367173, z: 1.7367173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5861869084544481757}
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 0
+  _transferOnSecondSelection: 1
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 0}
@@ -236,5 +237,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-514709425356195503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

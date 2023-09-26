@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4973951420441589017}
   - component: {fileID: 1350257191395590170}
   - component: {fileID: 379601765956251847}
+  - component: {fileID: 1526216725788846646}
+  - component: {fileID: 7541685540114599195}
   m_Layer: 0
   m_Name: HolkHoeger_low
   m_TagString: Untagged
@@ -190,3 +192,27 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
+--- !u!114 &1526216725788846646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7541685540114599195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
