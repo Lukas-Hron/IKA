@@ -63,7 +63,7 @@ public class CarsDoMove : MonoBehaviour
 
         for(int i = 0; hits.Length > i; i++)
         {
-            if (hits[i].collider != null && hits[i].collider.gameObject != this.gameObject && hits[i].collider.CompareTag("Car"));
+            if (hits[i].collider != null && hits[i].collider.gameObject != this.gameObject);
             {
                 moveSpeed = 0;
                 Invoke("CheckForCars", .2f);

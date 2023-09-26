@@ -22,12 +22,12 @@ public class WayManager : MonoBehaviour
         car.FixRotPos();
         tempWay.Drive += car.MoveCar;
     }
-  
+    
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<CarsDoMove>() != null)
+        if (other.gameObject.transform.root.GetComponent<CarsDoMove>() != null)
         {
-            other.gameObject.GetComponent<CarsDoMove>().StartCar(); // den här får du när du är en bil
+            other.gameObject.transform.root.GetComponent<CarsDoMove>().StartCar(); // den här får du när du är en bil också kanske ska vara root
         }
     }
 }

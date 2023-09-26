@@ -117,13 +117,16 @@ GameObject:
   - component: {fileID: 8114756779700278881}
   - component: {fileID: 2246952522755521180}
   - component: {fileID: 4127102212092537231}
+  - component: {fileID: 7758847730538079776}
   - component: {fileID: 2197094173836589707}
   - component: {fileID: 2530051612285539380}
   - component: {fileID: 3354614058284078222}
   - component: {fileID: 2392084382775626420}
+  - component: {fileID: -3314665258144323041}
+  - component: {fileID: 4510933611595990738}
   m_Layer: 0
   m_Name: HolkTak_low
-  m_TagString: Untagged
+  m_TagString: PickUpables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,6 +198,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7758847730538079776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754800973780525036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.023780009, y: 0.019905452, z: 0.014450613}
+  m_Center: {x: 0, y: 0, z: 0.02627312}
 --- !u!54 &2197094173836589707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -272,7 +296,33 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  SetSelfComponents: 1
-  _boundsCollider: {fileID: 0}
-  _colliders: []
+  _pointableElement: {fileID: 2530051612285539380}
+  SetSelfComponents: 0
+  _boundsCollider: {fileID: 7758847730538079776}
+  _colliders:
+  - {fileID: 3929975373231997451}
+  - {fileID: 138028138651265754}
+--- !u!114 &-3314665258144323041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754800973780525036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4510933611595990738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754800973780525036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
