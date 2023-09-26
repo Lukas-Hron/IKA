@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: -2464914405969075122}
   m_Layer: 0
   m_Name: HolkFot_low
-  m_TagString: Untagged
+  m_TagString: PickUpables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
