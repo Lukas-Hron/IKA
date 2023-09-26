@@ -37,8 +37,7 @@ public class CarsDoMove : MonoBehaviour
     public void FixRotPos()
     {
         //instantiate smokepuff
-        GameObject smokePuff = Instantiate(Resources.Load<GameObject>("VFX/VFX_Smoke_Large"), transform.position, Quaternion.identity);
-        Destroy(smokePuff, 2f);
+       
         transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         transform.position = new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z);
     }
