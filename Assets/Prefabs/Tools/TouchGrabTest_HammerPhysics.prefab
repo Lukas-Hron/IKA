@@ -145,8 +145,8 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2057799116694289695}
-        m_TargetAssemblyTypeName: Hammer, Assembly-CSharp
+      - m_Target: {fileID: 8828870741184153514}
+        m_TargetAssemblyTypeName: DoomHammer, Assembly-CSharp
         m_MethodName: SetIsGrabbedBool
         m_Mode: 6
         m_Arguments:
@@ -160,8 +160,8 @@ MonoBehaviour:
   _whenUnselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2057799116694289695}
-        m_TargetAssemblyTypeName: Hammer, Assembly-CSharp
+      - m_Target: {fileID: 8828870741184153514}
+        m_TargetAssemblyTypeName: DoomHammer, Assembly-CSharp
         m_MethodName: SetIsGrabbedBool
         m_Mode: 6
         m_Arguments:
@@ -397,10 +397,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4943277101655686310}
   - component: {fileID: 2116824032696506505}
-  - component: {fileID: 2057799116694289695}
   - component: {fileID: 6225651695708638956}
   - component: {fileID: 1948145370643834349}
   - component: {fileID: 8101803430491853451}
+  - component: {fileID: 8828870741184153514}
   m_Layer: 0
   m_Name: StrikePoint
   m_TagString: Untagged
@@ -444,23 +444,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019406846, y: 0.045357805, z: 0.13088034}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2057799116694289695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472340545198890239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a7bd5378facc494f96f33e2b0d23153, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clusterPrefab: {fileID: 2719488573399366096, guid: f965031c3b20ef643be831dbba5c9732,
-    type: 3}
-  weldableObjects:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &6225651695708638956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +572,19 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 7deac9862cf67f04eae58a4f68fd6ae0, type: 3}
   - {fileID: 8300000, guid: b5210db8c20292f40b34d47e2393ba5d, type: 3}
-  - {fileID: 8300000, guid: 9b299114ff338ce4488ade23243d40e9, type: 3}
+  - {fileID: 8300000, guid: 80a5ef498344b6e43b51a71d7c1b6682, type: 3}
+--- !u!114 &8828870741184153514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472340545198890239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc0b275c296c114da710a0fabfaaf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7718157399338037290
 GameObject:
   m_ObjectHideFlags: 0
