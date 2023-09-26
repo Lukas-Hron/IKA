@@ -112,7 +112,6 @@ public class GlueAttacher : MonoBehaviour
             }
         }
 
-        Debug.Log("5");
         RemoveGlue();
 
 
