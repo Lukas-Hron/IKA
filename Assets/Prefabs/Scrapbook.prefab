@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 9204214220481701804}
   - component: {fileID: 7147152095260011997}
   - component: {fileID: 86195668605413708}
+  - component: {fileID: 8770481998177223046}
   m_Layer: 0
   m_Name: Scrapbook
   m_TagString: Untagged
@@ -642,6 +643,18 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8770481998177223046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624779892666780219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5391031474168197227
 GameObject:
   m_ObjectHideFlags: 0
