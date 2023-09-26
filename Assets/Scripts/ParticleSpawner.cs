@@ -29,7 +29,7 @@ public class ParticleSpawner : MonoBehaviour
     }
 
 
-    public void PlayAllParticles(Vector3 position, int IndexVfx, int IndexSystem)
+    public void PlayBothParticles(Vector3 position, int IndexVfx, int IndexSystem)
     {
         if (VFXParticles != null)
         {
@@ -43,7 +43,7 @@ public class ParticleSpawner : MonoBehaviour
         }
     }
 
-    public void PlayAllParticles(Vector3 position, int Index, bool VFXOnly)
+    public void PlayOneParticles(Vector3 position, int Index, bool VFXOnly)
     {
         if (VFXOnly)
         {

@@ -118,8 +118,8 @@ public class GlueAttacher : MonoBehaviour
 
 
         //if(parentParticles != null)
-        parentParticles.PlayAllParticles(transform.position, 0, 0);
-        parentParticles.PlayAllParticles(transform.position, 1, false);
+        parentParticles.PlayBothParticles(transform.position, 0, 0);
+        parentParticles.PlayOneParticles(transform.position, 1, false);
         parentSound.PlayAudio(1, transform.position);
         // https://discussions.unity.com/t/how-to-find-the-point-of-contact-with-the-function-ontriggerenter/13338/5
 

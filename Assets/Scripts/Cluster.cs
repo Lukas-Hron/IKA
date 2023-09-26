@@ -12,6 +12,7 @@ public class Cluster : MonoBehaviour
     private int amountOfWheels;
     private bool isCar = false;
 
+    private Vector3 midPosition;
 
     public void AddPartToList(GameObject part)
     {
@@ -86,6 +87,57 @@ public class Cluster : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void RemoveAllPartsFromList()
+    {
+
+        CalculateMiddlePosOfChildren();
+
+        for (int i = parts.Count; i > 0; i--)
+        {
+            int index = i - 1;
+            parts[index].transform.parent = null;
+
+            WeldableObject partWeld = parts[index].GetComponent<WeldableObject>();
+            switch (partWeld.MyPart)
+            {
+                case (WeldableObject.Parts.Ordinary): // do nothing
+                    break;
+
+                case (WeldableObject.Parts.Wheel):
+                    amountOfWheels--;
+                    IAmACar();
+                    break;
+
+                default:
+                    break;
+            }
+
+            partWeld.TurnOnComponents();
+
+
+            touchGrab._colliders.Remove(parts[index].GetComponent<Collider>());
+
+
+
+
+            parts[index].GetComponent<Rigidbody>().AddForce((parts[index].transform.position - midPosition) * 5,ForceMode.Impulse);
+            parts.RemoveAt(index);
+        }
+        
+        Destroy(gameObject);
+
+    }
+
+    void CalculateMiddlePosOfChildren()
+    {
+        for (int i = 0; i < parts.Count; i++)
+        {
+            midPosition += parts[i].transform.position;
+        }
+
+        midPosition /= parts.Count;
     }
 
     public void AddThisClusterToAnotherOne(Cluster clusterToAddTo)

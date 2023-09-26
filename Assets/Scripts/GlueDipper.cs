@@ -22,10 +22,10 @@ public class GlueDipper : MonoBehaviour
     {
         if (other.CompareTag("PickUpables"))
         {
+            soundPlay.PlayAudio(0);
             if (other.GetComponent<GlueAttacher>() == null)
             {
                 GlueAttacher objRef = other.AddComponent<GlueAttacher>();
-                soundPlay.PlayAudio(0);
                 objRef.clusterPrefab = this.clusterPrefab;
                 objRef.parentParticles = particleSpawn;
                 objRef.parentSound = soundPlay;
