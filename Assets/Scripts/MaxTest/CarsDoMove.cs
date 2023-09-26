@@ -14,6 +14,12 @@ public class CarsDoMove : MonoBehaviour
     int waypointIndex = 0;
     [SerializeField]float moveSpeed = .15f;
     private float moveSpeedHolder = 0f;
+    private Vector3 bobbing = Vector3.zero;
+    [SerializeField]private float floatStrength = 0.0002f;
+    [SerializeField]private float bobFrequency = 10f;
+
+    Vector3 transformExy = Vector3.zero;
+    Vector3 wayPointExy = Vector3.zero;
     public void StartCar()
     {
         Debug.Log("Hello");
@@ -31,18 +37,25 @@ public class CarsDoMove : MonoBehaviour
     public void FixRotPos()
     {
         //instantiate smokepuff
+        GameObject smokePuff = Instantiate(Resources.Load<GameObject>("VFX/VFX_Smoke_Large"), transform.position, Quaternion.identity);
+        Destroy(smokePuff, 2f);
         transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
         transform.position = new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z);
     }
     public void MoveCar(float deltaTime) // might have to forget about the y axis so that cars dont go underground
     {
-        if(waypointIndex <= wayPoints.Count - 1)
+        bobbing = transform.position;
+        bobbing.y = (Mathf.Sin(Time.time * bobFrequency) * floatStrength);
+        if (waypointIndex <= wayPoints.Count - 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].position, moveSpeed * deltaTime);
-           
-            if((wayPoints[waypointIndex].position - transform.position).normalized != Vector3.zero)
+            transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].position, moveSpeed * deltaTime) + new Vector3(0,bobbing.y,0);
+
+            transformExy = new Vector3(transform.position.x, 0, transform.position.z);
+            wayPointExy = new Vector3(wayPoints[waypointIndex].position.x, 0, wayPoints[waypointIndex].position.z);
+
+            if ((wayPointExy - transformExy).normalized != Vector3.zero)
             {
-                Quaternion lookRotation = Quaternion.LookRotation((wayPoints[waypointIndex].position - transform.position).normalized);
+                Quaternion lookRotation = Quaternion.LookRotation((wayPointExy - transformExy).normalized);
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10f * deltaTime);
             }
         }
@@ -51,10 +64,11 @@ public class CarsDoMove : MonoBehaviour
             waypointIndex = 0;
         }
 
-        if(transform.position == wayPoints[waypointIndex].position)
+        if(transformExy == wayPointExy)
         {
             waypointIndex++;
         }
+        
     }
     private void CheckForCars()
     {
