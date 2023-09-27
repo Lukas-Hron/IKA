@@ -22,7 +22,7 @@ public class GlueDipper : MonoBehaviour
     {
         if (other.CompareTag("PickUpables"))
         {
-            soundPlay.PlayAudio(0);
+            //soundPlay.PlayAudio(0);
             if (other.GetComponent<GlueAttacher>() == null)
             {
                 GlueAttacher objRef = other.AddComponent<GlueAttacher>();

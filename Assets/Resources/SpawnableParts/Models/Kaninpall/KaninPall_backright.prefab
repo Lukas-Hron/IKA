@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 6812937604486374915}
   - component: {fileID: 1634233499084094731}
   - component: {fileID: 7137295746654449864}
+  - component: {fileID: 5704337305655575199}
+  - component: {fileID: 1782554944834849111}
+  - component: {fileID: 2833591714432976425}
+  - component: {fileID: 5099692804488913896}
   m_Layer: 0
   m_Name: KaninPall_backright
   m_TagString: PickUpables
@@ -32,14 +36,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184494681764196734}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.7367173, y: 1.7367173, z: 1.7367173}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4921335307114304324}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
 --- !u!33 &5580278476174238817
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -196,6 +200,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5704337305655575199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184494681764196734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 0}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1782554944834849111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184494681764196734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttached: 0
+  MyPart: 0
+--- !u!114 &2833591714432976425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184494681764196734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5099692804488913896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184494681764196734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 10
 --- !u!1 &8833541231299742783
 GameObject:
   m_ObjectHideFlags: 0

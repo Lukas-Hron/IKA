@@ -71,14 +71,12 @@ public class Scrapbook : MonoBehaviour
 
     private void CreatePagesAllItems()
     {
-        Debug.Log("all items create yea");
         int index = 0;
 
         List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
 
         foreach (SpawnableObjectSO partSO in spawnableParts)
         {
-            Debug.Log("all items created this part: " + partSO.name);
 
             if (index >= 36) //36 is the max amount in a uppslag so add to uppslag and clear
             {
@@ -93,7 +91,6 @@ public class Scrapbook : MonoBehaviour
 
         if (page.Count > 0)//add the last items to page even if its not a whole page
             totPages.Add(page);
-        Debug.Log("added page");
     }
 
     private void SetupOpenPage()
@@ -172,15 +169,12 @@ public class Scrapbook : MonoBehaviour
 
     public void FlipToNextPage()
     {
-        Debug.Log("flip to next");
         if (!gameObject.activeInHierarchy) return;
 
         int pageIndexBefore = pageIndex;
         pageIndex++;
 
-        Debug.Log("flip right pageindex " + pageIndex);
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
-        Debug.Log("flip right after clamp " + pageIndex);
 
         if (pageIndex != pageIndexBefore)
             bookAnimator.SetTrigger("FlipToNext");
@@ -195,9 +189,7 @@ public class Scrapbook : MonoBehaviour
         int pageIndexBefore = pageIndex;
         pageIndex--;
 
-        Debug.Log("flip right pageindex " + pageIndex);
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
-        Debug.Log("flip right after clamp " + pageIndex);
 
         if (pageIndex != pageIndexBefore)
             bookAnimator.SetTrigger("FlipToPrevious");

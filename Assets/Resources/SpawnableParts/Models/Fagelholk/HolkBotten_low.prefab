@@ -18,6 +18,10 @@ GameObject:
   - component: {fileID: 1481533992614662566}
   - component: {fileID: 3905374387500230777}
   - component: {fileID: 8014714406781900374}
+  - component: {fileID: 582732087846070351}
+  - component: {fileID: 71326650690602149}
+  - component: {fileID: 5151853028372384952}
+  - component: {fileID: 8108471813874773310}
   m_Layer: 0
   m_Name: HolkBotten_low
   m_TagString: PickUpables
@@ -216,3 +220,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &582732087846070351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563686846544987998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 0}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &71326650690602149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563686846544987998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttached: 0
+  MyPart: 0
+--- !u!114 &5151853028372384952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563686846544987998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8108471813874773310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563686846544987998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 10
