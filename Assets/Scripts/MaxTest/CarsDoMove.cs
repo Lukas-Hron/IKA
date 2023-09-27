@@ -28,7 +28,7 @@ public class CarsDoMove : MonoBehaviour
         Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
         Destroy(gameObject.GetComponent<Collider>());
         Destroy(gameObject.GetComponent<WeldableObject>());
-        Destroy(gameObject.GetComponent<Rigidbody>());
+        
         Destroy(gameObject.GetComponent<HandGrabInteractable>());
         thisCar?.Invoke(this);
         moveSpeedHolder = moveSpeed;
@@ -37,17 +37,20 @@ public class CarsDoMove : MonoBehaviour
     public void FixRotPos()
     {
         //instantiate smokepuff
-       
+        //transform.position = new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z);
+
         transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
-        transform.position = new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z);
+        Destroy(gameObject.GetComponent<Rigidbody>());
+        
     }
     public void MoveCar(float deltaTime) // might have to forget about the y axis so that cars dont go underground
     {
         bobbing = transform.position;
         bobbing.y = (Mathf.Sin(Time.time * bobFrequency) * floatStrength);
+
         if (waypointIndex <= wayPoints.Count - 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].position, moveSpeed * deltaTime) + new Vector3(0,bobbing.y,0);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x,transform.position.y, wayPoints[waypointIndex].position.z), moveSpeed * deltaTime) + new Vector3(0,bobbing.y,0);
 
             transformExy = new Vector3(transform.position.x, 0, transform.position.z);
             wayPointExy = new Vector3(wayPoints[waypointIndex].position.x, 0, wayPoints[waypointIndex].position.z);
