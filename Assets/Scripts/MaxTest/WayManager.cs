@@ -6,6 +6,7 @@ public class WayManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<PlayRugWay> ways = new List<PlayRugWay>();
+    public ParticleSpawner spawner;
     private void OnEnable()
     {
         CarsDoMove.thisCar += AddCarToWay;
@@ -19,6 +20,13 @@ public class WayManager : MonoBehaviour
         int temp = Random.Range(0, ways.Count);
         PlayRugWay tempWay = ways[temp];
         car.wayPoints = tempWay.wayPoints;
+
+
+        spawner.PlayOneParticles(car.transform.position, 0, true);
+
+
+
+        Debug.Log("Called");
         car.FixRotPos();
         tempWay.Drive += car.MoveCar;
     }
