@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3664823881550479148}
   - component: {fileID: 4589172494123987848}
   - component: {fileID: 8593323212594874997}
+  - component: {fileID: 2268260838439158231}
   m_Layer: 0
   m_Name: HolkPinne_low
   m_TagString: PickUpables
@@ -304,3 +305,25 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!64 &2268260838439158231
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756564200525220279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8613829542892007520, guid: 70eb46329e5e6404a96e9ef52d143703, type: 3}

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7273387023141939959}
   - component: {fileID: 2532333744174974046}
   - component: {fileID: 8955902721484441471}
+  - component: {fileID: 6360509732787087956}
   m_Layer: 0
   m_Name: KaninPall_teeth
   m_TagString: PickUpables
@@ -303,3 +304,24 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!65 &6360509732787087956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913455494219608124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027492559, y: 0.037057962, z: 0.018658118}
+  m_Center: {x: 0.00983901, y: 0.010366335, z: -0.00025449783}

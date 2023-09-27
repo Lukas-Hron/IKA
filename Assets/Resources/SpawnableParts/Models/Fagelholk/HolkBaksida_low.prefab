@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 935990438351601568}
   - component: {fileID: 710912676342903519}
   - component: {fileID: 7337687046873069211}
+  - component: {fileID: 415233033945645268}
   m_Layer: 0
   m_Name: HolkBaksida_low
   m_TagString: PickUpables
@@ -304,3 +305,25 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!64 &415233033945645268
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570261991716428196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2205607599073442895, guid: 70eb46329e5e6404a96e9ef52d143703, type: 3}

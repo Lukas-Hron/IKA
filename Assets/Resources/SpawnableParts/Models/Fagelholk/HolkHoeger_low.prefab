@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 6365940425031876044}
   - component: {fileID: 8552726257085379181}
   - component: {fileID: 8363362910174743954}
+  - component: {fileID: 260332858684958492}
   m_Layer: 0
   m_Name: HolkHoeger_low
   m_TagString: PickUpables
@@ -303,3 +304,24 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!65 &260332858684958492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001197543, y: 0.016354075, z: 0.01584509}
+  m_Center: {x: 0.0075782677, y: 0, z: 0.012007095}

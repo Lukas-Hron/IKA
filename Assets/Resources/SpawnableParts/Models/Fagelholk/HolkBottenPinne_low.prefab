@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7890596825129177384}
   - component: {fileID: 6926476562583041458}
   - component: {fileID: 3778659216889628222}
+  - component: {fileID: 703231040290523460}
   m_Layer: 0
   m_Name: HolkBottenPinne_low
   m_TagString: PickUpables
@@ -305,3 +306,26 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!136 &703231040290523460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845425690309226214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0017204657
+  m_Height: 0.05807042
+  m_Direction: 2
+  m_Center: {x: -0.000102728605, y: -0.000012826621, z: -0.025089417}

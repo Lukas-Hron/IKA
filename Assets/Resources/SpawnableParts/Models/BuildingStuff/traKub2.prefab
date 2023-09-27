@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7702550417196143651}
   - component: {fileID: 6962087218721475822}
   - component: {fileID: 189621143730181463}
+  - component: {fileID: 4551877116616270681}
   m_Layer: 0
   m_Name: traKub2
   m_TagString: PickUpables
@@ -303,3 +304,24 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!65 &4551877116616270681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190504398479246063}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019996257, y: 0.051579647, z: 0.019996257}
+  m_Center: {x: 0, y: 0.015791694, z: 0}

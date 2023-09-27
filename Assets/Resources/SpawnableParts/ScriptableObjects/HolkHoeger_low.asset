@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partPrefab: {fileID: 6449961774964839696, guid: 72f2ec3460b6c4d48bf6e3890ae1ef1a,
     type: 3}
-  partSprite: {fileID: 0}
+  partSprite: {fileID: 21300000, guid: e40452853b161dd478b90ee62ccd0cce, type: 3}
