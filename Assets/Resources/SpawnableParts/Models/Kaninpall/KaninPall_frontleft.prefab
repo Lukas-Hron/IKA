@@ -17,10 +17,10 @@ GameObject:
   - component: {fileID: 8397967596913363721}
   - component: {fileID: 6157195483330173273}
   - component: {fileID: -6138464173566926905}
-  - component: {fileID: 2037864403554957612}
-  - component: {fileID: 1808879478867620485}
   - component: {fileID: 8689374405523950300}
-  - component: {fileID: 216803504361510556}
+  - component: {fileID: 5867371223209450068}
+  - component: {fileID: 4450713113043051102}
+  - component: {fileID: 7887538599201304656}
   m_Layer: 0
   m_Name: KaninPall_frontleft
   m_TagString: PickUpables
@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
+  _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 8689374405523950300}
+  _twoGrabTransformer: {fileID: 7887538599201304656}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
 --- !u!114 &2374278926389413635
@@ -200,7 +200,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2037864403554957612
+--- !u!114 &8689374405523950300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966296940233911066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5867371223209450068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 0}
+  _interactableView: {fileID: 8397967596913363721}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -237,7 +249,7 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1808879478867620485
+--- !u!114 &4450713113043051102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,19 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttached: 0
   MyPart: 0
---- !u!114 &8689374405523950300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4966296940233911066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &216803504361510556
+--- !u!114 &7887538599201304656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,6 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3533241836527561671}
   - component: {fileID: 6267684432211904803}
+  - component: {fileID: 5435608790863382763}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -331,6 +332,29 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.122129
+  m_Height: 9.125461
+  m_Direction: 2
+  m_Center: {x: -0.000015680831, y: -0.6221253, z: -4.2620287}
+--- !u!136 &5435608790863382763
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086239585955747570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
