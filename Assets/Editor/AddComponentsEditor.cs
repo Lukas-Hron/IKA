@@ -16,6 +16,7 @@ public class AddComponentsToObject : Editor
         if (selectedObject != null)
         {
             selectedObject.tag = "PickUpables";
+            Debug.Log("1");
 
             if (!selectedObject.GetComponent<Rigidbody>())
             {
@@ -55,6 +56,7 @@ public class AddComponentsToObject : Editor
                 grabbable.InjectOptionalOneGrabTransformer(selectedObject.GetComponent<OneGrabFreeTransformer>());
                 grabbable.InjectOptionalTwoGrabTransformer(selectedObject.GetComponent<TwoGrabFreeTransformer>());
             }
+            Debug.Log("2");
 
             if (!selectedObject.GetComponent<PhysicsGrabbable>())
             {
@@ -79,8 +81,10 @@ public class AddComponentsToObject : Editor
 
             if (!selectedObject.GetComponent<InteractableUnityEventWrapper>())
             {
+                
                 var eventWrapper = selectedObject.AddComponent<InteractableUnityEventWrapper>();
                 eventWrapper.InjectInteractableView(selectedObject.GetComponent<TouchHandGrabInteractable>());
+                Debug.Log("3");
             }
         }
     }

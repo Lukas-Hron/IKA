@@ -24,6 +24,7 @@ public class Scrapbook : MonoBehaviour
 
     [SerializeField] RectTransform recipePage;
     [SerializeField] TextMeshProUGUI recipeName;
+    [SerializeField] Image recipeDecorImage;
 
     [SerializeField] RectTransform leftPage;
     [SerializeField] RectTransform rightPage;
@@ -45,7 +46,7 @@ public class Scrapbook : MonoBehaviour
         CreatePagesAllItems();
         SetupOpenPage();
 
-        CloseBook();
+        //CloseBook();
     }
 
     private void CreateRecipePages()
@@ -122,6 +123,7 @@ public class Scrapbook : MonoBehaviour
             leftPage.gameObject.SetActive(false);
 
             recipeName.text = totPages[pageIndex][0].name;
+            recipeDecorImage.sprite = totPages[pageIndex][0].wholeItemDecorSprite;
 
             spawnedItems = 17; //main page should only have the one item on left page
         }
@@ -164,7 +166,7 @@ public class Scrapbook : MonoBehaviour
 
         button.GetComponent<Button>().onClick.AddListener(() => ObjectSpawner.SpawnObject(buttonPartConnection[button]));
 
-        //button.GetComponent<Image>().sprite = partSO.partSprite;
+        button.GetComponent<Image>().sprite = partSO.partSprite;
     }
 
     public void FlipToNextPage()
@@ -218,7 +220,7 @@ public class Scrapbook : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        bookAnimator.SetTrigger("Close");
-        colliderAnimator.SetTrigger("Close");
+        //bookAnimator.SetTrigger("Close");
+        //colliderAnimator.SetTrigger("Close");
     }
 }

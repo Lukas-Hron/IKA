@@ -5,7 +5,6 @@ using Oculus.Interaction.HandGrab;
 using UnityEditor;
 using UnityEngine;
 
-[RequireComponent(typeof(InteractableUnityEventWrapper))]
 
 
 

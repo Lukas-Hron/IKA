@@ -15,3 +15,5 @@ MonoBehaviour:
   partPrefab: {fileID: 4872946326652844196, guid: 7d54d3e0b39faad47a1d491b69602210,
     type: 3}
   partSprite: {fileID: 21300000, guid: 7d1b01cbec3ce2b4ea5d4f68b775d9ac, type: 3}
+  wholeItemDecorSprite: {fileID: 21300000, guid: c73301188e2a0004ab0a769c0fe0aa0c,
+    type: 3}
