@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
-  m_Name: ToyCar
+  m_Name: Triangle
   m_EditorClassIdentifier: 
-  partPrefab: {fileID: 2672847363069294112, guid: 4c6a55bc8e490a4438d481aafc5df7d9,
+  partPrefab: {fileID: 3265995958321458874, guid: e056bb6c6adab234fa35b6d202c29d41,
     type: 3}
-  partSprite: {fileID: 21300000, guid: 9f379f1055ad3344aa733bd9664eef87, type: 3}
+  partSprite: {fileID: 0}
   wholeItemDecorSprite: {fileID: 0}
