@@ -29,6 +29,8 @@ public class Scrapbook : MonoBehaviour
     [SerializeField] RectTransform leftPage;
     [SerializeField] RectTransform rightPage;
 
+    private SoundPlayer soundScript;
+
     private int pageIndex = 0;
     private bool settingUpPage;
 
@@ -42,6 +44,8 @@ public class Scrapbook : MonoBehaviour
 
     private void Start()
     {
+        soundScript = GetComponent<SoundPlayer>();
+
         CreateRecipePages();
         CreatePagesAllItems();
         SetupOpenPage();
@@ -179,7 +183,10 @@ public class Scrapbook : MonoBehaviour
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
         if (pageIndex != pageIndexBefore)
+        {
             bookAnimator.SetTrigger("FlipToNext");
+            soundScript.PlayAudio(0);
+        }
 
         StartCoroutine(SetupPageDelay());
     }
@@ -194,7 +201,10 @@ public class Scrapbook : MonoBehaviour
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
         if (pageIndex != pageIndexBefore)
+        {
             bookAnimator.SetTrigger("FlipToPrevious");
+            soundScript.PlayAudio(1);
+        }
 
         StartCoroutine(SetupPageDelay());
     }
