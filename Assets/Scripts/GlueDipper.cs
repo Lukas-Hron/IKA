@@ -25,7 +25,7 @@ public class GlueDipper : MonoBehaviour
             soundPlay.PlayAudio(0);
             if (other.GetComponent<GlueAttacher>() == null)
             {
-                GlueAttacher objRef = other.transform.parent.AddComponent<GlueAttacher>();
+                GlueAttacher objRef = other.AddComponent<GlueAttacher>();
                 objRef.clusterPrefab = this.clusterPrefab;
                 objRef.parentParticles = particleSpawn;
                 objRef.parentSound = soundPlay;
