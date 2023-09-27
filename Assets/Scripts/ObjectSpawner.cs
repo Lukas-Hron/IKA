@@ -11,9 +11,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public static void SpawnObject(GameObject obj)
     {
-        Debug.Log("hej");
         if (obj == null) return;
-        Debug.Log("tjotjo");
 
         Instantiate(obj, spawnPosition, Quaternion.identity);
     }

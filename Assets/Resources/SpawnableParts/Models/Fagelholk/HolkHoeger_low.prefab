@@ -12,17 +12,17 @@ GameObject:
   - component: {fileID: 7698307702669369934}
   - component: {fileID: 948243130484012464}
   - component: {fileID: 3221366678957215911}
-  - component: {fileID: 420461403904998356}
-  - component: {fileID: 4973951420441589017}
-  - component: {fileID: 1350257191395590170}
-  - component: {fileID: 379601765956251847}
-  - component: {fileID: 1526216725788846646}
-  - component: {fileID: 7541685540114599195}
-  - component: {fileID: 6392357840705784832}
-  - component: {fileID: 6365940425031876044}
-  - component: {fileID: 8552726257085379181}
-  - component: {fileID: 8363362910174743954}
   - component: {fileID: 260332858684958492}
+  - component: {fileID: 7909650469135367737}
+  - component: {fileID: 4800207684095233102}
+  - component: {fileID: 783037124725648905}
+  - component: {fileID: 7862672763706906729}
+  - component: {fileID: 872300060105517220}
+  - component: {fileID: 8584899977689849686}
+  - component: {fileID: 6267706763652316523}
+  - component: {fileID: 7606157493088158072}
+  - component: {fileID: 6176000622688191584}
+  - component: {fileID: 3819139976729239947}
   m_Layer: 0
   m_Name: HolkHoeger_low
   m_TagString: PickUpables
@@ -116,7 +116,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.001197543, y: 0.016354075, z: 0.01584509}
   m_Center: {x: 0.0075782677, y: 0, z: 0.012007095}
---- !u!54 &420461403904998356
+--- !u!65 &260332858684958492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001197543, y: 0.016354075, z: 0.01584509}
+  m_Center: {x: 0.0075782677, y: 0, z: 0.012007095}
+--- !u!54 &7909650469135367737
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +145,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6449961774964839696}
   serializedVersion: 4
-  m_Mass: 0.1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -143,7 +164,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4973951420441589017
+--- !u!114 &4800207684095233102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttached: 0
+  MyPart: 0
+--- !u!114 &783037124725648905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7862672763706906729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449961774964839696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 10
+--- !u!114 &872300060105517220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,14 +222,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
+  _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 783037124725648905}
+  _twoGrabTransformer: {fileID: 7862672763706906729}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
---- !u!114 &1350257191395590170
+--- !u!114 &8584899977689849686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,10 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabbable: {fileID: 4973951420441589017}
-  _rigidbody: {fileID: 420461403904998356}
+  _grabbable: {fileID: 872300060105517220}
+  _rigidbody: {fileID: 7909650469135367737}
   _scaleMassWithSize: 1
---- !u!114 &379601765956251847
+--- !u!114 &6267706763652316523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +264,7 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
---- !u!114 &1526216725788846646
+--- !u!114 &7606157493088158072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7541685540114599195
+--- !u!114 &6176000622688191584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6392357840705784832
+--- !u!114 &3819139976729239947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 0}
+  _interactableView: {fileID: 6267706763652316523}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -258,70 +325,3 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6365940425031876044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449961774964839696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttached: 0
-  MyPart: 0
---- !u!114 &8552726257085379181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449961774964839696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8363362910174743954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449961774964839696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _constraints:
-    ConstraintsAreRelative: 0
-    MinScale:
-      Constrain: 1
-      Value: 1
-    MaxScale:
-      Constrain: 1
-      Value: 10
---- !u!65 &260332858684958492
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449961774964839696}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.001197543, y: 0.016354075, z: 0.01584509}
-  m_Center: {x: 0.0075782677, y: 0, z: 0.012007095}

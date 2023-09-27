@@ -12,17 +12,17 @@ GameObject:
   - component: {fileID: 4912509423100593364}
   - component: {fileID: 2506345474595172206}
   - component: {fileID: -695842348994452791}
-  - component: {fileID: -2609000900824384376}
-  - component: {fileID: -6225627053540959943}
-  - component: {fileID: -2813152686675869014}
-  - component: {fileID: -8266812306193199927}
-  - component: {fileID: -8050637538203966685}
-  - component: {fileID: 7930951580316369723}
-  - component: {fileID: 4758160373801864277}
-  - component: {fileID: 4955700822456634198}
-  - component: {fileID: 4587101713425782645}
-  - component: {fileID: 5055735275098957364}
   - component: {fileID: 8563314646921510487}
+  - component: {fileID: 352182232408876513}
+  - component: {fileID: 7209895577261336781}
+  - component: {fileID: 8300911550950240505}
+  - component: {fileID: 4882697257560559612}
+  - component: {fileID: 6621621180870286940}
+  - component: {fileID: 5184786464138915068}
+  - component: {fileID: 6418023938215266436}
+  - component: {fileID: 7109870420319036127}
+  - component: {fileID: 1177984978058503167}
+  - component: {fileID: 2257696482705494354}
   m_Layer: 0
   m_Name: traKub
   m_TagString: PickUpables
@@ -116,7 +116,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-2609000900824384376
+--- !u!65 &8563314646921510487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5416777303763991958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.02, y: 0.02, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &352182232408876513
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +164,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6225627053540959943
+--- !u!114 &7209895577261336781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,7 +178,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttached: 0
   MyPart: 0
---- !u!114 &-2813152686675869014
+--- !u!114 &8300911550950240505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5416777303763991958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4882697257560559612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5416777303763991958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 10
+--- !u!114 &6621621180870286940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,11 +225,11 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 4955700822456634198}
-  _twoGrabTransformer: {fileID: 4587101713425782645}
+  _oneGrabTransformer: {fileID: 8300911550950240505}
+  _twoGrabTransformer: {fileID: 4882697257560559612}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
---- !u!114 &-8266812306193199927
+--- !u!114 &5184786464138915068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,10 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabbable: {fileID: -2813152686675869014}
-  _rigidbody: {fileID: -2609000900824384376}
+  _grabbable: {fileID: 6621621180870286940}
+  _rigidbody: {fileID: 352182232408876513}
   _scaleMassWithSize: 1
---- !u!114 &-8050637538203966685
+--- !u!114 &6418023938215266436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +264,7 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
---- !u!114 &7930951580316369723
+--- !u!114 &7109870420319036127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4758160373801864277
+--- !u!114 &1177984978058503167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,39 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4955700822456634198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5416777303763991958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4587101713425782645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5416777303763991958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _constraints:
-    ConstraintsAreRelative: 0
-    MinScale:
-      Constrain: 1
-      Value: 1.5
-    MaxScale:
-      Constrain: 1
-      Value: 10
---- !u!114 &5055735275098957364
+--- !u!114 &2257696482705494354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: -8050637538203966685}
+  _interactableView: {fileID: 6418023938215266436}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -304,24 +325,3 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &8563314646921510487
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5416777303763991958}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.02, z: 0.02}
-  m_Center: {x: 0, y: 0, z: 0}

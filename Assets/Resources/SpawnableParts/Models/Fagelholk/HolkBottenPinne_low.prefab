@@ -12,17 +12,17 @@ GameObject:
   - component: {fileID: 682475164294381980}
   - component: {fileID: 5841807593025070277}
   - component: {fileID: 3519814053788697693}
-  - component: {fileID: 7816496937494958475}
-  - component: {fileID: 7232243229999334428}
-  - component: {fileID: 8050868872170120800}
-  - component: {fileID: 7930529974851402311}
-  - component: {fileID: 4980689299761050365}
-  - component: {fileID: 4888292061198385683}
-  - component: {fileID: 2831498804974236295}
-  - component: {fileID: 7890596825129177384}
-  - component: {fileID: 6926476562583041458}
-  - component: {fileID: 3778659216889628222}
   - component: {fileID: 703231040290523460}
+  - component: {fileID: 5353555892952535955}
+  - component: {fileID: 8802240782116102564}
+  - component: {fileID: 8256687826148236831}
+  - component: {fileID: 5044599039211076860}
+  - component: {fileID: 1807987349408324785}
+  - component: {fileID: 1267475879263170634}
+  - component: {fileID: 7780104325227410931}
+  - component: {fileID: 1895059709971849447}
+  - component: {fileID: 2381268810473118178}
+  - component: {fileID: 2599600366616866687}
   m_Layer: 0
   m_Name: HolkBottenPinne_low
   m_TagString: PickUpables
@@ -118,7 +118,30 @@ CapsuleCollider:
   m_Height: 0.05807042
   m_Direction: 2
   m_Center: {x: -0.000102728605, y: -0.000012826621, z: -0.025089417}
---- !u!54 &7816496937494958475
+--- !u!136 &703231040290523460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845425690309226214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0017204657
+  m_Height: 0.05807042
+  m_Direction: 2
+  m_Center: {x: -0.000102728605, y: -0.000012826621, z: -0.025089417}
+--- !u!54 &5353555892952535955
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +149,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3845425690309226214}
   serializedVersion: 4
-  m_Mass: 0.1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -145,7 +168,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7232243229999334428
+--- !u!114 &8802240782116102564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845425690309226214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttached: 0
+  MyPart: 0
+--- !u!114 &8256687826148236831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845425690309226214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5044599039211076860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845425690309226214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 1
+      Value: 1
+    MaxScale:
+      Constrain: 1
+      Value: 10
+--- !u!114 &1807987349408324785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,14 +226,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
+  _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 8256687826148236831}
+  _twoGrabTransformer: {fileID: 5044599039211076860}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
---- !u!114 &8050868872170120800
+--- !u!114 &1267475879263170634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,10 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grabbable: {fileID: 7232243229999334428}
-  _rigidbody: {fileID: 7816496937494958475}
+  _grabbable: {fileID: 1807987349408324785}
+  _rigidbody: {fileID: 5353555892952535955}
   _scaleMassWithSize: 1
---- !u!114 &7930529974851402311
+--- !u!114 &7780104325227410931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +268,7 @@ MonoBehaviour:
   SetSelfComponents: 1
   _boundsCollider: {fileID: 0}
   _colliders: []
---- !u!114 &4980689299761050365
+--- !u!114 &1895059709971849447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4888292061198385683
+--- !u!114 &2381268810473118178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2831498804974236295
+--- !u!114 &2599600366616866687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 0}
+  _interactableView: {fileID: 7780104325227410931}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -260,72 +329,3 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7890596825129177384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845425690309226214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a149d2e3c76204e48afac80cc804f096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttached: 0
-  MyPart: 0
---- !u!114 &6926476562583041458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845425690309226214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3778659216889628222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845425690309226214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _constraints:
-    ConstraintsAreRelative: 0
-    MinScale:
-      Constrain: 1
-      Value: 1
-    MaxScale:
-      Constrain: 1
-      Value: 10
---- !u!136 &703231040290523460
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3845425690309226214}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0017204657
-  m_Height: 0.05807042
-  m_Direction: 2
-  m_Center: {x: -0.000102728605, y: -0.000012826621, z: -0.025089417}

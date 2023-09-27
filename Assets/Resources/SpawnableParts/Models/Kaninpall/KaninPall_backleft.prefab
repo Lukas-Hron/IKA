@@ -91,15 +91,15 @@ GameObject:
   - component: {fileID: 6995582480347889436}
   - component: {fileID: 5112072086399224790}
   - component: {fileID: 5235557475623702500}
-  - component: {fileID: 6024381284592859589}
-  - component: {fileID: 1324098085643153488}
-  - component: {fileID: 880080705773698569}
   - component: {fileID: 2347768317744425740}
   - component: {fileID: -514709425356195503}
-  - component: {fileID: 8724440907691062562}
-  - component: {fileID: 3572788388854500745}
   - component: {fileID: 6136065000813377528}
-  - component: {fileID: 4430572925685850361}
+  - component: {fileID: 3526236041180023484}
+  - component: {fileID: 3371864567755340596}
+  - component: {fileID: 5930515576197967457}
+  - component: {fileID: 4227604334862838276}
+  - component: {fileID: 6877300276766980547}
+  - component: {fileID: 7751725985887029322}
   m_Layer: 0
   m_Name: KaninPall_backleft
   m_TagString: PickUpables
@@ -200,61 +200,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6024381284592859589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6769268725803362819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 1
-  _addNewPointsToFront: 0
-  _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
-  _targetTransform: {fileID: 0}
-  _maxGrabPoints: -1
---- !u!114 &1324098085643153488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6769268725803362819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabbable: {fileID: 6024381284592859589}
-  _rigidbody: {fileID: 5235557475623702500}
-  _scaleMassWithSize: 1
---- !u!114 &880080705773698569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6769268725803362819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb4a09355f9dc244bfbcd2ac9208ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactorFilters: []
-  _maxInteractors: -1
-  _maxSelectingInteractors: -1
-  _data: {fileID: 0}
-  _pointableElement: {fileID: 6024381284592859589}
-  SetSelfComponents: 0
-  _boundsCollider: {fileID: 1408257293599372883}
-  _colliders:
-  - {fileID: 1408257293599372883}
 --- !u!114 &2347768317744425740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +224,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8724440907691062562
+--- !u!114 &6136065000813377528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3526236041180023484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 0}
+  _interactableView: {fileID: 7751725985887029322}
   _whenHover:
     m_PersistentCalls:
       m_Calls: []
@@ -316,7 +273,7 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3572788388854500745
+--- !u!114 &3371864567755340596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,19 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttached: 0
   MyPart: 0
---- !u!114 &6136065000813377528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6769268725803362819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4430572925685850361
+--- !u!114 &5930515576197967457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,3 +307,57 @@ MonoBehaviour:
     MaxScale:
       Constrain: 1
       Value: 10
+--- !u!114 &4227604334862838276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 6136065000813377528}
+  _twoGrabTransformer: {fileID: 5930515576197967457}
+  _targetTransform: {fileID: 0}
+  _maxGrabPoints: -1
+--- !u!114 &6877300276766980547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabbable: {fileID: 4227604334862838276}
+  _rigidbody: {fileID: 5235557475623702500}
+  _scaleMassWithSize: 1
+--- !u!114 &7751725985887029322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb4a09355f9dc244bfbcd2ac9208ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 0}
+  SetSelfComponents: 1
+  _boundsCollider: {fileID: 0}
+  _colliders: []
