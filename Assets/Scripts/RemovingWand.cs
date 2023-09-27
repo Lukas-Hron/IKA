@@ -17,18 +17,21 @@ public class RemovingWand : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        soundScript.PlayAudio(0);
-
-        if (!isGrabbed) return;
-
-        if (other.GetComponent<WeldableObject>() != null)// get object and remove it from the cluster if attached
+        if (other.CompareTag("PickUpables"))
         {
-            if (other.GetComponent<WeldableObject>().isAttached)
-            {
-                other.GetComponentInParent<Cluster>().RemovePartFromList(other.gameObject);
+            soundScript.PlayAudio(0);
 
-                soundScript.PlayAudio(1);
-                particleScript.PlayOneParticles(other.ClosestPoint(transform.position), 0, true);
+            if (!isGrabbed) return;
+
+            if (other.GetComponent<WeldableObject>() != null)// get object and remove it from the cluster if attached
+            {
+                if (other.GetComponent<WeldableObject>().isAttached)
+                {
+                    other.GetComponentInParent<Cluster>().RemovePartFromList(other.gameObject);
+
+                    soundScript.PlayAudio(1);
+                    particleScript.PlayOneParticles(other.ClosestPoint(transform.position), 0, true);
+                }
             }
         }
     }
