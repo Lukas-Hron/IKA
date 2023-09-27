@@ -22,7 +22,6 @@ public class DoomHammer : MonoBehaviour
         if (other.CompareTag("PickUpables"))
         {
             soundScript.PlayAudio(0);
-            particleScript.PlayBothParticles(other.ClosestPoint(transform.position), 0, 0);
             if (!isGrabbed) return;
 
             if (other.GetComponent<WeldableObject>() != null)// get object and remove it from the cluster if attached
@@ -31,7 +30,7 @@ public class DoomHammer : MonoBehaviour
                 {
                     other.GetComponentInParent<Cluster>().RemoveAllPartsFromList();
                     soundScript.PlayAudio(2,transform.position);
-
+                    particleScript.PlayBothParticles(other.ClosestPoint(transform.position), 0, 0);
                 }
             }
         }
