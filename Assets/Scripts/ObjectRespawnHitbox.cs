@@ -13,10 +13,15 @@ public class ObjectRespawnHitbox : MonoBehaviour
             ObjectRespawn respawnScript = other.gameObject.GetComponent<ObjectRespawn>();
 
             // If the script exists, call its reset method
-            if (respawnScript != null)
+            if (respawnScript != null && respawnScript.enabled)
             {
                 respawnScript.Respawn();
             }
+            else if(other.transform.root.GetComponent<ObjectRespawn>())
+            {
+                other.transform.root.GetComponent<ObjectRespawn>().Respawn();
+            }
+
         }
     }
 }
