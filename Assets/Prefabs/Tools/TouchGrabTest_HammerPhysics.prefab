@@ -457,7 +457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXParticles:
-  - {fileID: 1445863969520266334, guid: 361ee12489d911d4884188ab45f1b498, type: 3}
   - {fileID: 7714557613898086160, guid: 939efbc7fdd24fe4b9833db43fb5a8bf, type: 3}
   systemParticles:
   - {fileID: 5618527769578377198, guid: 04ccff9ff6bda144da405079c651bb95, type: 3}
@@ -473,7 +472,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
