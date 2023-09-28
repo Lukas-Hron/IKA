@@ -12,7 +12,7 @@ public class CarsDoMove : MonoBehaviour
     public static Action<CarsDoMove> thisCar;
     public List<Transform> wayPoints = new List<Transform>();
     int waypointIndex = 0;
-    [SerializeField]float moveSpeed = .1f;
+    [SerializeField]float moveSpeed = .07f;
     private float moveSpeedHolder = 0f;
     private Vector3 bobbing = Vector3.zero;
     [SerializeField]private float floatStrength = 0.0002f;
@@ -77,9 +77,9 @@ public class CarsDoMove : MonoBehaviour
         RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, .1f);
         Debug.DrawRay(transform.position, transform.forward * .1f, Color.yellow, 1f);
 
-        for(int i = 0; hits.Length > i; i++)
+        for(int i = 0; i < hits.Length; i++)
         {
-            if (hits[i].collider != null && hits[i].collider.transform.root.gameObject != this.transform.root.gameObject) ;
+            if (hits[i].collider != null && hits[i].collider.transform.root.gameObject != this.transform.root.gameObject)
             {
                 Debug.Log(hits[i].collider.gameObject.name);
                 moveSpeed = 0;
