@@ -180,8 +180,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.303, y: 2.6413, z: -1.2269}
-  m_LocalScale: {x: 0.01755704, y: 0.01755704, z: 0.01755704}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9199596367032958204}
   - {fileID: 1972855836737605474}
@@ -257,10 +257,10 @@ MonoBehaviour:
     ConstraintsAreRelative: 0
     MinScale:
       Constrain: 1
-      Value: 1
+      Value: 0.03
     MaxScale:
       Constrain: 1
-      Value: 10
+      Value: 0.1
 --- !u!114 &852034142681119351
 MonoBehaviour:
   m_ObjectHideFlags: 0
