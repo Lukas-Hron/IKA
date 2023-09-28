@@ -57,8 +57,12 @@ public class GlueAttacher : MonoBehaviour
         Debug.Log("RELEASED");
         if (allColliders.Count > 0)
         {
-            AttachToObject(this.gameObject, allColliders[0]);
-
+            if (allColliders[0].GetComponent<WeldableObject>() != null)
+            {
+                AttachToObject(this.gameObject, allColliders[0]);
+                return;
+            }
+            AttachToObject(this.gameObject, allColliders[0].transform.parent.gameObject);
         }
     }
 
@@ -72,11 +76,11 @@ public class GlueAttacher : MonoBehaviour
 
         if (obj2Glue != null)
         {
-            print("Eyo!?!??!");
+            //print("Eyo!?!??!");
 
             //GetComponent<Rigidbody>().AddForce((object1.transform.position - object2.transform.position).normalized * 100f, ForceMode.Impulse);
             obj2Glue.RemoveGlue();
-            return;
+            //return;
         }
 
         // both objects are in clusters
