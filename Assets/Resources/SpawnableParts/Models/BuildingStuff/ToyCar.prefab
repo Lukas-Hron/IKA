@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2816293954381503326}
   - component: {fileID: 7711576883472453702}
   - component: {fileID: 5838813060933302110}
+  - component: {fileID: 8144865398058704671}
   m_Layer: 0
   m_Name: chassi_low
   m_TagString: PickUpables
@@ -131,6 +132,18 @@ CapsuleCollider:
   m_Height: 0.04879481
   m_Direction: 2
   m_Center: {x: -0.00030689972, y: -0.0006843097, z: -0.0019443437}
+--- !u!114 &8144865398058704671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621143523444089019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2672847363069294112
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +388,7 @@ GameObject:
   - component: {fileID: 9199596367032958204}
   - component: {fileID: 7594748006051595812}
   - component: {fileID: 37868117638798058}
+  - component: {fileID: 1529741525278516486}
   m_Layer: 0
   m_Name: back_low
   m_TagString: Untagged
@@ -447,6 +461,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1529741525278516486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884133361874037958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8266328643342725262
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +484,7 @@ GameObject:
   - component: {fileID: 1972855836737605474}
   - component: {fileID: 38201395691337577}
   - component: {fileID: 1191242275307102181}
+  - component: {fileID: 1370863923601632980}
   m_Layer: 0
   m_Name: beam_low
   m_TagString: Untagged
@@ -530,3 +557,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1370863923601632980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266328643342725262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
