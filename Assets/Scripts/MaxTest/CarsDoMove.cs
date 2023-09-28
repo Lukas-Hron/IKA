@@ -12,7 +12,7 @@ public class CarsDoMove : MonoBehaviour
     public static Action<CarsDoMove> thisCar;
     public List<Transform> wayPoints = new List<Transform>();
     int waypointIndex = 0;
-    [SerializeField]float moveSpeed = .15f;
+    [SerializeField]float moveSpeed = .1f;
     private float moveSpeedHolder = 0f;
     private Vector3 bobbing = Vector3.zero;
     [SerializeField]private float floatStrength = 0.0002f;
@@ -79,8 +79,9 @@ public class CarsDoMove : MonoBehaviour
 
         for(int i = 0; hits.Length > i; i++)
         {
-            if (hits[i].collider != null && hits[i].collider.gameObject != this.gameObject);
+            if (hits[i].collider != null && hits[i].collider.transform.root.gameObject != this.transform.root.gameObject) ;
             {
+                Debug.Log(hits[i].collider.gameObject.name);
                 moveSpeed = 0;
                 Invoke("CheckForCars", .2f);
                 return;
