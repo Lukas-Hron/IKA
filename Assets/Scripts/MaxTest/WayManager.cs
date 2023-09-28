@@ -21,13 +21,10 @@ public class WayManager : MonoBehaviour
         PlayRugWay tempWay = ways[temp];
         car.wayPoints = tempWay.wayPoints;
 
-
         spawner.PlayOneParticles(car.transform.position, 0, true);
 
-
-
-        Debug.Log("Called");
         car.FixRotPos();
+        car.myWay = tempWay;
         tempWay.Drive += car.MoveCar;
     }
     
