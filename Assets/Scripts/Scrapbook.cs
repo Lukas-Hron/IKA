@@ -228,7 +228,6 @@ public class Scrapbook : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        //bookAnimator.SetTrigger("Close");
-        //colliderAnimator.SetTrigger("Close");
+        bookAnimator.SetTrigger("Close");
     }
 }
