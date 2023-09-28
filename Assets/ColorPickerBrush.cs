@@ -46,9 +46,10 @@ public class ColorPickerBrush : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other.GetComponent<Colorable>() != null)
+        Colorable colorable = other.GetComponent<Colorable>();
+            if (colorable != null)
             {
-                other.GetComponent<Renderer>().material.color = currentColor;
+                colorable.Renderer.material.color = currentColor;
             }
     }
 }
