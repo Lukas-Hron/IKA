@@ -49,7 +49,7 @@ public class Scrapbook : MonoBehaviour
         CreatePagesAllItems();
         SetupOpenPage();
 
-        //CloseBook();
+        CloseBook();
     }
 
     private void CreateRecipePages()
@@ -116,6 +116,8 @@ public class Scrapbook : MonoBehaviour
         bool isRecipePage = false;
 
         RectTransform pageToAddTo = leftPage;
+
+        StartCoroutine(SetupPageDelay());
 
         if (pageIndex < recipeItems.Count)
         {
@@ -187,7 +189,7 @@ public class Scrapbook : MonoBehaviour
             soundScript.PlayAudio(0);
         }
 
-        StartCoroutine(SetupPageDelay());
+        SetupOpenPage();
     }
 
     public void FlipToPreviousPage()
@@ -205,13 +207,12 @@ public class Scrapbook : MonoBehaviour
             soundScript.PlayAudio(1);
         }
 
-        StartCoroutine(SetupPageDelay());
+        SetupOpenPage();    
     }
 
     private IEnumerator SetupPageDelay()
     {
         yield return new WaitForSeconds(0.4f);
-        SetupOpenPage();
     }
 
     private void OnEnable() => OpenBook();
