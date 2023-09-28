@@ -20,7 +20,7 @@ public class GlueDipper : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PickUpables"))
+        if (other.CompareTag("PickUpables") && other.GetComponent<WeldableObject>() != null)
         {
             soundPlay.PlayAudio(0);
             if (other.GetComponent<GlueAttacher>() == null)
