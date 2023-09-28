@@ -17,7 +17,6 @@ public class Scrapbook : MonoBehaviour
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
     [SerializeField] Animator bookAnimator;
-    [SerializeField] Animator colliderAnimator;
 
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] GameObject recipeButton;
@@ -223,14 +222,12 @@ public class Scrapbook : MonoBehaviour
         gameObject.SetActive(true);
 
         bookAnimator.SetTrigger("Open");
-        colliderAnimator.SetTrigger("Open");
     }
 
     public void CloseBook()
     {
         gameObject.SetActive(false);
 
-        //bookAnimator.SetTrigger("Close");
-        //colliderAnimator.SetTrigger("Close");
+        bookAnimator.SetTrigger("Close");
     }
 }

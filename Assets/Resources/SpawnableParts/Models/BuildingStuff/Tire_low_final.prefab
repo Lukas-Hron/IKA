@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttached: 0
-  MyPart: 0
+  MyPart: 1
 --- !u!114 &3936907414056933552
 MonoBehaviour:
   m_ObjectHideFlags: 0
