@@ -28,7 +28,7 @@ public class CarsDoMove : MonoBehaviour
         Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
         Destroy(gameObject.GetComponent<Collider>());
         Destroy(gameObject.GetComponent<WeldableObject>());
-        
+        Destroy(gameObject.GetComponent<WeldableObject>());
         Destroy(gameObject.GetComponent<HandGrabInteractable>());
         thisCar?.Invoke(this);
         moveSpeedHolder = moveSpeed;
@@ -74,7 +74,7 @@ public class CarsDoMove : MonoBehaviour
     }
     private void CheckForCars()
     {
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, .1f);
+        RaycastHit[] hits = Physics.RaycastAll(new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z) , transform.forward, .1f);
         Debug.DrawRay(transform.position, transform.forward * .1f, Color.yellow, 1f);
 
         for(int i = 0; i < hits.Length; i++)
