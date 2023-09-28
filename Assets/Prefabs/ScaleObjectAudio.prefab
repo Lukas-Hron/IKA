@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced30fb0d3378c442934280394576509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableView: {fileID: 4361803865546811291}
+  _interactableView: {fileID: 29953799066474407}
   _trackedTransform: {fileID: 0}
   _stepSize: 0.6
   _maxEventFreq: 25
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 4667355036802485334}
   - component: {fileID: 5436290385871011977}
   - component: {fileID: 5704031838459474867}
-  - component: {fileID: 4361803865546811291}
+  - component: {fileID: 29953799066474407}
   m_Layer: 0
   m_Name: ScaleObjectAudio
   m_TagString: Untagged
@@ -372,7 +372,7 @@ MonoBehaviour:
   _minimumVelocity: 0.05
   _timeBetweenCollisions: 0.2
   _allowMultipleCollisions: 0
---- !u!114 &4361803865546811291
+--- !u!114 &29953799066474407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -384,7 +384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bff16bb2b8cae9409e88ec4d3527c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactables: []
+  _interactables:
+  - {fileID: 0}
   _data: {fileID: 0}
 --- !u!1 &1835532266472630193
 GameObject:
