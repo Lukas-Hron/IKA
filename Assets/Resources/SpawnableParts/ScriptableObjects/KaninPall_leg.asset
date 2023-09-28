@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
+  m_Name: KaninPall_leg
+  m_EditorClassIdentifier: 
+  partPrefab: {fileID: 4966296940233911066, guid: 6c02c93bb1b41a641853e901f8b98e68,
+    type: 3}
+  partSprite: {fileID: 21300000, guid: f121fd6c9a64c4b488b441a551c82409, type: 3}
+  wholeItemDecorSprite: {fileID: 0}
