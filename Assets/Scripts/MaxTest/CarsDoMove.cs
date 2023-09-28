@@ -20,14 +20,19 @@ public class CarsDoMove : MonoBehaviour
 
     Vector3 transformExy = Vector3.zero;
     Vector3 wayPointExy = Vector3.zero;
+
+    public PlayRugWay myWay = null;
     public void StartCar()
     {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.GetComponent<WeldableObject>());
+        }
         Debug.Log("Hello");
         Destroy(gameObject.GetComponent<Grabbable>());
         Destroy(gameObject.GetComponent<PhysicsGrabbable>());
         Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
         Destroy(gameObject.GetComponent<Collider>());
-        Destroy(gameObject.GetComponent<WeldableObject>());
         Destroy(gameObject.GetComponent<WeldableObject>());
         Destroy(gameObject.GetComponent<HandGrabInteractable>());
         thisCar?.Invoke(this);
@@ -89,5 +94,11 @@ public class CarsDoMove : MonoBehaviour
         }
         moveSpeed = moveSpeedHolder;
         Invoke("CheckForCars", .2f);
+        
+    }
+    private void OnDestroy()
+    {
+        CancelInvoke();
+        myWay.Drive -= MoveCar;
     }
 }
