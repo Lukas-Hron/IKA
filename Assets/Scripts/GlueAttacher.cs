@@ -72,11 +72,11 @@ public class GlueAttacher : MonoBehaviour
 
         if (obj2Glue != null)
         {
-            print("Eyo!?!??!");
+            //print("Eyo!?!??!");
 
             //GetComponent<Rigidbody>().AddForce((object1.transform.position - object2.transform.position).normalized * 100f, ForceMode.Impulse);
             obj2Glue.RemoveGlue();
-            return;
+            //return;
         }
 
         // both objects are in clusters
