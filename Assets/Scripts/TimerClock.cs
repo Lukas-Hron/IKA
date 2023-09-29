@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class AlarmClock : MonoBehaviour
+public class TimerClock : MonoBehaviour
 {
     [SerializeField] TextMeshPro timerText;
     [SerializeField] AudioSource timerSource;

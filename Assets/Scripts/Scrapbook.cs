@@ -46,10 +46,11 @@ public class Scrapbook : MonoBehaviour
         CreateRecipePages();
         CreatePagesAllItems();
         SetupOpenPage();
-
+            }
+    private void Start()
+    {
         CloseBook();
     }
-
     private void CreateRecipePages()
     {
         List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page

@@ -7,6 +7,9 @@ public class BackgroundMusic : MonoBehaviour
     [SerializeField] List<AudioClip> hourlyMusic = new List<AudioClip>();
     [SerializeField] AudioSource audioSource;
 
+    [SerializeField] TimerClock timer;
+    [SerializeField] AudioClip timerMusic;
+
     int clipIndex = 0;
 
     private void Start()
@@ -15,6 +18,9 @@ public class BackgroundMusic : MonoBehaviour
         audioSource.clip = hourlyMusic[clipIndex];
         audioSource.Play();
         StartCoroutine(ChangeMusic());
+
+        timer.TimerStarted += OnTimerStarted;
+        timer.TimerEnded += OnTimerEnded;
     }
 
     private IEnumerator ChangeMusic()
@@ -24,8 +30,17 @@ public class BackgroundMusic : MonoBehaviour
         clipIndex++;
         audioSource.clip = hourlyMusic[clipIndex];
         audioSource.Play();
-
-
     }
 
+    private void OnTimerStarted()
+    {
+        audioSource.clip = timerMusic;
+        audioSource.Play();
+    }
+
+    private void OnTimerEnded()
+    {
+        audioSource.clip = hourlyMusic[clipIndex];
+        audioSource.Play();
+    }
 }
