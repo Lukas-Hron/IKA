@@ -469,6 +469,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330555808}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &380832639 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9105177557311622694, guid: 2218a41e85666944da3fbbb83b582445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1764974057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404658640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,6 +2658,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2514202675564459027, guid: 2218a41e85666944da3fbbb83b582445,
+        type: 3}
+      propertyPath: timerSource
+      value: 
+      objectReference: {fileID: 380832639}
     - target: {fileID: 4075400016187229858, guid: 2218a41e85666944da3fbbb83b582445,
         type: 3}
       propertyPath: m_Name
@@ -3043,7 +3054,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 43a246d86be42004c9f1a5122200cf28, type: 3}
   - {fileID: 8300000, guid: 175d0f9c02ee9c946a9efe1b9e2c8c43, type: 3}
   audioSource: {fileID: 1916223500}
-  timer: {fileID: 0}
   timerMusic: {fileID: 0}
 --- !u!1 &1971981422
 GameObject:
