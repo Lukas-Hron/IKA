@@ -17,6 +17,7 @@ public class Scrapbook : MonoBehaviour
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
     [SerializeField] Animator bookAnimator;
+    [SerializeField] Animator bookAnimator2;
 
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] GameObject recipeButton;
@@ -39,10 +40,7 @@ public class Scrapbook : MonoBehaviour
         recipeItems = new List<SpawnableObjectSO>(Resources.LoadAll<SpawnableObjectSO>("SpawnableParts/WholeItemsSO"));
 
         buttonPartConnection.Add(recipeButton, recipeItems[0].partPrefab);
-    }
 
-    private void Start()
-    {
         soundScript = GetComponent<SoundPlayer>();
 
         CreateRecipePages();
@@ -207,7 +205,7 @@ public class Scrapbook : MonoBehaviour
             soundScript.PlayAudio(1);
         }
 
-        SetupOpenPage();    
+        SetupOpenPage();
     }
 
     private IEnumerator SetupPageDelay()
@@ -223,6 +221,7 @@ public class Scrapbook : MonoBehaviour
         gameObject.SetActive(true);
 
         bookAnimator.SetTrigger("Open");
+        bookAnimator2.SetTrigger("LiftUp");
     }
 
     public void CloseBook()
@@ -230,5 +229,6 @@ public class Scrapbook : MonoBehaviour
         gameObject.SetActive(false);
 
         bookAnimator.SetTrigger("Close");
+        bookAnimator2.SetTrigger("PutDown");
     }
 }
