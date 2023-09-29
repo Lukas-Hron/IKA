@@ -60,8 +60,6 @@ public class GroanTube : MonoBehaviour
     private void CheckDotProduct()
     {
         float dot = Vector3.Dot(transform.position.normalized, transform.up);
-        Debug.Log(dot);
-        Debug.DrawRay(transform.position,transform.up, Color.yellow,5,false);
 
         if (isDown)
         {
