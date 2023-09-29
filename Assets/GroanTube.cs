@@ -9,6 +9,7 @@ public class GroanTube : MonoBehaviour
     private Rigidbody rb;
     private Vector3 lastPosition;
     private Vector3 lastVelocity;
+    private Vector3 currentVelocity;
 
     #region Audio Clip Lists
 
@@ -35,22 +36,24 @@ public class GroanTube : MonoBehaviour
         // Calculate velocity manually if Rigidbody is kinematic
         if (rb.isKinematic)
         {
-            lastVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
+            currentVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
             lastPosition = transform.position;
         }
         else
         {
-            lastVelocity = rb.velocity;
+            currentVelocity = rb.velocity;
         }
 
         CheckVelocityChange();
         CheckDotProduct();
+
+        lastVelocity = currentVelocity;
     }
 
     private void CheckVelocityChange()
     {
         // Use lastVelocity, which is updated based on whether the Rigidbody is kinematic or not
-        Vector3 velocity = lastVelocity;
+        Vector3 velocity = currentVelocity;
         float dif = Mathf.Abs((velocity - lastVelocity).magnitude) / Time.fixedDeltaTime;
 
         if (dif > maxChange)
