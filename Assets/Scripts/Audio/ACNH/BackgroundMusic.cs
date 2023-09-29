@@ -7,7 +7,7 @@ public class BackgroundMusic : MonoBehaviour
     [SerializeField] List<AudioClip> hourlyMusic = new List<AudioClip>();
     [SerializeField] AudioSource audioSource;
 
-    [SerializeField] TimerClock timer;
+    private TimerClock timer;
     [SerializeField] AudioClip timerMusic;
 
     int clipIndex = 0;
@@ -18,6 +18,8 @@ public class BackgroundMusic : MonoBehaviour
         audioSource.clip = hourlyMusic[clipIndex];
         audioSource.Play();
         StartCoroutine(ChangeMusic());
+
+        timer = FindObjectOfType<TimerClock>();
 
         timer.TimerStarted += OnTimerStarted;
         timer.TimerEnded += OnTimerEnded;
