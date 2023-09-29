@@ -2,40 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class AlarmClock : MonoBehaviour
 {
     [SerializeField] TextMeshPro timerText;
-    [SerializeField] AudioSource alarmSource;
+    [SerializeField] AudioSource timerSource;
+
+    [SerializeField] AudioClip timerStart;
+    [SerializeField] AudioClip timerEnd;
+
+    public event Action TimerStarted;
+    public event Action TimerEnded;
 
     private float timer = 0;
-    private float maxAlarmTime = 800;
-
     private bool timerRunning;
-    private bool alarmRunning;
 
     private void Start()
     {
         timerText.text = "00:00";
+        timerSource.Stop();
+    }
+
+    public void StartTimer()
+    {
+        timerText.text = "00:00";
+
+        TimerStarted?.Invoke();
         timerRunning = true;
 
-        alarmRunning = false;
-        alarmSource.Stop();
-        float alarmTimer = Random.Range(30, maxAlarmTime);
-        Invoke(nameof(StartAlarm), alarmTimer);
+        timerSource.clip = timerStart;
+        timerSource.Play();
+
+        StartCoroutine(Timer());
     }
 
-    private void StartAlarm()
+    private IEnumerator Timer()
     {
-        alarmSource.Play();
-        alarmRunning = true;
-    }
-
-    private void Update()
-    {
-        if (!timerRunning) return;
-
-        if (timer > 0)
+        while (timerRunning)
         {
             timer += Time.deltaTime;
 
@@ -43,20 +47,17 @@ public class AlarmClock : MonoBehaviour
             int seconds = Mathf.FloorToInt(timer % 60);
 
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
         }
+
+        yield return null;
     }
 
-    public void TurnOffAlarm()
+    public void StopTimer()
     {
-        if (!alarmRunning) return;
+        TimerEnded?.Invoke();
+        timerRunning = false;
 
-        alarmSource.Stop();
-
-        if (timerRunning)
-        {
-            float alarmTimer = Random.Range(30, maxAlarmTime);
-            Invoke(nameof(StartAlarm), alarmTimer);
-        }
+        timerSource.clip = timerEnd;
+        timerSource.Play();
     }
 }

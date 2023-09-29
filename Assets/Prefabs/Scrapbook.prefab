@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookAnimator: {fileID: 8485983824556148289}
-  bookAnimator2: {fileID: 0}
+  bookAnimator2: {fileID: 2329050671883186303}
   buttonPrefab: {fileID: 3011012427632218037, guid: 302df128e785fca46b8de58a5197cf95,
     type: 3}
   recipeButton: {fileID: 6789863827624558658}
