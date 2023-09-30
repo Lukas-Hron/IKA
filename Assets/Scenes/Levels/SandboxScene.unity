@@ -1086,21 +1086,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6843436343850916675, guid: c2d6ca31ebdb5854ebedfd33b5a199bd,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843436343850916675, guid: c2d6ca31ebdb5854ebedfd33b5a199bd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843436343850916675, guid: c2d6ca31ebdb5854ebedfd33b5a199bd,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843436343850916675, guid: c2d6ca31ebdb5854ebedfd33b5a199bd,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5343395
       objectReference: {fileID: 0}
@@ -1148,11 +1133,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843436343850916675, guid: c2d6ca31ebdb5854ebedfd33b5a199bd,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2421,6 +2401,16 @@ PrefabInstance:
       propertyPath: _hand
       value: 
       objectReference: {fileID: 7018375}
+    - target: {fileID: 4237075420112044839, guid: 685dd68adcc7bca40a6a417cd60340f8,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c236a1152ad1d394c9767dcb4e04b8bb, type: 3}
+    - target: {fileID: 4237075420112044839, guid: 685dd68adcc7bca40a6a417cd60340f8,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624779892666780219, guid: 685dd68adcc7bca40a6a417cd60340f8,
         type: 3}
       propertyPath: m_Name
@@ -2481,11 +2471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.257
       objectReference: {fileID: 0}
-    - target: {fileID: 6634506028503424544, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 6980702805668029933, guid: 685dd68adcc7bca40a6a417cd60340f8,
         type: 3}
       propertyPath: _hand
@@ -2510,11 +2495,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7891303187794578815, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8151654194789159216, guid: 685dd68adcc7bca40a6a417cd60340f8,
         type: 3}
@@ -3043,8 +3023,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 43a246d86be42004c9f1a5122200cf28, type: 3}
   - {fileID: 8300000, guid: 175d0f9c02ee9c946a9efe1b9e2c8c43, type: 3}
   audioSource: {fileID: 1916223500}
-  timer: {fileID: 0}
-  timerMusic: {fileID: 0}
+  timerMusic: {fileID: 8300000, guid: e942671254deed54baa34ab4f890347a, type: 3}
 --- !u!1 &1971981422
 GameObject:
   m_ObjectHideFlags: 0

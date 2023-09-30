@@ -24,7 +24,16 @@ public class TimerClock : MonoBehaviour
         timerSource.Stop();
     }
 
-    public void StartTimer()
+    public void OnPress()
+    {
+        if (timerRunning)
+            StopTimer();
+
+        else
+            StartTimer();
+    }
+
+    private void StartTimer()
     {
         timerText.text = "00:00";
 
@@ -52,7 +61,7 @@ public class TimerClock : MonoBehaviour
         yield return null;
     }
 
-    public void StopTimer()
+    private void StopTimer()
     {
         TimerEnded?.Invoke();
         timerRunning = false;
