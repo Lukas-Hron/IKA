@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5861869084544481757}
   - component: {fileID: 1408257293599372883}
-  - component: {fileID: 4739035844494186539}
   m_Layer: 0
   m_Name: Collider
   m_TagString: PickUpables
@@ -56,29 +55,6 @@ CapsuleCollider:
   m_Height: 9.125461
   m_Direction: 2
   m_Center: {x: -0.000015680831, y: -0.6221253, z: -4.2620287}
---- !u!136 &4739035844494186539
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937822101332722113}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.122129
-  m_Height: 9.125461
-  m_Direction: 2
-  m_Center: {x: -0.000015680831, y: -0.6221253, z: -4.2620287}
 --- !u!1 &6769268725803362819
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +76,7 @@ GameObject:
   - component: {fileID: 4227604334862838276}
   - component: {fileID: 6877300276766980547}
   - component: {fileID: 7751725985887029322}
+  - component: {fileID: 1436987851025326905}
   m_Layer: 0
   m_Name: KaninPall_backleft
   m_TagString: PickUpables
@@ -364,6 +341,28 @@ MonoBehaviour:
   _boundsCollider: {fileID: 1408257293599372883}
   _colliders:
   - {fileID: 1408257293599372883}
+--- !u!64 &1436987851025326905
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769268725803362819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3654281733545973804, guid: aa5541c32d281324ebdaec5c1ccae932, type: 3}
 --- !u!1001 &668195763283052397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,17 +404,17 @@ PrefabInstance:
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0480917
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6947179
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14682879
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}

@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 4241736613982901105}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
-  m_LocalPosition: {x: 0.55064094, y: 4.1265407, z: -0.98728}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Renderer: {fileID: 0}
 --- !u!114 &2270717818299297469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,32 +355,32 @@ PrefabInstance:
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.44444448
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.44444442
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.44444442
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.87178344
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9612157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.22153792
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667355036802485334, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
