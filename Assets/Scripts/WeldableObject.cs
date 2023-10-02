@@ -17,7 +17,7 @@ public class WeldableObject : MonoBehaviour
     private TouchHandGrabInteractable touchGrab;
     private ObjectRespawn objectRespawn;
     public bool isAttached;
-    public enum Parts {Ordinary, Wheel}
+    public enum Parts {Ordinary, Wheel, Anchor}
     public Parts MyPart = Parts.Ordinary;
     
 
