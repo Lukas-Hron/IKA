@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
+  m_Name: VaggfasteLOW (1)
+  m_EditorClassIdentifier: 
+  partPrefab: {fileID: 6051369029544761916, guid: c84be0b4203d33447af3011e6515f62f,
+    type: 3}
+  partSprite: {fileID: -7534710504798566327, guid: 64f884351318b694f942625580e64a8b,
+    type: 3}
+  wholeItemDecorSprite: {fileID: 0}
