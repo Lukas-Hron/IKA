@@ -10,7 +10,7 @@ public class SoundPlayer : MonoBehaviour
     public AudioClip[] audioClips;
 
 
-    private void Start()
+    private void Awake()
     {
         audioSause = GetComponent<AudioSource>();
     }

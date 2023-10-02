@@ -16,6 +16,10 @@ public class Scrapbook : MonoBehaviour
 
     private Dictionary<GameObject, GameObject> buttonPartConnection = new Dictionary<GameObject, GameObject>();
 
+    private ObjectSpawner objectSpawner;
+
+    [SerializeField] GameObject canvas;
+
     [SerializeField] Animator bookAnimator;
     [SerializeField] Animator bookAnimator2;
 
@@ -29,9 +33,15 @@ public class Scrapbook : MonoBehaviour
     [SerializeField] RectTransform leftPage;
     [SerializeField] RectTransform rightPage;
 
+    [SerializeField] Button flipNextButton;
+    [SerializeField] Button flipPreviousButton;
+
     private SoundPlayer soundScript;
 
     private int pageIndex = 0;
+    private int allPartsPages = 0;
+
+    private int maxItemsPerPage = 10;
     private bool settingUpPage;
 
     private void Awake()
@@ -40,17 +50,46 @@ public class Scrapbook : MonoBehaviour
         recipeItems = new List<SpawnableObjectSO>(Resources.LoadAll<SpawnableObjectSO>("SpawnableParts/WholeItemsSO"));
 
         buttonPartConnection.Add(recipeButton, recipeItems[0].partPrefab);
+        objectSpawner = GetComponent<ObjectSpawner>();
 
         soundScript = GetComponent<SoundPlayer>();
 
-        CreateRecipePages();
         CreatePagesAllItems();
-        SetupOpenPage();
+        CreateRecipePages();
+        SetBlankPages();
     }
 
     private void Start()
     {
-        CloseBook();
+        flipPreviousButton.interactable = false;
+    }
+
+    private void CreatePagesAllItems()
+    {
+        int index = 0;
+
+        List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
+
+        foreach (SpawnableObjectSO partSO in spawnableParts)
+        {
+            if (index >= maxItemsPerPage * 2) //10 is the max amount in a page so 20 in uppslag so add to pages and clear
+            {
+                totPages.Add(page);
+                page = new List<SpawnableObjectSO>();
+                index = 0;
+                allPartsPages++;
+            }
+            //add item to page
+            page.Add(partSO);
+            index++;
+        }
+
+        //add the last items to page even if its not a whole page
+        if (page.Count > 0)
+        {
+            totPages.Add(page);
+            allPartsPages++;
+        }
     }
 
     private void CreateRecipePages()
@@ -74,35 +113,8 @@ public class Scrapbook : MonoBehaviour
         }
     }
 
-    private void CreatePagesAllItems()
+    private void SetBlankPages()
     {
-        int index = 0;
-
-        List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
-
-        foreach (SpawnableObjectSO partSO in spawnableParts)
-        {
-
-            if (index >= 36) //36 is the max amount in a uppslag so add to uppslag and clear
-            {
-                totPages.Add(page);
-                page = new List<SpawnableObjectSO>();
-                index = 0;
-            }
-            //add item to page
-            page.Add(partSO);
-            index++;
-        }
-
-        if (page.Count > 0)//add the last items to page even if its not a whole page
-            totPages.Add(page);
-    }
-
-    private void SetupOpenPage()
-    {
-        if (settingUpPage) return;
-        settingUpPage = true;
-
         // Reset the pages
         if (leftPage.childCount != 0)
             foreach (RectTransform child in leftPage) { Destroy(child.gameObject); }
@@ -112,15 +124,21 @@ public class Scrapbook : MonoBehaviour
         // Reset dictionary and add back the recipebutton
         buttonPartConnection.Clear();
         buttonPartConnection.Add(recipeButton, recipeItems[0].partPrefab);
+    }
+
+    public void SetupOpenPage()
+    {
+        if (settingUpPage) return;
+        settingUpPage = true;
+
+        canvas.SetActive(true);
 
         int spawnedItems = 0;
         bool isRecipePage = false;
 
         RectTransform pageToAddTo = leftPage;
 
-        StartCoroutine(SetupPageDelay());
-
-        if (pageIndex < recipeItems.Count)
+        if (pageIndex >= allPartsPages)// recipes now
         {
             pageToAddTo = recipePage;
             isRecipePage = true;
@@ -131,7 +149,7 @@ public class Scrapbook : MonoBehaviour
             recipeName.text = totPages[pageIndex][0].name;
             recipeDecorImage.sprite = totPages[pageIndex][0].wholeItemDecorSprite;
 
-            spawnedItems = 17; //main page should only have the one item on left page
+            spawnedItems = maxItemsPerPage - 1; //main page should only have the one item on left page
         }
         else
         {
@@ -141,7 +159,7 @@ public class Scrapbook : MonoBehaviour
 
         foreach (SpawnableObjectSO part in totPages[pageIndex])
         {
-            if (spawnedItems >= 18) //18 is max amount in a page so switch pages
+            if (spawnedItems >= maxItemsPerPage) //18 is max amount in a page so switch pages
             {
                 pageToAddTo = rightPage;
                 isRecipePage = false;
@@ -170,72 +188,62 @@ public class Scrapbook : MonoBehaviour
             buttonPartConnection.Add(button, partSO.partPrefab);
         }
 
-        button.GetComponent<Button>().onClick.AddListener(() => ObjectSpawner.SpawnObject(buttonPartConnection[button]));
-
+        button.GetComponent<Button>().onClick.AddListener(() => objectSpawner.SpawnObject(buttonPartConnection[button]));
         button.GetComponent<Image>().sprite = partSO.partSprite;
     }
 
     public void FlipToNextPage()
     {
-        if (!gameObject.activeInHierarchy) return;
+        if (!canvas.activeInHierarchy) return;
+        SetBlankPages();
 
-        int pageIndexBefore = pageIndex;
         pageIndex++;
-
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
-        if (pageIndex != pageIndexBefore)
-        {
-            bookAnimator.SetTrigger("FlipToNext");
-            soundScript.PlayAudio(0);
-        }
+        flipNextButton.interactable = (pageIndex == totPages.Count - 1) ? false : true;
+        flipPreviousButton.interactable = true;
 
-        SetupOpenPage();
+        bookAnimator.SetTrigger("FlipToNext");
+
+        soundScript.PlayAudio(0);
+        Invoke(nameof(FlipPage), 0.4f);
     }
 
     public void FlipToPreviousPage()
     {
-        if (!gameObject.activeInHierarchy) return;
+        if (!canvas.activeInHierarchy) return;
+        SetBlankPages();
 
-        int pageIndexBefore = pageIndex;
         pageIndex--;
-
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
 
-        if (pageIndex != pageIndexBefore)
-        {
-            bookAnimator.SetTrigger("FlipToPrevious");
-            soundScript.PlayAudio(1);
-        }
+        flipPreviousButton.interactable = (pageIndex == 0) ? false : true;
+        flipNextButton.interactable = true;
 
-        SetupOpenPage();
+        bookAnimator.SetTrigger("FlipToPrevious");
+
+        soundScript.PlayAudio(0);
+        Invoke(nameof(FlipPage), 0.4f);
     }
 
-    private IEnumerator SetupPageDelay()
-    {
-        yield return new WaitForSeconds(0.4f);
-    }
-
-    private void OnEnable() => OpenBook();
-    private void OnDisable() => CloseBook();
+    private void FlipPage() => SetupOpenPage();
 
     public void OpenBook()
     {
-        gameObject.SetActive(true);
-
         bookAnimator.SetTrigger("Open");
         bookAnimator2.SetTrigger("LiftUp");
 
-      //  soundScript.PlayAudio(2);
+        soundScript.PlayAudio(1);
+        SetBlankPages();
     }
 
     public void CloseBook()
     {
-        gameObject.SetActive(false);
+        canvas.SetActive(false);
 
         bookAnimator.SetTrigger("Close");
         bookAnimator2.SetTrigger("PutDown");
 
-       // soundScript.PlayAudio(3);
+        soundScript.PlayAudio(2);
     }
 }
