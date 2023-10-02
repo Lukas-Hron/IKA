@@ -59,7 +59,13 @@ public class GlueAttacher : MonoBehaviour
         {
             if (allColliders[0].GetComponent<WeldableObject>() != null)
             {
-                AttachToObject(this.gameObject, allColliders[0]);
+                try
+                {
+                    AttachToObject(this.gameObject, allColliders[0]);
+                }
+                catch
+                {
+                }
                 return;
             }
             else if(allColliders[0].transform.parent.gameObject.GetComponent<WeldableObject>() != null)
