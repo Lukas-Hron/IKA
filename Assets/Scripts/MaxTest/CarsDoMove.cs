@@ -10,11 +10,14 @@ using static UnityEngine.GraphicsBuffer;
 public class CarsDoMove : MonoBehaviour
 {
     public static Action<CarsDoMove> thisCar;
+
     public List<Transform> wayPoints = new List<Transform>();
     int waypointIndex = 0;
     [SerializeField]float moveSpeed = .07f;
+
     private float moveSpeedHolder = 0f;
     private Vector3 bobbing = Vector3.zero;
+
     [SerializeField]private float floatStrength = 0.0002f;
     [SerializeField]private float bobFrequency = 10f;
 
@@ -22,40 +25,66 @@ public class CarsDoMove : MonoBehaviour
     Vector3 wayPointExy = Vector3.zero;
 
     public PlayRugWay myWay = null;
-    public void StartCar()
+
+    private Rigidbody rb = null;
+
+    private void Start()
     {
-        foreach(Transform child in transform)
-        {
-            Destroy(child.GetComponent<WeldableObject>());
-        }
-        Debug.Log("Hello");
-        Destroy(gameObject.GetComponent<Grabbable>());
-        Destroy(gameObject.GetComponent<PhysicsGrabbable>());
-        Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
-        Destroy(gameObject.GetComponent<Collider>());
-        Destroy(gameObject.GetComponent<WeldableObject>());
-        Destroy(gameObject.GetComponent<HandGrabInteractable>());
-        thisCar?.Invoke(this);
-        moveSpeedHolder = moveSpeed;
-        CheckForCars();
+        rb = GetComponent<Rigidbody>();
     }
+    public void StartCar(bool enabledScripts = false)
+    {
+        
+        //EnabledScripts(enabledScripts);
+        //Destroy(gameObject.GetComponent<Collider>());
+      
+        if (enabledScripts == false)
+        {
+            thisCar?.Invoke(this);
+            moveSpeedHolder = moveSpeed;
+            CheckForCars();
+        }
+        else if(wayPoints.Count > 0)
+        {
+            myWay.Drive -= MoveCar;
+            CancelInvoke();
+            wayPoints.Clear();
+            
+            rb.constraints = RigidbodyConstraints.None;
+            waypointIndex = 0;
+        }
+
+    }
+
+    private void EnabledScripts(bool enabledScripts)
+    {
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<WeldableObject>().enabled = enabledScripts;
+        }
+
+        gameObject.GetComponent<Grabbable>().enabled = enabledScripts;
+        gameObject.GetComponent<PhysicsGrabbable>().enabled = enabledScripts;
+        gameObject.GetComponent<TouchHandGrabInteractable>().enabled = enabledScripts;
+        gameObject.GetComponent<WeldableObject>().enabled = enabledScripts;
+        gameObject.GetComponent<HandGrabInteractable>().enabled = enabledScripts;
+    }
+
     public void FixRotPos()
     {
         //instantiate smokepuff
         //transform.position = new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z);
-
-        transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
-        Destroy(gameObject.GetComponent<Rigidbody>());
-        
+         rb.constraints = RigidbodyConstraints.FreezePosition;
+         rb.freezeRotation = true;
     }
     public void MoveCar(float deltaTime) // might have to forget about the y axis so that cars dont go underground
     {
-        bobbing = transform.position;
-        bobbing.y = (Mathf.Sin(Time.time * bobFrequency) * floatStrength);
+        
+       
 
         if (waypointIndex <= wayPoints.Count - 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x,transform.position.y, wayPoints[waypointIndex].position.z), moveSpeed * deltaTime) + new Vector3(0,bobbing.y,0);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x, transform.position.y, wayPoints[waypointIndex].position.z), moveSpeed * deltaTime);// + new Vector3(0,bobbing.y,0);
 
             transformExy = new Vector3(transform.position.x, 0, transform.position.z);
             wayPointExy = new Vector3(wayPoints[waypointIndex].position.x, 0, wayPoints[waypointIndex].position.z);
