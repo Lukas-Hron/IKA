@@ -28,7 +28,6 @@ public class TimerClock : MonoBehaviour
     {
         if (timerRunning)
             StopTimer();
-
         else
             StartTimer();
     }

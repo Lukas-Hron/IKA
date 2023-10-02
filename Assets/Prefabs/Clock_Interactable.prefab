@@ -688,7 +688,7 @@ MonoBehaviour:
   onPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1337584730885654618}
         m_TargetAssemblyTypeName: TimerClock, Assembly-CSharp
         m_MethodName: OnPress
         m_Mode: 1
