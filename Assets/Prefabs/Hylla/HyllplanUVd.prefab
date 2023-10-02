@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8483774927189818987}
     m_Modifications:
+    - target: {fileID: 29953799066474407, guid: a55760290867cb74095fb43d7b7ec272,
+        type: 3}
+      propertyPath: _interactables.Array.data[0]
+      value: 
+      objectReference: {fileID: 3270152524622295789}
     - target: {fileID: 1326046535051770123, guid: a55760290867cb74095fb43d7b7ec272,
         type: 3}
       propertyPath: m_Name
@@ -100,17 +105,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a6788a87198e6774892a853ddfe767c0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47232634
+      value: 1.1097152
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6788a87198e6774892a853ddfe767c0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.742897
+      value: 1.1664171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6788a87198e6774892a853ddfe767c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.78139615
+      value: 0.37600935
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6788a87198e6774892a853ddfe767c0,
         type: 3}
