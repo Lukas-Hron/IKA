@@ -8,6 +8,10 @@ public class ColorPickerBrush : MonoBehaviour
     public Material brushMaterial;
     public Color currentColor;      // This is the color picked up from the texture.
 
+    private void Start()
+    {
+        brushMaterial.color = Color.white;
+    }
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log("Found " + other.name);
