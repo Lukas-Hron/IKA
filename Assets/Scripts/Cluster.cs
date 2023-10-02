@@ -1,6 +1,9 @@
 using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +14,9 @@ public class Cluster : MonoBehaviour
     public List<GameObject> parts = new List<GameObject>();
     private int amountOfWheels;
     private bool isCar = false;
+
+    private int amountShelves;
+    private bool isShelf = false;
 
     private Vector3 midPosition;
 
@@ -27,9 +33,14 @@ public class Cluster : MonoBehaviour
             case (WeldableObject.Parts.Ordinary): // do nothing
                 break;
 
-            case(WeldableObject.Parts.Wheel):
+            case (WeldableObject.Parts.Wheel):
                 amountOfWheels++;
                 IAmACar();
+                break;
+
+            case (WeldableObject.Parts.Anchor):
+                amountShelves++;
+                IAmAShelf();
                 break;
 
             default:
@@ -50,10 +61,9 @@ public class Cluster : MonoBehaviour
         else
             Debug.Log("Missing Collider");
 
-
-
     }
 
+   
     public void RemovePartFromList(GameObject part)
     {
         if (!parts.Contains(part)) return;
@@ -70,7 +80,10 @@ public class Cluster : MonoBehaviour
                 amountOfWheels--;
                 IAmACar();
                 break;
-
+            case (WeldableObject.Parts.Anchor):
+                amountShelves--;
+                IAmAShelf();
+                break;
             default:
                 break;
         }
@@ -166,5 +179,38 @@ public class Cluster : MonoBehaviour
             gameObject.AddComponent<ObjectRespawn>();
         }
     }
+    private void IAmAShelf()
+    {
+        if (amountShelves > 1) 
+            isShelf = true;
 
+        if (amountShelves < 2)
+            isShelf = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        CheckForWallCollision(collision);
+    }
+
+    private void CheckForWallCollision(Collision collision)
+    {
+        if (!collision.gameObject.CompareTag("Wall")) return;
+        if (isShelf == false) return;
+
+        Destroy(gameObject.GetComponent<ObjectRespawn>());
+        Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
+        Destroy(gameObject.GetComponent<PhysicsGrabbable>());
+        Destroy(gameObject.GetComponent<Grabbable>());
+        Destroy(GetComponent<Rigidbody>());
+
+        foreach (Transform child in transform)
+        {
+            Destroy(child.GetComponent<WeldableObject>());
+        }
+
+        gameObject.tag = "Wall";
+
+        Destroy(this);
+    }
 }

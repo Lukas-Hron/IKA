@@ -11,6 +11,8 @@ TagManager:
   - ColorPickerTexture
   - SamplesInfoPanel
   - GlobalParticleSpawner
+  - Cluster
+  - Wall
   layers:
   - Default
   - TransparentFX
