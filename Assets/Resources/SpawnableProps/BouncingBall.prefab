@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 6375037902001823872}
   - component: {fileID: 589979354166068562}
   - component: {fileID: 6412602377576850460}
-  - component: {fileID: 1858836463741216532}
   - component: {fileID: 7286389160607078189}
   - component: {fileID: 7746173599696296869}
   - component: {fileID: 306914902420048480}
@@ -176,26 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1858836463741216532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8407865056671645999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _constraints:
-    ConstraintsAreRelative: 0
-    MinScale:
-      Constrain: 1
-      Value: 1
-    MaxScale:
-      Constrain: 1
-      Value: 10
 --- !u!114 &7286389160607078189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,11 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 0
+  _transferOnSecondSelection: 1
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 6412602377576850460}
-  _twoGrabTransformer: {fileID: 1858836463741216532}
+  _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
 --- !u!114 &7746173599696296869
@@ -264,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minVelocity: 0.01
   bias: 1
-  strength: 0.08
+  strength: 1
   squasher: {fileID: 8857385697173701267}
   upright: {fileID: 6273534926583774253}
   shouldBounce: 1
@@ -331,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809970cb60db7b24cb1779007fdfa1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 0.8
+  bounce: 1
   useVelocityBounce: 1
 --- !u!1 &8610168709770846120
 GameObject:
