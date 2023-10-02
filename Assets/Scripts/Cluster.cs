@@ -181,21 +181,30 @@ public class Cluster : MonoBehaviour
     }
     private void IAmAShelf()
     {
-        if (amountShelves > 1) ;// do things
+        if (amountShelves > 1) 
+            isShelf = true;
+
+        if (amountShelves < 2)
+            isShelf = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        CheckForWallCollision(collision);
+    }
+
+    private void CheckForWallCollision(Collision collision)
+    {
         if (!collision.gameObject.CompareTag("Wall")) return;
         if (isShelf == false) return;
-        
+
         Destroy(gameObject.GetComponent<ObjectRespawn>());
         Destroy(gameObject.GetComponent<TouchHandGrabInteractable>());
         Destroy(gameObject.GetComponent<PhysicsGrabbable>());
         Destroy(gameObject.GetComponent<Grabbable>());
         Destroy(GetComponent<Rigidbody>());
 
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             Destroy(child.GetComponent<WeldableObject>());
         }
@@ -203,6 +212,5 @@ public class Cluster : MonoBehaviour
         gameObject.tag = "Wall";
 
         Destroy(this);
-
     }
 }
