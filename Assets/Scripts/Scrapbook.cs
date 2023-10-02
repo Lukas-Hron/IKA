@@ -46,11 +46,13 @@ public class Scrapbook : MonoBehaviour
         CreateRecipePages();
         CreatePagesAllItems();
         SetupOpenPage();
-            }
+    }
+
     private void Start()
     {
         CloseBook();
     }
+
     private void CreateRecipePages()
     {
         List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
@@ -223,6 +225,8 @@ public class Scrapbook : MonoBehaviour
 
         bookAnimator.SetTrigger("Open");
         bookAnimator2.SetTrigger("LiftUp");
+
+      //  soundScript.PlayAudio(2);
     }
 
     public void CloseBook()
@@ -231,5 +235,7 @@ public class Scrapbook : MonoBehaviour
 
         bookAnimator.SetTrigger("Close");
         bookAnimator2.SetTrigger("PutDown");
+
+       // soundScript.PlayAudio(3);
     }
 }

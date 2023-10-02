@@ -1248,20 +1248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2514202675564459027, guid: 2218a41e85666944da3fbbb83b582445,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4075400016187229858, guid: 2218a41e85666944da3fbbb83b582445,
         type: 3}
       propertyPath: m_Name
       value: AlarmClock
-      objectReference: {fileID: 0}
-    - target: {fileID: 4075400016187229858, guid: 2218a41e85666944da3fbbb83b582445,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
