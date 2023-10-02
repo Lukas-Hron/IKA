@@ -134,10 +134,9 @@ public class Scrapbook : MonoBehaviour
         bool isRecipePage = false;
 
         RectTransform pageToAddTo = leftPage;
-        Debug.Log(pageIndex + " " + allPartsPages);
+
         if (pageIndex >= allPartsPages)// recipes now
         {
-            Debug.Log("recipe");
             pageToAddTo = recipePage;
             isRecipePage = true;
 
@@ -196,9 +195,7 @@ public class Scrapbook : MonoBehaviour
         SetBlankPages();
 
         pageIndex++;
-        Debug.Log("pageindex" + pageIndex);
         pageIndex = Mathf.Clamp(pageIndex, 0, totPages.Count - 1);
-        Debug.Log("pageindex2" + pageIndex);
 
         if (pageIndex == totPages.Count - 1)
             flipNextButton.interactable = false;
