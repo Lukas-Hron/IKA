@@ -1318,26 +1318,6 @@ PrefabInstance:
       propertyPath: objectSpawnPosition
       value: 
       objectReference: {fileID: 1816743092}
-    - target: {fileID: 6001238844942142877, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001238844942142877, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001238844942142877, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6001238844942142877, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 6320002892122144538, guid: 685dd68adcc7bca40a6a417cd60340f8,
         type: 3}
       propertyPath: m_LocalPosition.x
