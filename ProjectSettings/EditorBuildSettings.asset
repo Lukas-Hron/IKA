@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SandboxScene.unity
     guid: 4cd3b3fc9ea9cc2499d3d8179b9e94c9
+  - enabled: 1
+    path: Assets/Scenes/Easteregg.unity
+    guid: de8e60b7de13e374f8da79fc0c0fd9d0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d41377e81e56f3b4489d020f69c1cb06,
       type: 2}
