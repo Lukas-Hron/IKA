@@ -41,13 +41,11 @@ public class TimerClock : MonoBehaviour
 
         timerSource.clip = timerStart;
         timerSource.Play();
-
-        StartCoroutine(Timer());
     }
 
-    private IEnumerator Timer()
+    private void Update()
     {
-        while (timerRunning)
+        if (timerRunning)
         {
             timer += Time.deltaTime;
 
@@ -56,8 +54,6 @@ public class TimerClock : MonoBehaviour
 
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
-
-        yield return null;
     }
 
     private void StopTimer()
