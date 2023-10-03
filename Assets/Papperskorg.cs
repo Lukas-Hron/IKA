@@ -5,19 +5,46 @@ using UnityEngine;
 public class Papperskorg : MonoBehaviour
 {
     public GameObject Hammer;
-    private void OnCollisionEnter(Collision other)
+
+    public bool realTrashcan = false;
+
+    private ParticleSpawner partSpawn;
+    private SoundPlayer soundPlay;
+
+    private void Start()
     {
-        ObjectRespawn op = other.gameObject.GetComponent<ObjectRespawn>();
-
-        if(other.gameObject.GetComponent<ColorPickerBrush>() != null)
-             op?.Respawn();
-        else if(other.gameObject.GetComponent<RemovingWand>())
-            op?.Respawn();
-        else if(other.gameObject == Hammer)
-            other.gameObject.GetComponent<ObjectRespawn>().Respawn();
-
-
-        if (other.gameObject.CompareTag("PickUpables"))
-            Destroy(other.gameObject);
+        if(!realTrashcan) return;
+        partSpawn = GetComponent<ParticleSpawner>();
+        soundPlay = GetComponent<SoundPlayer>();    
     }
+
+    //private void TriggerEnter(Collision other)
+    //{
+    //    //ObjectRespawn op = other.gameObject.GetComponent<ObjectRespawn>();
+
+    //    //if(other.gameObject.GetComponent<ColorPickerBrush>() != null)
+    //    //     op?.Respawn();
+    //    //else if(other.gameObject.GetComponent<RemovingWand>())
+    //    //    op?.Respawn();
+    //    //else if(other.gameObject == Hammer)
+    //    //    other.gameObject.GetComponent<ObjectRespawn>().Respawn();
+
+
+
+    //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUpables"))
+        {
+            Destroy(other.gameObject);
+            if (realTrashcan)
+            {
+                partSpawn.PlayOneParticles(transform.position, 0, true);
+                soundPlay.PlayAudio(0);
+            }
+        }
+    }
+
+
 }
