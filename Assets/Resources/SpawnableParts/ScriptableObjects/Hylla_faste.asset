@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
-  m_Name: HyllplanUVd
+  m_Name: Hylla_faste
   m_EditorClassIdentifier: 
-  partPrefab: {fileID: 9148988926117274833, guid: 2de55e6e2fbce7f428b09ab99889e813,
+  partPrefab: {fileID: 6051369029544761916, guid: c84be0b4203d33447af3011e6515f62f,
     type: 3}
-  partSprite: {fileID: 21300138, guid: 7f186a9ac091755489927d745be0185a, type: 3}
+  partSprite: {fileID: -7534710504798566327, guid: 64f884351318b694f942625580e64a8b,
+    type: 3}
   wholeItemDecorSprite: {fileID: 0}
