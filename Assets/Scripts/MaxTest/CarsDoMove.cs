@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
@@ -36,15 +37,10 @@ public class CarsDoMove : MonoBehaviour
     }
     public void StartCar(bool enabledScripts = false)
     {
-        
-        //EnabledScripts(enabledScripts);
-        //Destroy(gameObject.GetComponent<Collider>());
-        
         if (enabledScripts == false)
         {
             CancelInvoke();
-            TurnOnAndOffColliders();
-            Invoke("StartIt", 3.5f);
+            Invoke("StartIt", 2f);
         }
         else if(wayPoints.Count > 0)
         {
@@ -52,7 +48,7 @@ public class CarsDoMove : MonoBehaviour
             myWay.Drive -= MoveCar;
             CancelInvoke();
             wayPoints.Clear();
-            
+            rb.freezeRotation = false;
             rb.constraints = RigidbodyConstraints.None;
             waypointIndex = 0;
         }
@@ -92,7 +88,7 @@ public class CarsDoMove : MonoBehaviour
     {
         if (waypointIndex <= wayPoints.Count - 1)
         {
-            Vector3 headed = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x,transform.position.y , wayPoints[waypointIndex].position.z), moveSpeed * deltaTime);// + new Vector3(0,bobbing.y,0);
+            Vector3 headed = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x, transform.position.y , wayPoints[waypointIndex].position.z), moveSpeed * deltaTime);// + new Vector3(0,bobbing.y,0);
             transform.position = new Vector3 (headed.x, transform.position.y, headed.z);
 
             transformExy = new Vector3(transform.position.x, 0, transform.position.z);
@@ -100,9 +96,7 @@ public class CarsDoMove : MonoBehaviour
 
             if ((wayPointExy - transformExy).normalized != Vector3.zero)
             {
-                Quaternion lookRotation = Quaternion.LookRotation((wayPointExy - transformExy).normalized);
-                Quaternion q = Quaternion.Slerp(transform.rotation, lookRotation, 10f * deltaTime);
-                transform.rotation = new Quaternion(transform.rotation.x, q.y, transform.rotation.z, q.w);
+                transform.LookAt(new Vector3(wayPointExy.x, transform.position.y, wayPointExy.z));
             }
         }
         else
@@ -118,6 +112,7 @@ public class CarsDoMove : MonoBehaviour
     }
     private void CheckForCars()
     {
+        return;
         RaycastHit[] hits = Physics.RaycastAll(new Vector3(transform.position.x, wayPoints[0].position.y, transform.position.z) , transform.forward, .1f);
         Debug.DrawRay(transform.position, transform.forward * .1f, Color.yellow, 1f);
 
@@ -140,37 +135,5 @@ public class CarsDoMove : MonoBehaviour
         CancelInvoke();
         myWay.Drive -= MoveCar;
     }
-    public void TurnOnAndOffColliders()
-    {
-        IEnumerator TurnonAndOff()
-        {
-            yield return new WaitForEndOfFrame();
-
-            List <Collider> colliders = new List<Collider>();
-            colliders = gameObject.GetComponentsInChildren<Collider>().ToList();
-
-            foreach (Collider collider in colliders)
-            {
-                Debug.LogWarning(collider.gameObject.name);
-                if ( collider.gameObject.GetComponent<WeldableObject>()?.MyPart == WeldableObject.Parts.Wheel || 
-                    collider.gameObject.transform.parent.gameObject.GetComponent<WeldableObject>()?.MyPart == WeldableObject.Parts.Wheel)
-                {
-                    //we have a wheel
-                }
-                else
-                {
-                    collider.enabled = false;
-                }
-            }
-
-            yield return new WaitForSeconds(3f);
-
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = true;
-            }
-        }
-
-        StartCoroutine(TurnonAndOff());
-    }
+    
 }
