@@ -219,7 +219,7 @@ public class Cluster : MonoBehaviour
     {
         if(isCar == true)
         {
-            GetComponent<CarsDoMove>().StartCar(true);
+           // GetComponent<CarsDoMove>().StartCar(true);
             Debug.Log("Pickued up car");
         }
     }

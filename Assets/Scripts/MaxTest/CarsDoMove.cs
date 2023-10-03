@@ -3,6 +3,8 @@ using Oculus.Interaction.HandGrab;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
@@ -37,15 +39,16 @@ public class CarsDoMove : MonoBehaviour
         
         //EnabledScripts(enabledScripts);
         //Destroy(gameObject.GetComponent<Collider>());
-      
+        
         if (enabledScripts == false)
         {
-            thisCar?.Invoke(this);
-            moveSpeedHolder = moveSpeed;
-            CheckForCars();
+            CancelInvoke();
+            TurnOnAndOffColliders();
+            Invoke("StartIt", 3.5f);
         }
         else if(wayPoints.Count > 0)
         {
+            gameObject.layer = 0;
             myWay.Drive -= MoveCar;
             CancelInvoke();
             wayPoints.Clear();
@@ -54,6 +57,14 @@ public class CarsDoMove : MonoBehaviour
             waypointIndex = 0;
         }
 
+    }
+
+    private void StartIt()
+    {
+        thisCar?.Invoke(this);
+        moveSpeedHolder = moveSpeed;
+        gameObject.layer = 11;
+        CheckForCars();
     }
 
     private void EnabledScripts(bool enabledScripts)
@@ -79,12 +90,10 @@ public class CarsDoMove : MonoBehaviour
     }
     public void MoveCar(float deltaTime) // might have to forget about the y axis so that cars dont go underground
     {
-        
-       
-
         if (waypointIndex <= wayPoints.Count - 1)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x, transform.position.y, wayPoints[waypointIndex].position.z), moveSpeed * deltaTime);// + new Vector3(0,bobbing.y,0);
+            Vector3 headed = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[waypointIndex].position.x,transform.position.y , wayPoints[waypointIndex].position.z), moveSpeed * deltaTime);// + new Vector3(0,bobbing.y,0);
+            transform.position = new Vector3 (headed.x, transform.position.y, headed.z);
 
             transformExy = new Vector3(transform.position.x, 0, transform.position.z);
             wayPointExy = new Vector3(wayPoints[waypointIndex].position.x, 0, wayPoints[waypointIndex].position.z);
@@ -92,7 +101,8 @@ public class CarsDoMove : MonoBehaviour
             if ((wayPointExy - transformExy).normalized != Vector3.zero)
             {
                 Quaternion lookRotation = Quaternion.LookRotation((wayPointExy - transformExy).normalized);
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10f * deltaTime);
+                Quaternion q = Quaternion.Slerp(transform.rotation, lookRotation, 10f * deltaTime);
+                transform.rotation = new Quaternion(transform.rotation.x, q.y, transform.rotation.z, q.w);
             }
         }
         else
@@ -129,5 +139,38 @@ public class CarsDoMove : MonoBehaviour
     {
         CancelInvoke();
         myWay.Drive -= MoveCar;
+    }
+    public void TurnOnAndOffColliders()
+    {
+        IEnumerator TurnonAndOff()
+        {
+            yield return new WaitForEndOfFrame();
+
+            List <Collider> colliders = new List<Collider>();
+            colliders = gameObject.GetComponentsInChildren<Collider>().ToList();
+
+            foreach (Collider collider in colliders)
+            {
+                Debug.LogWarning(collider.gameObject.name);
+                if ( collider.gameObject.GetComponent<WeldableObject>()?.MyPart == WeldableObject.Parts.Wheel || 
+                    collider.gameObject.transform.parent.gameObject.GetComponent<WeldableObject>()?.MyPart == WeldableObject.Parts.Wheel)
+                {
+                    //we have a wheel
+                }
+                else
+                {
+                    collider.enabled = false;
+                }
+            }
+
+            yield return new WaitForSeconds(3f);
+
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = true;
+            }
+        }
+
+        StartCoroutine(TurnonAndOff());
     }
 }

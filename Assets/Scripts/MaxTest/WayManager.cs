@@ -32,7 +32,10 @@ public class WayManager : MonoBehaviour
     {
         if (other.gameObject.transform.root.GetComponent<CarsDoMove>() != null)
         {
+            CancelInvoke();
+
             other.gameObject.transform.root.GetComponent<CarsDoMove>().StartCar(); // den här får du när du är en bil också kanske ska vara root
+            Debug.Log("Hell0 World");
         }
     }
 }

@@ -16,7 +16,6 @@ public class Papperskorg : MonoBehaviour
         else if(other.gameObject == Hammer)
             other.gameObject.GetComponent<ObjectRespawn>().Respawn();
 
-
         if (other.gameObject.CompareTag("PickUpables"))
             Destroy(other.gameObject);
     }
