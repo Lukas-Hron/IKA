@@ -68,6 +68,7 @@ public class Scrapbook : MonoBehaviour
     public void OpenBook()
     {
         Invoke(nameof(FlipPage), 0.4f);
+        Invoke(nameof(ShowCanvas), 0.4f);
 
         bookAnimator.SetTrigger("Open");
         bookAnimator2.SetTrigger("LiftUp");
@@ -77,6 +78,8 @@ public class Scrapbook : MonoBehaviour
 
         Destroy(GameObject.Find("CheckHover"));
     }
+
+    private void ShowCanvas() => canvas.SetActive(true);
 
     private void CreateRecipePages()
     {
@@ -145,11 +148,8 @@ public class Scrapbook : MonoBehaviour
         if (settingUpPage) return;
         settingUpPage = true;
 
-        canvas.SetActive(true);
-
         int spawnedItems = 0;
         bool isRecipePage = false;
-
         RectTransform pageToAddTo = leftPage;
 
         if (pageIndex < recipeItems.Count)// first pages are recipes then do all items
@@ -178,7 +178,6 @@ public class Scrapbook : MonoBehaviour
                 pageToAddTo = rightPage;
                 isRecipePage = false;
             }
-
             CreateButton(buttonPrefab, pageToAddTo, part, isRecipePage);
 
             spawnedItems++;
@@ -208,7 +207,6 @@ public class Scrapbook : MonoBehaviour
 
     public void FlipToNextPage()
     {
-        if (!canvas.activeInHierarchy) return;
         SetBlankPages();
 
         pageIndex++;
@@ -225,7 +223,6 @@ public class Scrapbook : MonoBehaviour
 
     public void FlipToPreviousPage()
     {
-        if (!canvas.activeInHierarchy) return;
         SetBlankPages();
 
         pageIndex--;
