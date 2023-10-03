@@ -51,7 +51,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.4
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2094800337754880052
 GameObject:
@@ -290,7 +290,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2662299300287713001
 GameObject:
@@ -358,19 +358,7 @@ MonoBehaviour:
         m_CallState: 2
   _whenDeactivated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8362915541139465943}
-        m_TargetAssemblyTypeName: Scrapbook, Assembly-CSharp
-        m_MethodName: CloseBook
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _emitOnFirstUpdate: 1
 --- !u!114 &4058021812391853081
 MonoBehaviour:
@@ -822,7 +810,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6320002892122144538}
   - component: {fileID: 778903085591289622}
-  - component: {fileID: 5537619719781230053}
   - component: {fileID: 727622071945417479}
   - component: {fileID: 6980702805668029933}
   - component: {fileID: 2329050671883186303}
@@ -872,18 +859,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.55, y: 0.05, z: 1.15}
   m_Center: {x: 0, y: 0.025, z: 0}
---- !u!114 &5537619719781230053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4624779892666780219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587a497150e90ef459e8d0f4fab4c7e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &727622071945417479
 MonoBehaviour:
   m_ObjectHideFlags: 0

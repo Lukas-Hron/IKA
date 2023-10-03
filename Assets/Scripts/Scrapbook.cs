@@ -54,14 +54,49 @@ public class Scrapbook : MonoBehaviour
 
         soundScript = GetComponent<SoundPlayer>();
 
-        CreatePagesAllItems();
         CreateRecipePages();
+        CreatePagesAllItems();
         SetBlankPages();
     }
 
     private void Start()
     {
         flipPreviousButton.interactable = false;
+        canvas.SetActive(false);
+    }
+
+    public void OpenBook()
+    {
+        Invoke(nameof(FlipPage), 0.4f);
+
+        bookAnimator.SetTrigger("Open");
+        bookAnimator2.SetTrigger("LiftUp");
+
+        soundScript.PlayAudio(1);
+        SetBlankPages();
+
+        Destroy(GameObject.Find("CheckHover"));
+    }
+
+    private void CreateRecipePages()
+    {
+        List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
+
+        foreach (SpawnableObjectSO mainItem in recipeItems)
+        {
+            //add the main item to a page
+            page.Add(mainItem);
+            foreach (SpawnableObjectSO partSO in spawnableParts)
+            {
+                if (partSO.name.Contains(mainItem.name))
+                    page.Add(partSO);
+            }
+
+            if (page.Count > 0) //add both the main item and the parts as a page
+                totPages.Add(page);
+
+            page = new List<SpawnableObjectSO>(); //Reset page
+        }
     }
 
     private void CreatePagesAllItems()
@@ -92,27 +127,6 @@ public class Scrapbook : MonoBehaviour
         }
     }
 
-    private void CreateRecipePages()
-    {
-        List<SpawnableObjectSO> page = new List<SpawnableObjectSO>();// create a new page
-
-        foreach (SpawnableObjectSO mainItem in recipeItems)
-        {
-            //add the main item to a page
-            page.Add(mainItem);
-            foreach (SpawnableObjectSO partSO in spawnableParts)
-            {
-                if (partSO.name.Contains(mainItem.name))
-                    page.Add(partSO);
-            }
-
-            if (page.Count > 0) //add both the main item and the parts as a page
-                totPages.Add(page);
-
-            page = new List<SpawnableObjectSO>(); //Reset page
-        }
-    }
-
     private void SetBlankPages()
     {
         // Reset the pages
@@ -138,7 +152,7 @@ public class Scrapbook : MonoBehaviour
 
         RectTransform pageToAddTo = leftPage;
 
-        if (pageIndex >= allPartsPages)// recipes now
+        if (pageIndex < recipeItems.Count)// first pages are recipes then do all items
         {
             pageToAddTo = recipePage;
             isRecipePage = true;
@@ -228,22 +242,15 @@ public class Scrapbook : MonoBehaviour
 
     private void FlipPage() => SetupOpenPage();
 
-    public void OpenBook()
-    {
-        bookAnimator.SetTrigger("Open");
-        bookAnimator2.SetTrigger("LiftUp");
 
-        soundScript.PlayAudio(1);
-        SetBlankPages();
-    }
+    //public void CloseBook()
+    //{
+    //    CancelInvoke();
+    //    canvas.SetActive(false);
+    //    Debug.Log("close");
+    //    bookAnimator.SetTrigger("Close");
+    //    bookAnimator2.SetTrigger("PutDown");
 
-    public void CloseBook()
-    {
-        canvas.SetActive(false);
-
-        bookAnimator.SetTrigger("Close");
-        bookAnimator2.SetTrigger("PutDown");
-
-        soundScript.PlayAudio(2);
-    }
+    //    soundScript.PlayAudio(2);
+    //}
 }
