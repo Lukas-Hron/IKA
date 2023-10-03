@@ -2625,58 +2625,6 @@ PrefabInstance:
       propertyPath: _hand
       value: 
       objectReference: {fileID: 7018375}
-    - target: {fileID: 1988826033728486902, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 586c1bc8688955c45a775be58c40080b,
-        type: 3}
-    - target: {fileID: 1988826033728486902, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988826033728486902, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988826033728486902, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2486942993764183580, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 286fab5719096304baff58823fc4e6bd,
-        type: 3}
-    - target: {fileID: 2486942993764183580, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2486942993764183580, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2486942993764183580, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4237075420112044839, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c236a1152ad1d394c9767dcb4e04b8bb, type: 3}
-    - target: {fileID: 4237075420112044839, guid: 685dd68adcc7bca40a6a417cd60340f8,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4624779892666780219, guid: 685dd68adcc7bca40a6a417cd60340f8,
         type: 3}
       propertyPath: m_Name
