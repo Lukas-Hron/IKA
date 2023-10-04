@@ -35,6 +35,7 @@ public class TimerClock : MonoBehaviour
     private void StartTimer()
     {
         timerText.text = "00:00";
+        timer = 0;
 
         TimerStarted?.Invoke();
         timerRunning = true;

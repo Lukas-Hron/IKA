@@ -20,6 +20,7 @@ public class Cluster : MonoBehaviour
 
     private Vector3 midPosition;
 
+    
     public void AddPartToList(GameObject part)
     {
         if (parts.Contains(part)) return;
@@ -171,6 +172,7 @@ public class Cluster : MonoBehaviour
         {
             Destroy(GetComponent<ObjectRespawn>());
             gameObject.AddComponent<CarsDoMove>();
+            isCar = true;
         }
         else if(amountOfWheels < 4 && isCar == true) // if we remove a wheel and we no longer should be considered a car
         {
@@ -212,5 +214,14 @@ public class Cluster : MonoBehaviour
         gameObject.tag = "Wall";
 
         Destroy(this);
+    }
+
+    public void Selected()
+    {
+        if(isCar == true)
+        {
+            GetComponent<CarsDoMove>().StartCar(true);
+            Debug.Log("Pickued up car");
+        }
     }
 }
