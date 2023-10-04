@@ -28,7 +28,6 @@ public class ColorPickerBrush : MonoBehaviour
             brushMaterial.color = Color.white;
         }
 
-
         //Debug.Log("Found " + other.name);
         if (other.CompareTag("ColorPickerTexture")) // Make sure to tag your rainbow gradient texture object with "ColorPickerTexture".
         {
