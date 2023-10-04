@@ -19,7 +19,6 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene(selectedLevelName);
     }
 
-
     public void ExitGame()
     {
 #if UNITY_EDITOR
