@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transferOnSecondSelection: 0
+  _transferOnSecondSelection: 1
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _oneGrabTransformer: {fileID: 6383759940261286796}
@@ -169,10 +169,9 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 7661629790723331462}
-  SetSelfComponents: 0
-  _boundsCollider: {fileID: 5069625167047629074}
-  _colliders:
-  - {fileID: 5069625167047629074}
+  SetSelfComponents: 1
+  _boundsCollider: {fileID: 0}
+  _colliders: []
 --- !u!114 &9172171764716386731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}
+  Renderer: {fileID: 858907577700384415}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5554259436768550255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +382,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5175954060936478633}
   m_SourcePrefab: {fileID: 100100000, guid: abcd8a8e040d6cd448d76c70dbfb6a0d, type: 3}
+--- !u!23 &858907577700384415 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7106962769065887323, guid: abcd8a8e040d6cd448d76c70dbfb6a0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1636368934030427962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1242770972027855057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: abcd8a8e040d6cd448d76c70dbfb6a0d,

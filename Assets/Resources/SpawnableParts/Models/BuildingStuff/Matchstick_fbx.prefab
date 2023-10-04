@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}
+  Renderer: {fileID: 9216284307509410439}
   originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &80968639888702065
 MonoBehaviour:

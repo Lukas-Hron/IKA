@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 871072641960372515}
   - component: {fileID: 1733270542852883810}
   - component: {fileID: 2816293954381503326}
-  - component: {fileID: 7711576883472453702}
-  - component: {fileID: 5838813060933302110}
   - component: {fileID: 8144865398058704671}
   m_Layer: 0
   m_Name: chassi_low
@@ -86,52 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7711576883472453702
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621143523444089019}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0057080733
-  m_Height: 0.04879481
-  m_Direction: 2
-  m_Center: {x: -0.00030689972, y: -0.0006843097, z: -0.0019443437}
---- !u!136 &5838813060933302110
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621143523444089019}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0057080733
-  m_Height: 0.04879481
-  m_Direction: 2
-  m_Center: {x: -0.00030689972, y: -0.0006843097, z: -0.0019443437}
 --- !u!114 &8144865398058704671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 0}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2672847363069294112
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +117,8 @@ GameObject:
   - component: {fileID: 8969277856214269636}
   - component: {fileID: 5279821903024392180}
   - component: {fileID: 4134881018828754455}
+  - component: {fileID: 5961439967885558732}
+  - component: {fileID: 1614565931134696271}
   m_Layer: 0
   m_Name: ToyCar
   m_TagString: PickUpables
@@ -314,10 +269,9 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 852034142681119351}
-  SetSelfComponents: 0
-  _boundsCollider: {fileID: 7711576883472453702}
-  _colliders:
-  - {fileID: 7711576883472453702}
+  SetSelfComponents: 1
+  _boundsCollider: {fileID: 0}
+  _colliders: []
 --- !u!114 &8969277856214269636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}
+  Renderer: {fileID: 2816293954381503326}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4134881018828754455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +335,48 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &5961439967885558732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672847363069294112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9730133, y: 1.2486185, z: 4.7774005}
+  m_Center: {x: 0.004009977, y: -0.09222962, z: -0.14836907}
+--- !u!65 &1614565931134696271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672847363069294112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9730133, y: 1.2486185, z: 4.7774005}
+  m_Center: {x: 0.004009977, y: -0.09222962, z: -0.14836907}
 --- !u!1 &5884133361874037958
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 0}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8266328643342725262
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 0}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &8886282798014516211
 PrefabInstance:
   m_ObjectHideFlags: 0

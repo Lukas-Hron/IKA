@@ -105,17 +105,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6799675
+      value: 0.34307033
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7342786
+      value: -0.41810012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9521717
+      value: 0.8652807
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
         type: 3}
@@ -219,6 +219,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2491173554854111133}
   m_SourcePrefab: {fileID: 100100000, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432, type: 3}
+--- !u!23 &4839574340746157738 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7200623606410708537, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
+    type: 3}
+  m_PrefabInstance: {fileID: 6862256319456208749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6051369029544761916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
@@ -348,7 +354,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 9165054407026219815}
   SetSelfComponents: 0
   _boundsCollider: {fileID: 2011337615400834379}
   _colliders:
@@ -377,7 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988b38854f613bd4e866bbfb82d99fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}
+  Renderer: {fileID: 4839574340746157738}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1607568060618160386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,8 +441,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.066042356, y: 0.10781856, z: 0.14251137}
-  m_Center: {x: 0.0019507147, y: 0.06664561, z: -0.07026096}
+  m_Size: {x: 0.05812642, y: 0.10861018, z: 0.14224756}
+  m_Center: {x: 0.00036753714, y: 0.064402774, z: -0.07619792}
 --- !u!4 &6390916553631629446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd1bbc87a6ba1f1449c3bf6ada0fc432,
