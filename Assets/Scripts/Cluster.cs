@@ -20,6 +20,7 @@ public class Cluster : MonoBehaviour
 
     private Vector3 midPosition;
 
+    
     public void AddPartToList(GameObject part)
     {
         if (parts.Contains(part)) return;
