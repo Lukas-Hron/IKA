@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 2584004487509300764}
   - component: {fileID: 5644652732178709396}
   - component: {fileID: 2410934310544147994}
+  - component: {fileID: 7672566238902365757}
   m_Layer: 0
   m_Name: ColorPickerBrush
   m_TagString: PickUpables
@@ -197,8 +198,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008595331
-  m_Center: {x: 0, y: 0.12055444, z: -9.1773733e-10}
+  m_Radius: 0.007
+  m_Center: {x: 0, y: 0.115, z: -9.1773733e-10}
 --- !u!114 &3512164322830474326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastOrigin: {fileID: 4798775680888327212}
   brushMaterial: {fileID: 2100000, guid: 0f3f1f73130d0f1478ace215074ca043, type: 2}
-  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  currentColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!54 &5356363962831533597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -308,6 +309,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d723aa1f3873a49b2533ca895e0a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7672566238902365757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358078252588365251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 2584004487509300764}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3512164322830474326}
+        m_TargetAssemblyTypeName: ColorPickerBrush, Assembly-CSharp
+        m_MethodName: SetIsGrabbedBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3512164322830474326}
+        m_TargetAssemblyTypeName: ColorPickerBrush, Assembly-CSharp
+        m_MethodName: SetIsGrabbedBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7315533391568499044
 GameObject:
   m_ObjectHideFlags: 0

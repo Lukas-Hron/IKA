@@ -8,52 +8,67 @@ public class ColorPickerBrush : MonoBehaviour
     public Material brushMaterial;
     public Color currentColor;      // This is the color picked up from the texture.
 
+    public bool isWatered;
+
+    private bool isGrabbed;
+    public void SetIsGrabbedBool(bool value) => isGrabbed = value;
+
     private void Start()
     {
         brushMaterial.color = Color.white;
     }
+
     private void OnTriggerStay(Collider other)
     {
+        if (!isGrabbed) return;
+
+        if (other.CompareTag("Water"))
+        {
+            isWatered = true;
+            brushMaterial.color = Color.white;
+        }
+
+
         //Debug.Log("Found " + other.name);
         if (other.CompareTag("ColorPickerTexture")) // Make sure to tag your rainbow gradient texture object with "ColorPickerTexture".
         {
-            Debug.Log("Gameobject is Tagged correctly");
+            isWatered = false;
+
             Ray ray = new Ray(raycastOrigin.position, raycastOrigin.forward);
             Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * 10f, Color.red, 1f);
-
 
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.collider == other)
                 {
-                    Debug.Log("Hit " + other.name);
                     Texture2D texture = hit.collider.GetComponent<Renderer>().material.mainTexture as Texture2D;
 
                     if (texture != null)
                     {
-                        Debug.Log("Texture isn't null");
                         Vector2 pixelUV = hit.textureCoord;
                         Debug.Log(hit.textureCoord);
                         pixelUV.x *= texture.width;
                         pixelUV.y *= texture.height;
 
                         currentColor = texture.GetPixel((int)pixelUV.x, (int)pixelUV.y);
-                        Debug.Log("Color is " + currentColor);
                         brushMaterial.color = currentColor;
                     }
                 }
             }
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!isGrabbed) return;
+
         Colorable colorable = other.GetComponent<Colorable>();
-            if (colorable != null)
-            {
-                colorable.Renderer.material.color = currentColor;
-            }
+
+        if (colorable != null && isWatered)
+            colorable.Renderer.material.color = colorable.originColor;
+
+        else if (colorable != null)
+            colorable.Renderer.material.color = currentColor;
     }
 }
