@@ -19,12 +19,13 @@ public class WayManager : MonoBehaviour
     {
         int temp = Random.Range(0, ways.Count);
         PlayRugWay tempWay = ways[temp];
-        car.wayPoints = tempWay.wayPoints;
-
-        spawner.PlayOneParticles(car.transform.position, 0, true);
-
-        car.FixRotPos();
         car.myWay = tempWay;
+
+        if (car.wayPoints.Count <= 0)
+        {
+            car.wayPoints = tempWay.wayPoints;
+        }
+            
         tempWay.Drive += car.MoveCar;
     }
     
@@ -32,7 +33,7 @@ public class WayManager : MonoBehaviour
     {
         if (other.gameObject.transform.root.GetComponent<CarsDoMove>() != null)
         {
-            other.gameObject.transform.root.GetComponent<CarsDoMove>().StartCar(); // den här får du när du är en bil också kanske ska vara root
+            other.gameObject.transform.root.GetComponent<CarsDoMove>().StartCar();
         }
     }
 }
