@@ -50,7 +50,7 @@ public class ParticleSpawner : MonoBehaviour
             if (VFXParticles != null)
             {
                 vfxPosRef[Index].transform.position = position;
-                Debug.Log("Org : " + vfxPosRef[Index].transform.position + " Target : " + position);
+               // Debug.Log("Org : " + vfxPosRef[Index].transform.position + " Target : " + position);
                 VFXRefs[Index].Play();
             }
         }
