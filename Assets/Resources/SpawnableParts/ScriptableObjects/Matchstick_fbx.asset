@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9822d26de22a4424c8d700349fc21c44, type: 3}
   m_Name: Matchstick_fbx
   m_EditorClassIdentifier: 
-  partPrefab: {fileID: 3454411225195322483, guid: f7f2ef95c347c7a4db318fbff37b32bd,
+  partPrefab: {fileID: 4588216007258171912, guid: f7f2ef95c347c7a4db318fbff37b32bd,
     type: 3}
   partSprite: {fileID: 0}
   wholeItemDecorSprite: {fileID: 0}
