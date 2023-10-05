@@ -6,7 +6,6 @@ public class GroanTube : MonoBehaviour
 {
     [SerializeField] private float maxChange;
     private AudioSource audioSource;
-    private Rigidbody rb;
     private Vector3 lastPosition;
     private Vector3 lastVelocity;
     private Vector3 currentVelocity;
@@ -27,22 +26,15 @@ public class GroanTube : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        rb = GetComponent<Rigidbody>();
         lastPosition = transform.position; // Initialize lastPosition
     }
 
     private void FixedUpdate()
     {
         // Calculate velocity manually if Rigidbody is kinematic
-        if (rb.isKinematic)
-        {
-            currentVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
-            lastPosition = transform.position;
-        }
-        else
-        {
-            currentVelocity = rb.velocity;
-        }
+        currentVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
+        lastPosition = transform.position;
+
 
         CheckVelocityChange();
         CheckDotProduct();
