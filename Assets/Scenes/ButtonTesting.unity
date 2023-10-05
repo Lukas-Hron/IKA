@@ -588,11 +588,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToyCar
       objectReference: {fileID: 0}
-    - target: {fileID: 5279821903024392180, guid: 4c6a55bc8e490a4438d481aafc5df7d9,
-        type: 3}
-      propertyPath: Renderer
-      value: 
-      objectReference: {fileID: 1260755449}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1300,12 +1295,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7583813491716739801, guid: 3c657e74d4a10234480c3f2fbaddd25d,
     type: 3}
   m_PrefabInstance: {fileID: 794663799}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1260755449 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2816293954381503326, guid: 4c6a55bc8e490a4438d481aafc5df7d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 372231590}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1272037519 stripped
 Transform:
