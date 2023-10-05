@@ -26,6 +26,11 @@ public class BackgroundMusic : MonoBehaviour
             timer.TimerStarted += OnTimerStarted;
             timer.TimerEnded += OnTimerEnded;
         }
+
+        MenuScript musicMenu = GameObject.FindAnyObjectByType<MenuScript>();
+
+        musicMenu.AddMusicVolume += AddVolume;
+        musicMenu.RemoveMusicVolume += RemoveVolume;
     }
 
     private void PlayMusicClip(AudioClip clipToPlay)
@@ -52,8 +57,6 @@ public class BackgroundMusic : MonoBehaviour
         StartCoroutine(ChangeMusic());
     }
 
-
-
     private void OnTimerStarted()
     {
         PlayMusicClip(timerMusic);
@@ -66,5 +69,35 @@ public class BackgroundMusic : MonoBehaviour
         PlayMusicClip(hourlyMusic[clipIndex]);
 
         StartCoroutine(ChangeMusic());
+    }
+
+    private void AddVolume()
+    {
+        float targetVolume = Mathf.Clamp(audioSource.volume + 0.05f, 0.0f, 0.5f);
+        float fadeDuration = 1.0f;
+        StartCoroutine(FadeVolume(audioSource, targetVolume, fadeDuration));
+    }
+
+    private void RemoveVolume()
+    {
+        float targetVolume = Mathf.Clamp(audioSource.volume - 0.05f, 0.0f, 0.5f);
+        float fadeDuration = 1.0f;
+        StartCoroutine(FadeVolume(audioSource, targetVolume, fadeDuration));
+    }
+
+    IEnumerator FadeVolume(AudioSource audioSource, float targetVolume, float duration)
+    {
+        float startVolume = audioSource.volume;
+        float startTime = Time.time;
+
+        while (Time.time < startTime + duration)
+        {
+            float elapsed = Time.time - startTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, t);
+            yield return null;
+        }
+
+        audioSource.volume = targetVolume;
     }
 }
