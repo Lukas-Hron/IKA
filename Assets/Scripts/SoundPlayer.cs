@@ -13,6 +13,7 @@ public class SoundPlayer : MonoBehaviour
     {
         MenuScript musicMenu = GameObject.FindAnyObjectByType<MenuScript>();
 
+        if (musicMenu == null) return;
         musicMenu.AddSFXVolume += AddVolume;
         musicMenu.RemoveSFXVolume += RemoveVolume;
     }
@@ -21,6 +22,7 @@ public class SoundPlayer : MonoBehaviour
     {
         MenuScript musicMenu = GameObject.FindAnyObjectByType<MenuScript>();
 
+        if (musicMenu == null) return;
         musicMenu.AddSFXVolume -= AddVolume;
         musicMenu.RemoveSFXVolume -= RemoveVolume;
     }
