@@ -23,6 +23,7 @@ public class GlueDipper : MonoBehaviour
         if (other.CompareTag("PickUpables") && other.GetComponent<WeldableObject>() != null)
         {
             soundPlay.PlayAudio(0);
+            particleSpawn.PlayOneParticles(other.transform.position,0,false);
             if (other.GetComponent<GlueAttacher>() == null)
             {
                 GlueAttacher objRef = other.AddComponent<GlueAttacher>();
