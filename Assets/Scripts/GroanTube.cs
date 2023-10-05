@@ -31,10 +31,8 @@ public class GroanTube : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Calculate velocity manually if Rigidbody is kinematic
         currentVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
         lastPosition = transform.position;
-
 
         CheckVelocityChange();
         CheckDotProduct();
@@ -44,7 +42,6 @@ public class GroanTube : MonoBehaviour
 
     private void CheckVelocityChange()
     {
-        // Use lastVelocity, which is updated based on whether the Rigidbody is kinematic or not
         Vector3 velocity = currentVelocity;
         float dif = Mathf.Abs((velocity - lastVelocity).magnitude) / Time.fixedDeltaTime;
 
