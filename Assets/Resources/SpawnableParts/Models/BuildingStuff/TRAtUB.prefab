@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 0}
+  originColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2270717818299297469
 MonoBehaviour:
   m_ObjectHideFlags: 0

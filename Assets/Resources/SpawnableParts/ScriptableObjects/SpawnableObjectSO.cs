@@ -8,6 +8,6 @@ public class SpawnableObjectSO : ScriptableObject
     public GameObject partPrefab;
     public Sprite partSprite;
 
-    [Header("Only for whole objects")]
+    [Header("NOT FOR NORMAL OBJECTS")]
     public Sprite wholeItemDecorSprite;
 }
