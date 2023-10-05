@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MenuScript : MonoBehaviour
 {
+    public event Action AddMusicVolume;
+    public event Action RemoveMusicVolume;
+    public event Action RemoveSFXVolume;
+    public event Action AddSFXVolume;
+
     string selectedLevelName;
 
     public void FlipIsActive()
@@ -18,6 +23,12 @@ public class MenuScript : MonoBehaviour
         selectedLevelName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(selectedLevelName);
     }
+
+    public void AddVolumeMusic() => AddMusicVolume?.Invoke();
+    public void RemoveVolumeMusic() => RemoveMusicVolume?.Invoke();
+
+    public void AddVolumeSfx() => AddSFXVolume?.Invoke();
+    public void RemoveVolumeSfx() => RemoveSFXVolume?.Invoke();
 
     public void ExitGame()
     {
