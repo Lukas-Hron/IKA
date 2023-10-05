@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Papperskorg : MonoBehaviour
 {
-    //public GameObject Hammer;
+    public GameObject hammer;
+    public GameObject pensel;
+    public GameObject crowbar;
 
     public bool realTrashcan = false;
 
@@ -22,7 +24,10 @@ public class Papperskorg : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUpables"))
         {
-            if (other.transform.root.gameObject.GetComponent<Cluster>())
+            if (other.gameObject == hammer || other.gameObject == pensel || other.gameObject == crowbar)
+                other.gameObject.GetComponent<ObjectRespawn>().Respawn();
+
+            else if (other.transform.root.gameObject.GetComponent<Cluster>())
                 Destroy(other.transform.root.gameObject);
 
             else
