@@ -4513,10 +4513,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.492
       objectReference: {fileID: 0}
+    - target: {fileID: 1674833647104536985, guid: fdae7ad542494224b9e03348496c11cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUpables
+      objectReference: {fileID: 0}
     - target: {fileID: 6358078252588365251, guid: fdae7ad542494224b9e03348496c11cf,
         type: 3}
       propertyPath: m_Name
       value: ColorPickerBrush
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315533391568499044, guid: fdae7ad542494224b9e03348496c11cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUpables
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813891677662803672, guid: fdae7ad542494224b9e03348496c11cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUpables
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
