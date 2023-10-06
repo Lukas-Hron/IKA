@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ButtonTesting.unity
     guid: c61292c4f6c6feb4583bdbc0492a6600
   - enabled: 1
+    path: Assets/Scenes/Levels/Intro.unity
+    guid: 9125387d07ec5b34682d42cb3928db34
+  - enabled: 1
     path: Assets/Scenes/Levels/SandboxScene.unity
     guid: 4cd3b3fc9ea9cc2499d3d8179b9e94c9
   - enabled: 1
